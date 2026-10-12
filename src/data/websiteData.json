@@ -1,0 +1,805 @@
+{
+  "common": {
+    "siteName": "ArchiLuxe",
+    "phone": "+1 (800) 123-4567",
+    "email": "info@xyz.com",
+    "address": "100 S Main Street, New York, NY 10001",
+    "workingHours": "Monday – Sat: 8:00 AM – 6:00 PM",
+    "socialLinks": {
+      "facebook": "https://facebook.com",
+      "instagram": "https://instagram.com",
+      "whatsapp": "https://whatsapp.com",
+      "linkedin": "https://linkedin.com",
+      "twitter": "https://x.com",
+      "youtube": "https://youtube.com"
+    }
+  },
+  "categories": {
+    "Architecture": {
+      "templateComponents": {
+        "template-1": {
+          "shared": {
+            "Header": "ArchiHeader1",
+            "Footer": "ArchiFooter1"
+          },
+          "pages": {
+            "home": {
+              "components": [
+                { "key": "Banner", "component": "ArchiBanner1" },
+                { "key": "About", "component": "ArchiAbout1" },
+                { "key": "StatsCounter", "component": "ArchiStatsCounter1" },
+                { "key": "Services", "component": "ArchiServices1" },
+                { "key": "Projects", "component": "ArchiProjects1" },
+                { "key": "Team", "component": "ArchiTeam1" },
+                { "key": "Testimonials", "component": "ArchiTestimonials1" },
+                { "key": "FAQ", "component": "ArchiFAQ1" },
+                { "key": "CTA", "component": "ArchiCTA1" }
+              ]
+            },
+            "about": {
+              "components": [
+                { "key": "PageBanner", "component": "ArchiPageBanner1" },
+                { "key": "About", "component": "ArchiAbout1" },
+                { "key": "StatsCounter", "component": "ArchiStatsCounter1" },
+                { "key": "Timeline", "component": "ArchiTimeline1" },
+                { "key": "WhyChooseUs", "component": "ArchiWhyChooseUs1" },
+                { "key": "MissionVision", "component": "ArchiMissionVision1" },
+                { "key": "CTA", "component": "ArchiCTA1" }
+              ]
+            },
+            "services": {
+              "components": [
+                { "key": "PageBanner", "component": "ArchiPageBanner1" },
+                { "key": "Services", "component": "ArchiServices1" },
+                { "key": "FeaturedProject", "component": "ArchiFeaturedProject1" },
+                { "key": "Testimonials", "component": "ArchiTestimonials1" },
+                { "key": "CTA", "component": "ArchiCTA1" }
+              ]
+            },
+            "projects": {
+              "components": [
+                { "key": "PageBanner", "component": "ArchiPageBanner1" },
+                { "key": "Projects", "component": "ArchiProjects1" },
+                { "key": "CTA", "component": "ArchiCTA1" }
+              ]
+            },
+            "team": {
+              "components": [
+                { "key": "PageBanner", "component": "ArchiPageBanner1" },
+                { "key": "Team", "component": "ArchiTeam1" },
+                { "key": "CTA", "component": "ArchiCTA1" }
+              ]
+            },
+            "gallery": {
+              "components": [
+                { "key": "PageBanner", "component": "ArchiPageBanner1" },
+                { "key": "Gallery", "component": "ArchiGallery1" },
+                { "key": "CTA", "component": "ArchiCTA1" }
+              ]
+            },
+            "contact": {
+              "components": [
+                { "key": "PageBanner", "component": "ArchiPageBanner1" },
+                { "key": "Contact", "component": "ArchiContact1" }
+              ]
+            }
+          }
+        }
+      },
+      "sections": {
+        "Header": {
+          "variants": {
+            "ArchiHeader1": {
+              "logoText": "Archi",
+              "logoHighlight": "luxe",
+              "tagline": "ARCHITECTURE FIRM",
+              "navLinks": [
+                { "title": "Home", "path": "/" },
+                { "title": "About Us", "path": "/about" },
+                {
+                  "title": "Services",
+                  "path": "/services",
+                  "children": [
+                    { "title": "All Services Overview", "path": "/services" },
+                    { "title": "Residential Architecture", "path": "/services/residential-architecture" },
+                    { "title": "Commercial Architecture", "path": "/services/commercial-architecture" },
+                    { "title": "Interior Designing", "path": "/services/interior-designing" },
+                    { "title": "Renovation & Remodeling", "path": "/services/renovation-remodeling" },
+                    { "title": "Landscape Design", "path": "/services/landscape-design" },
+                    { "title": "Planning & Consultation", "path": "/services/planning-consultation" },
+                    { "title": "Kitchen Remodeling", "path": "/services/kitchen-remodeling" },
+                    { "title": "Bathroom Renovation", "path": "/services/bathroom-renovation" }
+                  ]
+                },
+                {
+                  "title": "Projects",
+                  "path": "/projects",
+                  "children": [
+                    { "title": "All Projects Gallery", "path": "/projects" },
+                    { "title": "Modern White Kitchen", "path": "/projects/modern-white-kitchen" },
+                    { "title": "Contemporary Kitchen", "path": "/projects/contemporary-kitchen" },
+                    { "title": "Classic Kitchen Remodel", "path": "/projects/classic-kitchen-remodel" },
+                    { "title": "Small Kitchen Makeover", "path": "/projects/small-kitchen-makeover" },
+                    { "title": "Luxury Kitchen Design", "path": "/projects/luxury-kitchen-design" },
+                    { "title": "Open Concept Kitchen", "path": "/projects/open-concept-kitchen" },
+                    { "title": "Serene Heights Luxury Villa", "path": "/projects/serene-heights" }
+                  ]
+                },
+                { "title": "Our Team", "path": "/team" },
+                { "title": "Gallery", "path": "/gallery" },
+                { "title": "Contact Us", "path": "/contact" }
+              ],
+              "ctaButton": {
+                "text": "Contact Us",
+                "path": "/contact"
+              }
+            }
+          }
+        },
+        "Banner": {
+          "variants": {
+            "ArchiBanner1": {
+              "badge": "MODERN SPACES FOR BETTER LIVING",
+              "titleLine1": "Inspired",
+              "titleHighlight": "Spaces",
+              "titleLine2": "for Life",
+              "description": "Creative architecture, functional design and sustainable solutions for a better tomorrow.",
+              "backgroundImage": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85",
+              "buttons": [
+                { "label": "Explore Our Projects", "href": "/projects" }
+              ],
+              "stripHighlights": [
+                { "id": "01", "title": "Innovative", "subtitle": "Design Approach" },
+                { "id": "02", "title": "Sustainable", "subtitle": "Architecture" },
+                { "id": "03", "title": "Client-Centric", "subtitle": "Solutions" }
+              ]
+            }
+          }
+        },
+        "PageBanner": {
+          "variants": {
+            "ArchiPageBanner1": {
+              "bgOverlayImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80"
+            }
+          }
+        },
+        "About": {
+          "variants": {
+            "ArchiAbout1": {
+              "badge": "ABOUT US —",
+              "titleLine1": "Foundations of",
+              "titleHighlight": "ArchiLuxe",
+              "subtitle": "Crafting Architectural Designs and Masterpieces Interior Wonders",
+              "mainImage": "bb.webp",
+              "points": [
+                {
+                  "id": "01",
+                  "title": "Innovation Beyond Boundaries",
+                  "description": "We thrive on challenging the norms, infusing each project with fresh, innovative perspectives that defy convention."
+                },
+                {
+                  "id": "02",
+                  "title": "Visionaries at Work",
+                  "description": "We're not just designers; we're dream weavers. Your visions become our blueprints for extraordinary spaces."
+                },
+                {
+                  "id": "03",
+                  "title": "Awards and Acclaim",
+                  "description": "Join us on a journey marked by accolades and distinctions as we carve our path in the world of design."
+                }
+              ],
+              "button": {
+                "label": "Learn more About Us",
+                "href": "/about"
+              }
+            }
+          }
+        },
+        "StatsCounter": {
+          "variants": {
+            "ArchiStatsCounter1": {
+              "items": [
+                { "value": "22", "label": "Years of Experience", "icon": "hardHat" },
+                { "value": "282+", "label": "Projects Completed", "icon": "building" },
+                { "value": "420k", "label": "Square Feet Covered", "icon": "maximize" },
+                { "value": "93%", "label": "Positive Feedbacks", "icon": "users" }
+              ]
+            }
+          }
+        },
+        "Timeline": {
+          "variants": {
+            "ArchiTimeline1": {
+              "items": [
+                {
+                  "year": "2010",
+                  "title": "Founding Year",
+                  "subtitle": "Inception:",
+                  "description": "Florz was founded by a team of flooring enthusiasts with a vision to redefine flooring solutions for homeowners and businesses alike. Their goal was to combine quality materials with exceptional service.",
+                  "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
+                  "imageOnLeft": true
+                },
+                {
+                  "year": "2013",
+                  "title": "Initial Launch",
+                  "subtitle": "Business Setup:",
+                  "description": "Florz established its headquarters in New York, partnering with top manufacturers to offer a diverse range of flooring products, including hardwood, laminate, vinyl, and tile.",
+                  "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80",
+                  "imageOnLeft": false
+                },
+                {
+                  "year": "2015",
+                  "title": "Growth and Community Recognition",
+                  "subtitle": "Market Expansion:",
+                  "description": "As demand grew, Florz expanded its product offerings to include eco-friendly flooring options, catering to environmentally conscious consumers.",
+                  "image": "aa.jpg",
+                  "imageOnLeft": true
+                }
+              ]
+            }
+          }
+        },
+        "WhyChooseUs": {
+          "variants": {
+            "ArchiWhyChooseUs1": {
+              "badge": "WHY CHOOSE US",
+              "titleLine1": "Why Choose",
+              "titleHighlight": "Archiluxe",
+              "description": "We combine creativity, functionality and expertise to deliver architectural and interior spaces that exceed expectations.",
+              "centerImage": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+              "button": {
+                "label": "Learn More",
+                "href": "/services"
+              },
+              "features": [
+                { "title": "Experienced Team", "desc": "Skilled architects, designers and project managers.", "icon": "users" },
+                { "title": "Innovative Designs", "desc": "Creative and functional spaces for modern living.", "icon": "lightbulb" },
+                { "title": "End-to-End Solutions", "desc": "From concept to completion we handle everything.", "icon": "cog" },
+                { "title": "Quality & Craftsmanship", "desc": "Premium materials with attention to detail.", "icon": "gem" },
+                { "title": "Sustainable Approach", "desc": "Eco-friendly and future-ready designs.", "icon": "leaf" },
+                { "title": "Client-Centric Focus", "desc": "Your vision, our priority.", "icon": "headphones" }
+              ]
+            }
+          }
+        },
+        "MissionVision": {
+          "variants": {
+            "ArchiMissionVision1": {
+              "badge": "MISSION & VISION",
+              "titleLine1": "Our Mission",
+              "titleHighlight": "& Vision",
+              "description": "Guided by a clear purpose and a bold vision, we design spaces that inspire, enrich lives, and create a sustainable tomorrow.",
+              "mission": {
+                "title": "Our Mission",
+                "description": "To create innovative, functional and sustainable architectural and interior spaces that enhance lives and bring our clients' vision to reality through thoughtful design and expert execution.",
+                "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=700&q=80",
+                "icon": "target"
+              },
+              "vision": {
+                "title": "Our Vision",
+                "description": "To be a leading architecture and design firm recognized for creating inspiring spaces, setting new benchmarks in design excellence and contributing to a more sustainable and beautiful built environment.",
+                "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
+                "icon": "eye"
+              }
+            }
+          }
+        },
+        "Services": {
+          "variants": {
+            "ArchiServices1": {
+              "badge": "OUR SERVICES",
+              "titleLine1": "Designing Spaces",
+              "titleHighlight": "for Every Vision",
+              "description": "From concept to completion, we offer a full range of architectural and design services to create functional, beautiful and sustainable spaces.",
+              "items": [
+                {
+                  "id": 1,
+                  "slug": "residential-architecture",
+                  "title": "Residential Architecture",
+                  "desc": "Thoughtfully designed homes that blend comfort, style and functionality.",
+                  "image": "https://static.vecteezy.com/system/resources/previews/023/309/311/non_2x/ai-generative-exterior-of-modern-luxury-house-with-garden-and-beautiful-sky-photo.jpg",
+                  "icon": "home"
+                },
+                {
+                  "id": 2,
+                  "slug": "commercial-architecture",
+                  "title": "Commercial Architecture",
+                  "desc": "Innovative commercial spaces that enhance productivity and brand value.",
+                  "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
+                  "icon": "building2"
+                },
+                {
+                  "id": 3,
+                  "slug": "interior-designing",
+                  "title": "Interior Designing",
+                  "desc": "Elegant interiors that reflect your personality and make every space extraordinary.",
+                  "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
+                  "icon": "sofa"
+                },
+                {
+                  "id": 4,
+                  "slug": "renovation-remodeling",
+                  "title": "Renovation & Remodeling",
+                  "desc": "Transforming existing spaces into modern, functional and stylish environments.",
+                  "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+                  "icon": "wrench"
+                },
+                {
+                  "id": 5,
+                  "slug": "landscape-design",
+                  "title": "Landscape Design",
+                  "desc": "Beautiful outdoor spaces that bring nature, balance and tranquility.",
+                  "image": "https://sandovallandscaping.com/app/uploads/2026/02/luxury-landscape-design-dfw-estates-hero.webp",
+                  "icon": "leaf"
+                },
+                {
+                  "id": 6,
+                  "slug": "planning-consultation",
+                  "title": "Planning & Consultation",
+                  "desc": "Expert guidance from concept to execution for successful and hassle-free projects.",
+                  "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
+                  "icon": "fileSpreadsheet"
+                }
+              ]
+            }
+          }
+        },
+        "ServiceDetails": {
+          "variants": {
+            "ArchiServiceDetails1": {
+              "servicesMap": {
+                "kitchen-remodeling": {
+                  "category": "KITCHEN REMODELING",
+                  "title": "Create a Beautiful Kitchen Designed for Modern Living",
+                  "description1": "The kitchen is the heart of every home, and a well-designed kitchen can completely transform your daily routine. Our kitchen remodeling services combine thoughtful layouts, premium materials, and expert craftsmanship to create spaces that are both functional and visually stunning.",
+                  "description2": "Whether you're planning a complete kitchen renovation or upgrading selected features, we design kitchens that improve comfort, efficiency, and long-term value while reflecting your personal style and lifestyle needs.",
+                  "heroImage": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80",
+                  "expYears": "15+",
+                  "expTitle": "Transform the Heart of Your Home",
+                  "expDescription": "With over 15 years of experience, we specialize in creating beautiful kitchens with custom cabinetry, premium countertops, modern lighting, and intelligent layouts that enhance everyday living while increasing your property's value.",
+                  "features": [
+                    { "title": "Custom Cabinetry", "desc": "Stylish and functional cabinets designed to maximize storage, match your style, and make your kitchen more organized.", "icon": "archive" },
+                    { "title": "Premium Countertops", "desc": "Choose from quartz, granite, marble, or other high-quality surfaces that are durable, elegant, and easy to maintain.", "icon": "layers" },
+                    { "title": "Modern Lighting", "desc": "Enhance your kitchen with layered lighting, pendant fixtures, and under-cabinet illumination for a warm and inviting atmosphere.", "icon": "lightbulb" },
+                    { "title": "Space Optimization", "desc": "Smart layouts and efficient designs that make the most of every square foot, improving workflow and functionality.", "icon": "ruler" },
+                    { "title": "Appliance Integration", "desc": "Seamlessly integrate modern appliances for improved efficiency, energy savings, and a clean, contemporary look.", "icon": "zap" },
+                    { "title": "Quality Craftsmanship", "desc": "Every project is completed with exceptional attention to detail using premium materials and proven construction methods for long-lasting results.", "icon": "award" }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "FeaturedProject": {
+          "variants": {
+            "ArchiFeaturedProject1": {
+              "badge": "OUR PROJECTS",
+              "titleLine1": "Featured",
+              "titleHighlight": "Projects",
+              "description": "Explore our latest architectural and interior design projects that reflect creativity, functionality and modern living.",
+              "projectName": "Serene Heights",
+              "projectDesc": "A modern living space designed with elegant interiors, open layouts and natural light, creating a perfect blend of comfort and functionality.",
+              "bgImage": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85",
+              "meta": {
+                "clients": "Skyline Builders",
+                "area": "5,200 m²",
+                "projectYear": "2024",
+                "projectType": "Residential Interior"
+              },
+              "viewProjectLink": "/projects/serene-heights",
+              "newProjectsLink": "/projects"
+            }
+          }
+        },
+        "Projects": {
+          "variants": {
+            "ArchiProjects1": {
+              "badge": "OUR PROJECTS",
+              "titleLine1": "Explore Our Kitchen Remodeling",
+              "titleHighlight": "Projects",
+              "description": "Take a look at some of our recent kitchen remodeling projects. Each space is thoughtfully designed to combine style, functionality, and long-lasting quality, tailored to our clients' unique needs.",
+              "categories": [
+                "All Projects",
+                "Modern Kitchen",
+                "Contemporary",
+                "Traditional",
+                "Small Kitchen",
+                "Luxury Kitchen"
+              ],
+              "items": [
+                {
+                  "id": 1,
+                  "category": "Modern Kitchen",
+                  "title": "Modern White Kitchen",
+                  "description": "A clean and elegant design with premium finishes and smart storage solutions.",
+                  "image": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80",
+                  "slug": "modern-white-kitchen"
+                },
+                {
+                  "id": 2,
+                  "category": "Contemporary",
+                  "title": "Contemporary Kitchen",
+                  "description": "A stylish kitchen with modern lighting and spacious layout for everyday living.",
+                  "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+                  "slug": "contemporary-kitchen"
+                },
+                {
+                  "id": 3,
+                  "category": "Traditional",
+                  "title": "Classic Kitchen Remodel",
+                  "description": "A timeless design that blends traditional charm with modern functionality.",
+                  "image": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80",
+                  "slug": "classic-kitchen-remodel"
+                },
+                {
+                  "id": 4,
+                  "category": "Small Kitchen",
+                  "title": "Small Kitchen Makeover",
+                  "description": "Smart design to maximize space and storage without compromising on style.",
+                  "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+                  "slug": "small-kitchen-makeover"
+                },
+                {
+                  "id": 5,
+                  "category": "Luxury Kitchen",
+                  "title": "Luxury Kitchen Design",
+                  "description": "Premium materials and elegant finishes for a sophisticated look.",
+                  "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80",
+                  "slug": "luxury-kitchen-design"
+                },
+                {
+                  "id": 6,
+                  "category": "Modern Kitchen",
+                  "title": "Open Concept Kitchen",
+                  "description": "A modern open kitchen design that seamlessly connects with the living space.",
+                  "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
+                  "slug": "open-concept-kitchen"
+                }
+              ]
+            }
+          }
+        },
+        "ProjectDetails": {
+          "variants": {
+            "ArchiProjectDetails1": {
+              "badge": "PROJECT DETAIL",
+              "titleLine1": "Modern Kitchen",
+              "titleHighlight": "Remodel",
+              "description": "This modern kitchen remodel combines clean lines, premium materials, and smart storage solutions to create a stylish and functional space. Designed to maximize space and natural light, this kitchen offers the perfect blend of beauty, convenience, and modern living.",
+              "meta": {
+                "type": "Kitchen Remodeling",
+                "completionTime": "6 Weeks",
+                "location": "New Delhi, India"
+              },
+              "heroImage": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1400&q=85",
+              "gallery": [
+                "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
+                "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
+                "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
+                "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80"
+              ],
+              "overview": "Our team transformed this outdated kitchen into a modern, elegant, and highly functional space. We focused on open layouts, premium finishes, and smart storage to enhance both aesthetics and usability. The result is a bright, spacious kitchen that perfectly fits the homeowner's lifestyle.",
+              "keyHighlights": [
+                "Custom cabinetry with smart storage solutions",
+                "Premium quartz countertops",
+                "Modern pendant lighting and under-cabinet lights",
+                "Modern appliances and seamless integration"
+              ],
+              "features": [
+                { "title": "Custom Cabinetry", "desc": "Designed for maximum storage and a clean, modern look.", "icon": "archive" },
+                { "title": "Space Optimization", "desc": "Smart layouts to make the most of every square foot.", "icon": "ruler" },
+                { "title": "Premium Countertops", "desc": "High-quality quartz surfaces for durability and elegance.", "icon": "layers" },
+                { "title": "Appliance Integration", "desc": "Seamless installation of modern appliances for a sleek finish.", "icon": "zap" },
+                { "title": "Modern Lighting", "desc": "Pendant lights and under-cabinet lighting for a warm ambiance.", "icon": "lightbulb" },
+                { "title": "Stylish Finishes", "desc": "Premium materials and textures for a contemporary look.", "icon": "sparkles" }
+              ],
+              "beforeAfter": {
+                "before": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
+                "after": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80"
+              }
+            }
+          }
+        },
+        "Team": {
+          "variants": {
+            "ArchiTeam1": {
+              "badge": "OUR TEAM",
+              "titleLine1": "Meet Our",
+              "titleHighlight": "Creative Team",
+              "description": "A dedicated team of designers, planners and project experts working together to create beautiful and functional kitchen spaces for your home.",
+              "members": [
+                {
+                  "name": "Vikram Singh",
+                  "role": "Founder & CEO",
+                  "bio": "With 20+ years of experience, Vikram leads our vision to create modern and functional kitchens for every home.",
+                  "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80"
+                },
+                {
+                  "name": "Priya Malhotra",
+                  "role": "Lead Interior Designer",
+                  "bio": "Priya specializes in creating stylish and practical kitchen designs that match your lifestyle and aesthetic preferences.",
+                  "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80"
+                },
+                {
+                  "name": "Amit Sharma",
+                  "role": "Project Manager",
+                  "bio": "Amit ensures smooth execution of every project, from planning to installation, with attention to detail and quality.",
+                  "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80"
+                },
+                {
+                  "name": "Sneha Gupta",
+                  "role": "Kitchen Design Consultant",
+                  "bio": "Sneha works closely with clients to understand their needs and create personalized kitchen solutions.",
+                  "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&q=80"
+                },
+                {
+                  "name": "Rahul Mehta",
+                  "role": "3D Visualization Expert",
+                  "bio": "Rahul creates detailed 3D designs to help you visualize your dream kitchen before the project begins.",
+                  "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80"
+                },
+                {
+                  "name": "Anjali Verma",
+                  "role": "Material & Product Specialist",
+                  "bio": "Anjali helps you choose the best materials, finishes, and appliances to create a kitchen that is durable and elegant.",
+                  "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80"
+                },
+                {
+                  "name": "Karan Yadav",
+                  "role": "Installation Supervisor",
+                  "bio": "Karan oversees the installation process and ensures every detail is completed with precision and perfection.",
+                  "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=80"
+                },
+                {
+                  "name": "Nikita Rao",
+                  "role": "Client Relationship Manager",
+                  "bio": "Nikita ensures a seamless experience by providing complete support and guidance throughout your kitchen remodeling journey.",
+                  "image": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=700&q=80"
+                }
+              ]
+            }
+          }
+        },
+        "Testimonials": {
+          "variants": {
+            "ArchiTestimonials1": {
+              "badge": "Testimonials",
+              "titleLine1": "What People Say About",
+              "titleHighlight": "Our Design Studio",
+              "items": [
+                {
+                  "id": 1,
+                  "quote": "Working with this design studio was a fantastic experience. They understood our vision perfectly and transformed our space into a beautiful, functional and modern home. Highly professional and creative team!",
+                  "author": "Rohan Mehta",
+                  "role": "Homeowner",
+                  "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80"
+                },
+                {
+                  "id": 2,
+                  "quote": "Exceptional creativity and attention to detail! The team delivered a space that is both stylish and practical. From concept to completion, the entire process was smooth and stress-free. Truly recommend them!",
+                  "author": "Priya Sharma",
+                  "role": "Interior Designer",
+                  "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80"
+                },
+                {
+                  "id": 3,
+                  "quote": "The design studio exceeded our expectations with their innovative ideas and elegant designs. They created an office space that reflects our brand and culture perfectly. Great team, great results!",
+                  "author": "Amit Verma",
+                  "role": "Business Owner",
+                  "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80"
+                }
+              ]
+            }
+          }
+        },
+        "Gallery": {
+          "variants": {
+            "ArchiGallery1": {
+              "badge": "OUR GALLERY",
+              "titleLine1": "Explore Our",
+              "titleHighlight": "Kitchen Gallery",
+              "description": "Take a look at our completed kitchen remodeling projects. Each design reflects our commitment to quality, functionality, and modern aesthetics.",
+              "categories": [
+                "All",
+                "Modern Kitchen",
+                "Contemporary",
+                "Traditional",
+                "Small Kitchen",
+                "Luxury Kitchen"
+              ],
+              "items": [
+                {
+                  "id": 1,
+                  "category": "Modern Kitchen",
+                  "title": "Calacatta Gold Island with Pendant Glow",
+                  "image": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85"
+                },
+                {
+                  "id": 2,
+                  "category": "Contemporary",
+                  "title": "Matte Anthracite & Nero Marquina Island",
+                  "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+                },
+                {
+                  "id": 3,
+                  "category": "Modern Kitchen",
+                  "title": "Scandinavian White Oak & Marble Counter",
+                  "image": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=85"
+                },
+                {
+                  "id": 4,
+                  "category": "Traditional",
+                  "title": "Sage Green Country Estate Millwork",
+                  "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85"
+                },
+                {
+                  "id": 5,
+                  "category": "Traditional",
+                  "title": "L-Shaped Olive Green Cabinetry & Open Shelving",
+                  "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=85"
+                },
+                {
+                  "id": 6,
+                  "category": "Contemporary",
+                  "title": "Minimalist Warm Oak Island & Stainless Range",
+                  "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
+                },
+                {
+                  "id": 7,
+                  "category": "Luxury Kitchen",
+                  "title": "Walnut Vertical Grain Veneer with Marble Bar",
+                  "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"
+                },
+                {
+                  "id": 8,
+                  "category": "Small Kitchen",
+                  "title": "Sunlit Coastal White Kitchen with Black Range",
+                  "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85"
+                },
+                {
+                  "id": 9,
+                  "category": "Luxury Kitchen",
+                  "title": "Open Garden Courtyard Transition Kitchen",
+                  "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85"
+                },
+                {
+                  "id": 10,
+                  "category": "Modern Kitchen",
+                  "title": "Warm Backlit Veneer & Waterfall Island",
+                  "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85"
+                },
+                {
+                  "id": 11,
+                  "category": "Small Kitchen",
+                  "title": "Bespoke Corner Pantry & Fluted Glass Millwork",
+                  "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=85"
+                },
+                {
+                  "id": 12,
+                  "category": "Contemporary",
+                  "title": "Charcoal Bar Stools & Panoramic Garden Sliders",
+                  "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
+                }
+              ]
+            }
+          }
+        },
+        "FAQ": {
+          "variants": {
+            "ArchiFAQ1": {
+              "badge": "FAQ",
+              "titleLine1": "Frequently Asked",
+              "titleHighlight": "Questions",
+              "description": "Find answers to common questions about our design process, services and working approach.",
+              "items": [
+                {
+                  "id": 1,
+                  "question": "1. What services does your design studio offer?",
+                  "answer": "We offer a complete range of architectural and interior design services including residential, commercial, office spaces, renovations and turnkey project solutions tailored to your needs."
+                },
+                {
+                  "id": 2,
+                  "question": "2. How does the design process work?",
+                  "answer": "Our design process starts with client discovery, feasibility study, schematic plans, 3D renderings, and ends with hands-on site management."
+                },
+                {
+                  "id": 3,
+                  "question": "3. Do you provide customized designs?",
+                  "answer": "Yes, every layout, bespoke cabinetry piece, and lighting plan is tailored to individual requirements."
+                },
+                {
+                  "id": 4,
+                  "question": "4. What is the typical project timeline?",
+                  "answer": "Interior renovations usually span 8-12 weeks, whereas full-scale architectural builds can take anywhere between 6-18 months."
+                },
+                {
+                  "id": 5,
+                  "question": "5. Do you handle both design and execution?",
+                  "answer": "Yes, we handle complete turnkey execution, supervising contractors and materials on-site."
+                },
+                {
+                  "id": 6,
+                  "question": "6. What factors affect the project cost?",
+                  "answer": "Scope of work, structural complexity, selected materials, and custom finishes determine final expenses."
+                },
+                {
+                  "id": 7,
+                  "question": "7. Can you work with my existing space?",
+                  "answer": "Yes, we specialize in structural renovations and internal space restructuring."
+                },
+                {
+                  "id": 8,
+                  "question": "8. Do you offer 3D designs or visualization?",
+                  "answer": "Yes, photo-realistic 3D rendering and VR walkthroughs are part of our standard design package."
+                },
+                {
+                  "id": 9,
+                  "question": "9. Will you help with material selection?",
+                  "answer": "Yes, our team personally accompanies clients to showrooms to pick finishes, veneers, and stones."
+                },
+                {
+                  "id": 10,
+                  "question": "10. Do you provide after-service support?",
+                  "answer": "Yes, we provide warranty assistance and scheduled follow-ups post handover."
+                }
+              ]
+            }
+          }
+        },
+        "Contact": {
+          "variants": {
+            "ArchiContact1": {
+              "badge": "CONTACT US",
+              "titleLine1": "Let's Discuss Your",
+              "titleHighlight": "Kitchen Project",
+              "description": "Have a question, need expert advice, or ready to start your kitchen remodeling project? Our team is here to help you create a beautiful, functional, and modern kitchen for your home.",
+              "office": {
+                "title": "Office Location",
+                "address": "100 S Main Street, New York, NY 10001"
+              },
+              "email": {
+                "title": "Email Us",
+                "email": "info@xyz.com"
+              },
+              "call": {
+                "title": "Call Us",
+                "phone": "+1 (800) 123-4567"
+              },
+              "mapLocation": {
+                "label": "Our Location",
+                "address": "100 S Main Street, New York, NY 10001",
+                "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280012224!2d-74.11976374026851!3d40.69766374859258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              }
+            }
+          }
+        },
+        "CTA": {
+          "variants": {
+            "ArchiCTA1": {
+              "titleLine1": "Ready to Build",
+              "titleHighlight": "Your Vision?",
+              "description": "Let's create inspiring spaces together. Get in touch with our team today.",
+              "button": {
+                "label": "Contact Us",
+                "href": "/contact"
+              },
+              "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85"
+            }
+          }
+        },
+        "Footer": {
+          "variants": {
+            "ArchiFooter1": {
+              "about": "We create innovative architecture and interior spaces that blend aesthetics, functionality, and sustainability. From residential to commercial projects, we bring your vision to life with thoughtful design and expert execution.",
+              "location": "100 S Main Street, New York, NY 10001",
+              "phone": "+1 (800) 123-4567",
+              "email": "info@xyz.com",
+            
+              "copyright": "Copyright © 2026 Archiluxe. All Rights Reserved. Powered by Lestow."
+            }
+          }
+        }
+      }
+    }
+  }
+}
