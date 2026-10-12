@@ -22,6 +22,7 @@ import PageBanner from "@/components/PageBanner";
 import siteData from "@/data/websiteData.json";
 
 export default function ContactPage() {
+  const common = (siteData as any)?.common || {};
   const architecture = (siteData as any)?.categories?.Architecture?.sections;
   const pageBanner = architecture?.PageBanner?.variants?.ArchiPageBanner1;
   const contactData = architecture?.Contact?.variants?.ArchiContact1;
@@ -61,19 +62,23 @@ export default function ContactPage() {
     setIsSubmitted(false);
   };
 
+  const officeTitle = contactData?.office?.title || "Office Location";
+  const officeAddress = contactData?.office?.address || common.address || "100 S Main Street, New York, NY 10001";
+  const emailTitle = contactData?.email?.title || "Email Us";
+  const emailAddress = contactData?.email?.email || common.email || "contact@archiluxe.com";
+  const callTitle = contactData?.call?.title || "Call Us";
+  const callPhone = contactData?.call?.phone || common.phone || "+1 (800) 123-4567";
+
   return (
     <main className="min-h-screen bg-[#faf8f5] text-[#14171c] font-sans selection:bg-[#b88344] selection:text-white">
-      {/* 1. Header Navigation */}
       <Navbar activePage="Contact Us" />
 
-      {/* 2. Universal Page Banner */}
       <PageBanner
         title={contactData?.badge?.replace(/—/g, "").trim() || "Contact Us"}
         breadcrumbs={[{ label: "Contact Us" }]}
         bgImage={pageBanner?.bgOverlayImage}
       />
 
-      {/* 3. Contact Form & Details Section */}
       <section className="pt-10 sm:pt-14 pb-12 sm:pb-16 px-4 sm:px-6 md:px-8 max-w-[1360px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           <div className="lg:col-span-5 space-y-6">
@@ -106,10 +111,10 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="text-xs sm:text-[13px] font-bold text-[#14171c]">
-                    {contactData?.office?.title || "Office Location"}
+                    {officeTitle}
                   </h4>
                   <p className="text-[11.5px] sm:text-xs text-neutral-500 mt-0.5 leading-relaxed">
-                    {contactData?.office?.address || "100 S Main Street, New York, NY 10001"}
+                    {officeAddress}
                   </p>
                 </div>
               </div>
@@ -120,13 +125,13 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="text-xs sm:text-[13px] font-bold text-[#14171c]">
-                    {contactData?.email?.title || "Email Us"}
+                    {emailTitle}
                   </h4>
                   <a
-                    href={`mailto:${contactData?.email?.email || "contact@archiluxe.com"}`}
+                    href={`mailto:${emailAddress}`}
                     className="text-[11.5px] sm:text-xs text-neutral-500 hover:text-[#b88344] mt-0.5 block truncate transition-colors"
                   >
-                    {contactData?.email?.email || "contact@archiluxe.com"}
+                    {emailAddress}
                   </a>
                 </div>
               </div>
@@ -137,13 +142,13 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="text-xs sm:text-[13px] font-bold text-[#14171c]">
-                    {contactData?.call?.title || "Call Us"}
+                    {callTitle}
                   </h4>
                   <a
-                    href={`tel:${(contactData?.call?.phone || "+1 (800) 123-4567").replace(/[^0-9+]/g, "")}`}
+                    href={`tel:${callPhone.replace(/[^0-9+]/g, "")}`}
                     className="text-[11.5px] sm:text-xs text-neutral-500 hover:text-[#b88344] mt-0.5 block transition-colors"
                   >
-                    {contactData?.call?.phone || "+1 (800) 123-4567"}
+                    {callPhone}
                   </a>
                 </div>
               </div>
@@ -155,10 +160,11 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <h3 className="text-2xl sm:text-[26px] font-extrabold text-[#14171c] tracking-tight">
-                    Send Us a Message
+                    {contactData?.form?.title || "Send Us a Message"}
                   </h3>
                   <p className="text-xs sm:text-[13px] text-neutral-500 mt-1">
-                    Fill out the form below and our team will get back to you shortly to discuss your requirements.
+                    {contactData?.form?.description ||
+                      "Fill out the form below and our team will get back to you shortly to discuss your requirements."}
                   </p>
                 </div>
 
@@ -271,7 +277,10 @@ export default function ContactPage() {
                   disabled={isSubmitting}
                   className="w-full bg-[#b88344] hover:bg-[#a07136] text-white py-3.5 rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-[#b88344]/30 hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer disabled:opacity-75"
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"} <ArrowRight size={15} />
+                  {isSubmitting
+                    ? contactData?.form?.submittingLabel || "Sending..."
+                    : contactData?.form?.submitButton || "Send Message"}{" "}
+                  <ArrowRight size={15} />
                 </button>
               </form>
             ) : (
@@ -287,17 +296,25 @@ export default function ContactPage() {
 
                 <div className="space-y-2 max-w-md">
                   <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-[#b88344]">
-                    MESSAGE RECEIVED
+                    {contactData?.success?.badge || "MESSAGE RECEIVED"}
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-black text-[#14171c] tracking-tight">
-                    Thank You, {formData.name || "Client"}!
+                    {contactData?.success?.heading || "Thank You"}, {formData.name || "Client"}!
                   </h3>
                   <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
-                    Aapka message successfully submit ho gaya hai. Humari team jald hi{" "}
-                    <span className="font-semibold text-[#b88344]">
-                      {formData.email}
-                    </span>{" "}
-                    par aapke project ({formData.projectType}) ke liye contact karegi.
+                    {contactData?.success?.description ? (
+                      contactData.success.description
+                        .replace("{{email}}", formData.email)
+                        .replace("{{projectType}}", formData.projectType)
+                    ) : (
+                      <>
+                        Your message has been received successfully. Our team will contact you at{" "}
+                        <span className="font-semibold text-[#b88344]">
+                          {formData.email}
+                        </span>{" "}
+                        shortly regarding your {formData.projectType} inquiry.
+                      </>
+                    )}
                   </p>
                 </div>
 
@@ -307,13 +324,15 @@ export default function ContactPage() {
                     onClick={handleReset}
                     className="inline-flex items-center gap-2 bg-[#faf8f5] hover:bg-[#f1ede6] text-[#14171c] border border-neutral-200/80 px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer"
                   >
-                    <RotateCcw size={14} /> Send Another Message
+                    <RotateCcw size={14} />{" "}
+                    {contactData?.success?.resetButton || "Send Another Message"}
                   </button>
                   <Link
                     href="/"
                     className="inline-flex items-center gap-2 bg-[#b88344] hover:bg-[#a07136] text-white px-5 py-2.5 rounded-xl text-xs font-bold shadow-md shadow-[#b88344]/25 transition-all"
                   >
-                    Return Home <ArrowRight size={14} />
+                    {contactData?.success?.homeButton || "Return Home"}{" "}
+                    <ArrowRight size={14} />
                   </Link>
                 </div>
               </motion.div>
@@ -322,7 +341,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* 4. Google Maps Embed */}
       {contactData?.mapLocation?.embedUrl && (
         <section className="px-4 sm:px-6 md:px-8 pb-12 sm:pb-16 max-w-[1360px] mx-auto">
           <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-neutral-100 h-[280px] sm:h-[360px]">
@@ -355,7 +373,6 @@ export default function ContactPage() {
         </section>
       )}
 
-      {/* 5. Footer */}
       <Footer />
     </main>
   );
