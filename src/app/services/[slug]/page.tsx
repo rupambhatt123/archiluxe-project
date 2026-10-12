@@ -26,7 +26,7 @@ const siteName = common.siteName || "ArchiLuxe";
 
 const architecture = siteData.categories?.Architecture?.sections;
 const servicesSection = architecture?.Services?.variants?.ArchiServices1;
-const servicesList: any[] = servicesSection?.items || [];
+const servicesList: any[] = servicesSection?.items || servicesSection?.services || [];
 const contactData = architecture?.Contact?.variants?.ArchiContact1;
 const serviceDetailsConfig = architecture?.ServiceDetails?.variants?.ArchiServiceDetails1;
 
@@ -38,9 +38,27 @@ const iconMap: Record<string, LucideIcon> = {
   building: Building2,
 };
 
+// Helper: title se slug banana ya compare karna
+function normalizeSlug(str: string = "") {
+  return str.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+function findServiceBySlug(targetSlug: string) {
+  if (!targetSlug) return null;
+  const cleanTarget = normalizeSlug(targetSlug);
+
+  return (
+    servicesList.find((srv: any) => {
+      const slugMatch = srv.slug && normalizeSlug(srv.slug) === cleanTarget;
+      const titleMatch = srv.title && normalizeSlug(srv.title) === cleanTarget;
+      return slugMatch || titleMatch;
+    }) || null
+  );
+}
+
 export async function generateStaticParams() {
   return servicesList.map((srv: any) => ({
-    slug: srv.slug || "residential-architecture",
+    slug: srv.slug || normalizeSlug(srv.title) || "service",
   }));
 }
 
@@ -50,14 +68,17 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const currentService =
-    servicesList.find((s: any) => s.slug === slug) || servicesList[0] || {};
+  const matchedService = findServiceBySlug(slug);
 
-  const title = `${currentService.title || "Architectural Service"} | ${siteName}`;
+  const fallbackTitle = slug
+    ? slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
+    : "Architectural Service";
+
+  const title = `${matchedService?.title || fallbackTitle} | ${siteName}`;
   const description =
-    currentService.description ||
-    currentService.desc ||
-    "Expert architectural and interior design solutions.";
+    matchedService?.description ||
+    matchedService?.desc ||
+    "Expert architectural, interior, and remodeling solutions.";
 
   return {
     title,
@@ -68,16 +89,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function ServiceDetailPage({ params }: PageProps) {
   const { slug } = await params;
 
-  // Resolve current active service from websiteData.json
-  const currentService =
-    servicesList.find((s: any) => s.slug === slug) ||
-    servicesList[0] || {
-      title: "Architectural Design",
-      description:
-        "Comprehensive architectural and master planning solutions tailored to your unique site and lifestyle.",
-      image:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-    };
+  // 1. Matched service dhoondhein
+  const matchedService = findServiceBySlug(slug);
+
+  // 2. Agar list me item na ho, toh URL slug se title generate karein taaki galat service na dikhe
+  const fallbackTitle = slug
+    ? slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
+    : "Architectural Service";
+
+  const currentService = matchedService || {
+    title: fallbackTitle,
+    description:
+      "Comprehensive architectural, renovation, and spatial design solutions tailored to your unique site and lifestyle.",
+    image:
+      "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80",
+  };
 
   const dynamicServiceTitle = currentService.title;
 
@@ -91,7 +117,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
     common.address ||
     "742 Evergreen Terrace, Suite 400, New York, NY";
 
-  // Dynamic Pillars / Highlights from service or section config
+  // Dynamic Pillars / Highlights
   const pillars = currentService.pillars || serviceDetailsConfig?.pillars || [
     { title: "Custom Planning", icon: "compass" },
     { title: "Modern Materials", icon: "layers" },
@@ -99,7 +125,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
     { title: "Turnkey Execution", icon: "shield" },
   ];
 
-  // Dynamic Methodology & Deliverables from JSON
+  // Dynamic Methodology & Deliverables
   const approachParagraph1 =
     currentService.approachP1 ||
     serviceDetailsConfig?.approachP1 ||
@@ -129,6 +155,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         title={dynamicServiceTitle}
         bgImage={currentService.image}
         breadcrumbs={[
+          { label: "Home", href: "/" },
           { label: "Our Services", href: "/services" },
           { label: dynamicServiceTitle },
         ]}
@@ -151,12 +178,13 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
               <div className="p-3.5 space-y-1.5">
                 {servicesList.map((item: any, idx: number) => {
-                  const isActive = item.slug === slug;
+                  const itemSlug = item.slug || normalizeSlug(item.title);
+                  const isActive = normalizeSlug(itemSlug) === normalizeSlug(slug);
 
                   return (
                     <Link
                       key={item.slug || idx}
-                      href={`/services/${item.slug}`}
+                      href={`/services/${itemSlug}`}
                       className={`flex items-center justify-between px-4 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition ${
                         isActive
                           ? "bg-[#b88344] text-white shadow-sm"
@@ -182,7 +210,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            {/* 2. Get In Touch Box from JSON */}
+            {/* 2. Get In Touch Box */}
             <div className="bg-white rounded-3xl border border-neutral-100 shadow-[0_4px_25px_rgba(0,0,0,0.03)] overflow-hidden">
               <div className="bg-[#14171c] px-6 py-5">
                 <h3 className="text-white font-bold text-lg tracking-wide">
@@ -250,7 +278,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {currentService.description || currentService.desc}
             </p>
 
-            {/* Featured Image with unoptimized flag to accept any external host */}
+            {/* Featured Image with unoptimized flag */}
             <div className="relative h-[280px] sm:h-[420px] w-full rounded-2xl overflow-hidden mt-6 mb-8 shadow-sm bg-neutral-100">
               <Image
                 src={
@@ -265,7 +293,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               />
             </div>
 
-            {/* Key Pillars Highlights from JSON */}
+            {/* Key Pillars Highlights */}
             <div className="grid grid-cols-2 sm:grid-cols-4 rounded-2xl bg-[#faf7f2] border border-neutral-100 overflow-hidden divide-y sm:divide-y-0 sm:divide-x divide-neutral-200/60 mb-10">
               {pillars.map((item: any, i: number) => {
                 const IconComp = iconMap[item.icon] || Compass;
@@ -296,7 +324,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </p>
             </div>
 
-            {/* Deliverables Checklist from JSON */}
+            {/* Deliverables Checklist */}
             <div className="bg-[#14171c] text-white p-7 sm:p-8 rounded-3xl mb-10">
               <h3 className="font-extrabold text-lg text-white mb-2">
                 What We Deliver For {currentService.title}
@@ -314,7 +342,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            {/* CTA Box from JSON */}
+            {/* CTA Box */}
             <div className="border border-neutral-100 rounded-2xl p-6 bg-[#faf7f2] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
                 <h4 className="font-black text-[#14171c] text-base">
