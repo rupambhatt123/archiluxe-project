@@ -42,7 +42,31 @@ export default function AboutPage() {
 
   const timelineItems: any[] = timelineData?.items || [];
   const whyFeaturesList: any[] = whyChooseUsData?.features || whyChooseUsData?.items || [];
-  const missionVisionCards: any[] = missionVisionData?.cards || missionVisionData?.items || [];
+
+  // Robust Card Extraction: works with items, cards, or individual mission/vision keys
+  const missionVisionCards: any[] =
+    missionVisionData?.items ||
+    missionVisionData?.cards ||
+    [
+      missionVisionData?.mission
+        ? {
+            title: missionVisionData.mission.title || "Our Mission",
+            description: missionVisionData.mission.description,
+            image:
+              missionVisionData.mission.image ||
+              "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+          }
+        : null,
+      missionVisionData?.vision
+        ? {
+            title: missionVisionData.vision.title || "Our Vision",
+            description: missionVisionData.vision.description,
+            image:
+              missionVisionData.vision.image ||
+              "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+          }
+        : null,
+    ].filter(Boolean);
 
   return (
     <main className="min-h-screen bg-[#faf8f5] text-[#14171c] font-sans selection:bg-[#b88344] selection:text-white">
@@ -292,7 +316,7 @@ export default function AboutPage() {
                             src={
                               card.image ||
                               (idx === 0
-                                ? "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80"
+                                ? "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
                                 : "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80")
                             }
                             alt={card.title}

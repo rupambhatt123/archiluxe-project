@@ -269,16 +269,30 @@
               "titleLine1": "Our Mission",
               "titleHighlight": "& Vision",
               "description": "Guided by a clear purpose and a bold vision, we design spaces that inspire, enrich lives, and create a sustainable tomorrow.",
+              "items": [
+                {
+                  "title": "Our Mission",
+                  "description": "To create innovative, functional and sustainable architectural and interior spaces that enhance lives and bring our clients' vision to reality through thoughtful design and expert execution.",
+                  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+                  "icon": "target"
+                },
+                {
+                  "title": "Our Vision",
+                  "description": "To be a leading architecture and design firm recognized for creating inspiring spaces, setting new benchmarks in design excellence and contributing to a more sustainable and beautiful built environment.",
+                  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+                  "icon": "eye"
+                }
+              ],
               "mission": {
                 "title": "Our Mission",
                 "description": "To create innovative, functional and sustainable architectural and interior spaces that enhance lives and bring our clients' vision to reality through thoughtful design and expert execution.",
-                "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=700&q=80",
+                "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
                 "icon": "target"
               },
               "vision": {
                 "title": "Our Vision",
                 "description": "To be a leading architecture and design firm recognized for creating inspiring spaces, setting new benchmarks in design excellence and contributing to a more sustainable and beautiful built environment.",
-                "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
+                "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
                 "icon": "eye"
               }
             }
@@ -339,6 +353,22 @@
                   "desc": "Expert guidance from concept to execution for successful and hassle-free projects.",
                   "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
                   "icon": "fileSpreadsheet"
+                },
+                {
+                  "id": 7,
+                  "slug": "kitchen-remodeling",
+                  "title": "Kitchen Remodeling",
+                  "desc": "Create a beautiful kitchen designed for modern living with bespoke cabinetry, countertops, and space optimization.",
+                  "image": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80",
+                  "icon": "archive"
+                },
+                {
+                  "id": 8,
+                  "slug": "bathroom-renovation",
+                  "title": "Bathroom Renovation",
+                  "desc": "Spa-inspired bathroom sanctuaries featuring luxury sanitary fittings, heated surfaces, and elegant tile work.",
+                  "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
+                  "icon": "wrench"
                 }
               ]
             }
@@ -729,7 +759,7 @@
                 },
                 {
                   "id": 8,
-                  "question": "8. Do you offer 3D designs or visualization?",
+                  "question": "8. do you offer 3d designs or visualization?",
                   "answer": "Yes, photo-realistic 3D rendering and VR walkthroughs are part of our standard design package."
                 },
                 {
@@ -794,7 +824,6 @@
               "location": "100 S Main Street, New York, NY 10001",
               "phone": "+1 (800) 123-4567",
               "email": "info@xyz.com",
-            
               "copyright": "Copyright © 2026 Archiluxe. All Rights Reserved. Powered by Lestow."
             }
           }
