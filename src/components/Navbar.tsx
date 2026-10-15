@@ -28,20 +28,29 @@ export default function Navbar({
     setMobileDropdown((prev) => (prev === title ? null : title));
   };
 
+  const resolveChildHref = (child: any) => {
+    const title = (child.title || "").toLowerCase().trim();
+    if (
+      title.includes("overview") ||
+      title.includes("all services") ||
+      child.path === "/services/all-services-overview"
+    ) {
+      return "/services";
+    }
+    return child.path || `/services/${child.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`;
+  };
+
   return (
     <header className="absolute top-0 left-0 right-0 z-50 w-full pt-4 md:pt-6 px-4 md:px-8 pointer-events-none">
-      <div className="max-w-[1340px] mx-auto bg-white/95 backdrop-blur-md rounded-[28px] md:rounded-full px-5 md:px-7 py-2.5 shadow-2xl border border-white/60 flex items-center justify-between pointer-events-auto">
-        
-        {/* Logo */}
+      <div className="max-w-[1340px] mx-auto bg-white/95 backdrop-blur-md rounded-[28px] md:rounded-full px-5 md:px-7 py-2 md:py-2.5 shadow-2xl border border-white/60 flex items-center justify-between pointer-events-auto">
         <Link href="/" className="flex items-center gap-3 shrink-0">
           <img
             src="/l1.png"
             alt={headerData.logoText || "Archiluxe"}
-            className="h-8 sm:h-9 md:h-11 w-auto object-contain"
+            className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain transition-all"
           />
         </Link>
 
-        {/* Desktop Nav Links (Untouched) */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[13px] font-semibold text-neutral-800">
           {headerData.navLinks?.map((link: any) => {
             const hasChildren = link.children && link.children.length > 0;
@@ -75,7 +84,6 @@ export default function Navbar({
                   )}
                 </Link>
 
-                {/* Desktop Dropdown Menu */}
                 {hasChildren && (
                   <div
                     className={`absolute top-full left-0 pt-2 w-64 z-50 transition-all duration-200 ${
@@ -88,7 +96,7 @@ export default function Navbar({
                       {link.children.map((child: any) => (
                         <Link
                           key={child.title}
-                          href={child.path || "/services"}
+                          href={resolveChildHref(child)}
                           onClick={() => setActiveDropdown(null)}
                           className="block px-4 py-2 text-xs font-semibold text-neutral-700 hover:bg-[#fbf9f5] hover:text-[#b88344] rounded-xl transition-colors"
                         >
@@ -103,7 +111,6 @@ export default function Navbar({
           })}
         </nav>
 
-        {/* Right Section: Desktop CTA + Mobile Hamburger */}
         <div className="flex items-center gap-2 sm:gap-3">
           {headerData.ctaButton && (
             <Link
@@ -114,7 +121,6 @@ export default function Navbar({
             </Link>
           )}
 
-          {/* Mobile Hamburger Toggle Button (< lg screens only) */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -126,7 +132,6 @@ export default function Navbar({
         </div>
       </div>
 
-      {/* Mobile Navigation Drawer with Dropdowns */}
       {mobileMenuOpen && (
         <div className="lg:hidden max-w-[1340px] mx-auto mt-2 bg-white rounded-3xl p-5 shadow-2xl border border-neutral-100 pointer-events-auto animate-in fade-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col space-y-1.5 divide-y divide-neutral-100">
@@ -149,7 +154,6 @@ export default function Navbar({
                       {link.title}
                     </Link>
 
-                    {/* Dropdown Toggle Button for Mobile */}
                     {hasChildren && (
                       <button
                         type="button"
@@ -167,13 +171,12 @@ export default function Navbar({
                     )}
                   </div>
 
-                  {/* Mobile Dropdown Sub-menu List */}
                   {hasChildren && isChildOpen && (
                     <div className="mt-1.5 mb-2 pl-3 py-1 space-y-1 bg-[#fcfbf9] rounded-2xl border border-neutral-100/80">
                       {link.children.map((child: any) => (
                         <Link
                           key={child.title}
-                          href={child.path || "/services"}
+                          href={resolveChildHref(child)}
                           onClick={() => {
                             setMobileMenuOpen(false);
                             setMobileDropdown(null);

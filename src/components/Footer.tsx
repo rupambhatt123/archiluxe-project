@@ -68,7 +68,7 @@ export default function Footer({
     ];
 
   const servicesList =
-  currentCategory?.sections?.Services?.variants?.ArchiServices1?.items || [];
+    currentCategory?.sections?.Services?.variants?.ArchiServices1?.items || [];
   const quickLinks = [
     { title: "Home", href: "/" },
     { title: "About Us", href: "/about" },
@@ -142,7 +142,7 @@ export default function Footer({
               <img
                 src="/l2.png"
                 alt="Archiluxe Architecture Firm"
-                className="h-9 md:h-11 w-auto object-contain mix-blend-screen"
+                className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain mix-blend-screen"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = "/l1.png";
                 }}
@@ -281,8 +281,6 @@ export default function Footer({
                   </a>
                 </div>
               </div>
-
-              
             </div>
           </div>
         </div>

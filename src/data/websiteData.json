@@ -1,7 +1,7 @@
 {
   "common": {
     "siteName": "ArchiLuxe",
-    "phone": "+1 (800) 123-4567",
+    "phone": "+1 000 000 000",
     "email": "info@xyz.com",
     "address": "100 S Main Street, New York, NY 10001",
     "workingHours": "Monday – Sat: 8:00 AM – 6:00 PM",
@@ -216,7 +216,7 @@
                   "title": "Founding Year",
                   "subtitle": "Inception:",
                   "description": "Florz was founded by a team of flooring enthusiasts with a vision to redefine flooring solutions for homeowners and businesses alike. Their goal was to combine quality materials with exceptional service.",
-                  "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
+                  "image": "/j1.avif",
                   "imageOnLeft": true
                 },
                 {
@@ -224,7 +224,7 @@
                   "title": "Initial Launch",
                   "subtitle": "Business Setup:",
                   "description": "Florz established its headquarters in New York, partnering with top manufacturers to offer a diverse range of flooring products, including hardwood, laminate, vinyl, and tile.",
-                  "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80",
+                  "image": "/j2.avif",
                   "imageOnLeft": false
                 },
                 {
@@ -232,7 +232,7 @@
                   "title": "Growth and Community Recognition",
                   "subtitle": "Market Expansion:",
                   "description": "As demand grew, Florz expanded its product offerings to include eco-friendly flooring options, catering to environmentally conscious consumers.",
-                  "image": "aa.jpg",
+                  "image": "/aa.jpg",
                   "imageOnLeft": true
                 }
               ]
@@ -273,13 +273,13 @@
                 {
                   "title": "Our Mission",
                   "description": "To create innovative, functional and sustainable architectural and interior spaces that enhance lives and bring our clients' vision to reality through thoughtful design and expert execution.",
-                  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+                  "image": "/m1.avif",
                   "icon": "target"
                 },
                 {
                   "title": "Our Vision",
                   "description": "To be a leading architecture and design firm recognized for creating inspiring spaces, setting new benchmarks in design excellence and contributing to a more sustainable and beautiful built environment.",
-                  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+                  "image": "/m2.avif",
                   "icon": "eye"
                 }
               ],
@@ -311,7 +311,7 @@
                   "slug": "residential-architecture",
                   "title": "Residential Architecture",
                   "desc": "Thoughtfully designed homes that blend comfort, style and functionality.",
-                  "image": "https://static.vecteezy.com/system/resources/previews/023/309/311/non_2x/ai-generative-exterior-of-modern-luxury-house-with-garden-and-beautiful-sky-photo.jpg",
+                  "image": "/s1.jpg",
                   "icon": "home"
                 },
                 {
@@ -319,7 +319,7 @@
                   "slug": "commercial-architecture",
                   "title": "Commercial Architecture",
                   "desc": "Innovative commercial spaces that enhance productivity and brand value.",
-                  "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
+                  "image": "/s2.avif",
                   "icon": "building2"
                 },
                 {
@@ -327,7 +327,7 @@
                   "slug": "interior-designing",
                   "title": "Interior Designing",
                   "desc": "Elegant interiors that reflect your personality and make every space extraordinary.",
-                  "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
+                  "image": "/s3.avif",
                   "icon": "sofa"
                 },
                 {
@@ -335,7 +335,7 @@
                   "slug": "renovation-remodeling",
                   "title": "Renovation & Remodeling",
                   "desc": "Transforming existing spaces into modern, functional and stylish environments.",
-                  "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+                  "image": "/s4.avif",
                   "icon": "wrench"
                 },
                 {
@@ -343,7 +343,7 @@
                   "slug": "landscape-design",
                   "title": "Landscape Design",
                   "desc": "Beautiful outdoor spaces that bring nature, balance and tranquility.",
-                  "image": "https://sandovallandscaping.com/app/uploads/2026/02/luxury-landscape-design-dfw-estates-hero.webp",
+                  "image": "/s5.webp",
                   "icon": "leaf"
                 },
                 {
@@ -351,7 +351,7 @@
                   "slug": "planning-consultation",
                   "title": "Planning & Consultation",
                   "desc": "Expert guidance from concept to execution for successful and hassle-free projects.",
-                  "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
+                  "image": "/s6.avif",
                   "icon": "fileSpreadsheet"
                 },
                 {
@@ -359,7 +359,7 @@
                   "slug": "kitchen-remodeling",
                   "title": "Kitchen Remodeling",
                   "desc": "Create a beautiful kitchen designed for modern living with bespoke cabinetry, countertops, and space optimization.",
-                  "image": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80",
+                  "image": "/s7.avif",
                   "icon": "archive"
                 },
                 {
@@ -367,7 +367,7 @@
                   "slug": "bathroom-renovation",
                   "title": "Bathroom Renovation",
                   "desc": "Spa-inspired bathroom sanctuaries featuring luxury sanitary fittings, heated surfaces, and elegant tile work.",
-                  "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
+                  "image": "/s8.avif",
                   "icon": "wrench"
                 }
               ]
@@ -542,49 +542,49 @@
                   "name": "Vikram Singh",
                   "role": "Founder & CEO",
                   "bio": "With 20+ years of experience, Vikram leads our vision to create modern and functional kitchens for every home.",
-                  "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80"
+                  "image": "/t1.avif"
                 },
                 {
                   "name": "Priya Malhotra",
                   "role": "Lead Interior Designer",
                   "bio": "Priya specializes in creating stylish and practical kitchen designs that match your lifestyle and aesthetic preferences.",
-                  "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80"
+                  "image": "/t2.avif"
                 },
                 {
                   "name": "Amit Sharma",
                   "role": "Project Manager",
                   "bio": "Amit ensures smooth execution of every project, from planning to installation, with attention to detail and quality.",
-                  "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80"
+                  "image": "/ts.avif"
                 },
                 {
                   "name": "Sneha Gupta",
                   "role": "Kitchen Design Consultant",
                   "bio": "Sneha works closely with clients to understand their needs and create personalized kitchen solutions.",
-                  "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&q=80"
+                  "image": "/t4.avif"
                 },
                 {
                   "name": "Rahul Mehta",
                   "role": "3D Visualization Expert",
                   "bio": "Rahul creates detailed 3D designs to help you visualize your dream kitchen before the project begins.",
-                  "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80"
+                  "image": "/ts.avif"
                 },
                 {
                   "name": "Anjali Verma",
                   "role": "Material & Product Specialist",
                   "bio": "Anjali helps you choose the best materials, finishes, and appliances to create a kitchen that is durable and elegant.",
-                  "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80"
+                  "image": "/t1.avif"
                 },
                 {
                   "name": "Karan Yadav",
                   "role": "Installation Supervisor",
                   "bio": "Karan oversees the installation process and ensures every detail is completed with precision and perfection.",
-                  "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=80"
+                  "image": "/t7.avif"
                 },
                 {
                   "name": "Nikita Rao",
                   "role": "Client Relationship Manager",
                   "bio": "Nikita ensures a seamless experience by providing complete support and guidance throughout your kitchen remodeling journey.",
-                  "image": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=700&q=80"
+                  "image": "/t8.avif"
                 }
               ]
             }
@@ -793,7 +793,7 @@
               },
               "call": {
                 "title": "Call Us",
-                "phone": "+1 (800) 123-4567"
+                "phone": "+1 000 000 000"
               },
               "mapLocation": {
                 "label": "Our Location",
@@ -813,8 +813,9 @@
                 "label": "Contact Us",
                 "href": "/contact"
               },
-               "image": "/hero.png",
-              "bgImage": "/hero.png"            }
+              "image": "/hero.png",
+              "bgImage": "/hero.png"
+            }
           }
         },
         "Footer": {
@@ -822,7 +823,7 @@
             "ArchiFooter1": {
               "about": "We create innovative architecture and interior spaces that blend aesthetics, functionality, and sustainability. From residential to commercial projects, we bring your vision to life with thoughtful design and expert execution.",
               "location": "100 S Main Street, New York, NY 10001",
-              "phone": "+1 (800) 123-4567",
+              "phone": "+1 000 000 000",
               "email": "info@xyz.com",
               "copyright": "Copyright © 2026 Archiluxe. All Rights Reserved. Powered by Lestow."
             }
