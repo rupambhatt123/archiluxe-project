@@ -136,9 +136,7 @@ export default function Services({
           </p>
         </div>
 
-        {/* Dynamic Responsive Container: 
-            Mobile: Swipe-Snappable row showing exactly 1 Card front & center
-            Desktop: Standard grid view */}
+        {/* Dynamic Responsive Container */}
         <div
           ref={scrollRef}
           onScroll={handleScroll}
@@ -147,7 +145,20 @@ export default function Services({
         >
           {servicesList.map((item: any, idx: number) => {
             const Icon = iconMap[item.icon] || Home;
-            const cardLink = item.href || item.link || item.slug || "/services";
+
+            // Proper Slug generation ensuring it always points to /services/[slug]
+            const rawSlug =
+              item.slug ||
+              item.title
+                ?.toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/(^-|-$)/g, "");
+
+            const cardLink =
+              item.href ||
+              item.link ||
+              (rawSlug ? `/services/${rawSlug}` : "/services");
+
             const cardBtnLabel = item.buttonText || item.cta || globalBtnText;
             const descriptionText = item.desc || item.description || "";
 

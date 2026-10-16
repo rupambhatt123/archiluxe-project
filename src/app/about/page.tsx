@@ -311,19 +311,23 @@ export default function AboutPage() {
                       className="bg-white rounded-3xl p-5 sm:p-6 shadow-[0_4px_25px_rgba(0,0,0,0.04)] border border-neutral-100 flex flex-col justify-between"
                     >
                       <div>
-                        <div className="relative h-[200px] sm:h-[220px] rounded-2xl overflow-hidden mb-6 bg-neutral-200">
-                          <img
-                            src={
-                              card.image ||
-                              (idx === 0
-                                ? "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
-                                : "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80")
-                            }
-                            alt={card.title}
-                            className="w-full h-full object-cover"
-                          />
+                        {/* Relative Wrapper without overflow-hidden so the icon badge is never cut */}
+                        <div className="relative mb-7">
+                          <div className="h-[200px] sm:h-[220px] rounded-2xl overflow-hidden bg-neutral-200">
+                            <img
+                              src={
+                                card.image ||
+                                (idx === 0
+                                  ? "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                                  : "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80")
+                              }
+                              alt={card.title}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
 
-                          <div className="absolute -bottom-3 left-4 w-12 h-12 rounded-full bg-gradient-to-br from-[#c89858] to-[#9e6f33] text-white flex items-center justify-center shadow-md shadow-[#b88344]/40 border-2 border-white z-10">
+                          {/* Floating Circular Icon Badge */}
+                          <div className="absolute -bottom-4 left-4 w-12 h-12 rounded-full bg-gradient-to-br from-[#c89858] to-[#9e6f33] text-white flex items-center justify-center shadow-lg shadow-[#b88344]/40 border-2 border-white z-20">
                             <CardIcon size={20} className="stroke-[2.2]" />
                           </div>
                         </div>

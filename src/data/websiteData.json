@@ -286,13 +286,13 @@
               "mission": {
                 "title": "Our Mission",
                 "description": "To create innovative, functional and sustainable architectural and interior spaces that enhance lives and bring our clients' vision to reality through thoughtful design and expert execution.",
-                "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+                "image": "/m1.avif",
                 "icon": "target"
               },
               "vision": {
                 "title": "Our Vision",
                 "description": "To be a leading architecture and design firm recognized for creating inspiring spaces, setting new benchmarks in design excellence and contributing to a more sustainable and beautiful built environment.",
-                "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+                "image": "/m2.avif",
                 "icon": "eye"
               }
             }
