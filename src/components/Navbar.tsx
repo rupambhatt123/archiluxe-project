@@ -28,17 +28,59 @@ export default function Navbar({
     setMobileDropdown((prev) => (prev === title ? null : title));
   };
 
-  const resolveChildHref = (child: any) => {
-    const title = (child.title || "").toLowerCase().trim();
-    if (
-      title.includes("overview") ||
-      title.includes("all services") ||
-      child.path === "/services/all-services-overview"
-    ) {
-      return "/services";
+  // Fixed Smart URL Resolver: Parent context ke hisaab se path resolve karega
+  const resolveChildHref = (child: any, parentLink: any) => {
+    if (child.path) return child.path;
+
+    const parentTitle = (parentLink?.title || "").toLowerCase().trim();
+    const childTitle = (child.title || "").toLowerCase().trim();
+
+    if (parentTitle.includes("project")) {
+      if (childTitle.includes("overview") || childTitle.includes("all")) {
+        return "/projects";
+      }
+      const slug = childTitle.replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+      return `/projects/${slug}`;
     }
-    return child.path || `/services/${child.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`;
+
+    if (parentTitle.includes("service")) {
+      if (childTitle.includes("overview") || childTitle.includes("all")) {
+        return "/services";
+      }
+      const slug = childTitle.replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+      return `/services/${slug}`;
+    }
+
+    return child.path || "/";
   };
+
+  // 1. Duplicate Contact filter
+  // 2. Services dropdown remove karke direct clean link
+  const filteredNavLinks = (headerData.navLinks || [])
+    .filter((link: any) => {
+      if (!headerData.ctaButton) return true;
+      const linkTitle = (link.title || "").toLowerCase().trim();
+      const linkPath = (link.path || "").toLowerCase().trim();
+      const ctaText = (headerData.ctaButton.text || "").toLowerCase().trim();
+      const ctaPath = (headerData.ctaButton.path || "").toLowerCase().trim();
+
+      const isDuplicateContact =
+        (linkTitle === "contact" || linkTitle === "contact us") &&
+        (ctaText.includes("contact") || ctaPath.includes("contact"));
+
+      return !isDuplicateContact && linkPath !== ctaPath;
+    })
+    .map((link: any) => {
+      const linkTitle = (link.title || "").toLowerCase().trim();
+      if (linkTitle === "services" || linkTitle === "our services") {
+        return {
+          ...link,
+          path: link.path || "/services",
+          children: undefined,
+        };
+      }
+      return link;
+    });
 
   return (
     <header className="absolute top-0 left-0 right-0 z-50 w-full pt-4 md:pt-6 px-4 md:px-8 pointer-events-none">
@@ -52,8 +94,8 @@ export default function Navbar({
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[13px] font-semibold text-neutral-800">
-          {headerData.navLinks?.map((link: any) => {
-            const hasChildren = link.children && link.children.length > 0;
+          {filteredNavLinks.map((link: any) => {
+            const hasChildren = Boolean(link.children && link.children.length > 0);
             const isCurrent =
               activePage.toLowerCase() === link.title.toLowerCase();
 
@@ -96,7 +138,7 @@ export default function Navbar({
                       {link.children.map((child: any) => (
                         <Link
                           key={child.title}
-                          href={resolveChildHref(child)}
+                          href={resolveChildHref(child, link)}
                           onClick={() => setActiveDropdown(null)}
                           className="block px-4 py-2 text-xs font-semibold text-neutral-700 hover:bg-[#fbf9f5] hover:text-[#b88344] rounded-xl transition-colors"
                         >
@@ -135,8 +177,8 @@ export default function Navbar({
       {mobileMenuOpen && (
         <div className="lg:hidden max-w-[1340px] mx-auto mt-2 bg-white rounded-3xl p-5 shadow-2xl border border-neutral-100 pointer-events-auto animate-in fade-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col space-y-1.5 divide-y divide-neutral-100">
-            {headerData.navLinks?.map((link: any) => {
-              const hasChildren = link.children && link.children.length > 0;
+            {filteredNavLinks.map((link: any) => {
+              const hasChildren = Boolean(link.children && link.children.length > 0);
               const isCurrent =
                 activePage.toLowerCase() === link.title.toLowerCase();
               const isChildOpen = mobileDropdown === link.title;
@@ -176,7 +218,7 @@ export default function Navbar({
                       {link.children.map((child: any) => (
                         <Link
                           key={child.title}
-                          href={resolveChildHref(child)}
+                          href={resolveChildHref(child, link)}
                           onClick={() => {
                             setMobileMenuOpen(false);
                             setMobileDropdown(null);

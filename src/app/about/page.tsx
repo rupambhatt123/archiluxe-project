@@ -8,7 +8,6 @@ import {
   Gem,
   Leaf,
   Headphones,
-  ArrowRight,
   Rocket,
   Eye,
   LucideIcon,
@@ -16,7 +15,6 @@ import {
 import Navbar from "@/components/Navbar";
 import PageBanner from "@/components/PageBanner";
 import About from "@/components/About";
-import Stats from "@/components/Stats";
 import Footer from "@/components/Footer";
 import siteData from "@/data/websiteData.json";
 
@@ -38,7 +36,6 @@ export default function AboutPage() {
   const timelineData = architecture?.Timeline?.variants?.ArchiTimeline1;
   const whyChooseUsData = architecture?.WhyChooseUs?.variants?.ArchiWhyChooseUs1;
   const missionVisionData = architecture?.MissionVision?.variants?.ArchiMissionVision1;
-  const ctaData = architecture?.CTA?.variants?.ArchiCTA1;
 
   const timelineItems: any[] = timelineData?.items || [];
   const whyFeaturesList: any[] = whyChooseUsData?.features || whyChooseUsData?.items || [];
@@ -83,10 +80,7 @@ export default function AboutPage() {
       {/* 3. Dynamic About Section */}
       <About />
 
-      {/* 4. Dynamic Stats Counter */}
-      <Stats />
-
-      {/* 5. 100% Dynamic Timeline / Journey Section */}
+      {/* 4. 100% Dynamic Timeline / Journey Section */}
       {timelineData && (
         <section className="relative py-12 sm:py-16 md:py-20 bg-[#faf8f5] px-4 sm:px-6 md:px-12 overflow-hidden border-t border-neutral-200/60">
           <div
@@ -168,12 +162,12 @@ export default function AboutPage() {
         </section>
       )}
 
-      {/* 6. 100% Dynamic Why Choose Us Section */}
+      {/* 5. 100% Dynamic Why Choose Us Section */}
       {whyChooseUsData && (
         <section className="relative bg-[#fcfbf9] py-14 sm:py-18 px-4 sm:px-6 lg:px-10 overflow-hidden border-t border-neutral-200/60">
           <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
-            {/* Left Column: Heading & Content */}
+            {/* Left Column: Heading & Content (Button Removed) */}
             <div className="lg:col-span-3 space-y-4 pr-0 lg:pr-2">
               <div className="flex items-center gap-2.5">
                 <span className="w-8 h-[2px] bg-[#b88344]" />
@@ -193,16 +187,6 @@ export default function AboutPage() {
                 {whyChooseUsData.description ||
                   "We combine creativity, functionality and expertise to deliver architectural and interior spaces that exceed expectations."}
               </p>
-
-              <div className="pt-2">
-                <Link
-                  href={whyChooseUsData.button?.href || "/contact"}
-                  className="inline-flex items-center gap-2 bg-[#b88344] hover:bg-[#a27137] text-white px-7 py-3.5 rounded-lg text-sm font-semibold shadow-md transition-all hover:scale-105 active:scale-95"
-                >
-                  {whyChooseUsData.button?.label || "Learn More"}{" "}
-                  <ArrowRight size={16} className="stroke-[2.2]" />
-                </Link>
-              </div>
             </div>
 
             {/* Center Column: Dynamic Highlight Image */}
@@ -258,7 +242,7 @@ export default function AboutPage() {
         </section>
       )}
 
-      {/* 7. 100% Dynamic Mission & Vision Section */}
+      {/* 6. 100% Dynamic Mission & Vision Section */}
       {missionVisionData && (
         <section className="relative overflow-hidden selection:bg-[#b88344] selection:text-white bg-[#faf8f5] border-t border-neutral-200/60">
           <div
@@ -351,63 +335,7 @@ export default function AboutPage() {
         </section>
       )}
 
-      {/* 8. 100% Dynamic CTA Section */}
-      {ctaData && (
-        <section className="relative py-10 sm:py-14 px-4 sm:px-6 md:px-10 bg-[#faf8f5] overflow-hidden border-t border-neutral-200/60">
-          <div className="max-w-[1380px] mx-auto">
-            <div className="relative w-full rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-neutral-100 bg-[#fdfcf9] min-h-[260px] sm:min-h-[290px] flex items-center">
-              
-              <div className="absolute inset-y-0 right-0 w-full md:w-[58%] lg:w-[54%] overflow-hidden z-0">
-                <img
-                  src={ctaData.bgImage || "/hero.png"}
-                  alt={ctaData.titleHighlight || "Architecture Vision"}
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-
-              <div
-                aria-hidden="true"
-                className="hidden md:block absolute inset-0 z-10 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(105deg, #fdfbf7 0%, #fdfbf7 46%, rgba(253,251,247,0.85) 52%, rgba(253,251,247,0.3) 60%, transparent 70%)",
-                }}
-              />
-              <div
-                aria-hidden="true"
-                className="md:hidden absolute inset-0 z-10 bg-gradient-to-t from-[#fdfbf7] via-[#fdfbf7]/90 to-[#fdfbf7]/40 pointer-events-none"
-              />
-
-              <div className="relative z-20 w-full md:w-[62%] lg:w-[55%] py-8 sm:py-10 md:py-12 px-6 sm:px-10 md:px-14 flex flex-col justify-center">
-                <h2 className="text-3xl sm:text-4xl md:text-[44px] lg:text-[48px] font-black text-[#14171c] leading-[1.1] tracking-[-0.02em]">
-                  {ctaData.titleLine1 || "Ready to Build"}{" "}
-                  <span className="text-[#b88344]">
-                    {ctaData.titleHighlight || "Your Vision?"}
-                  </span>
-                </h2>
-
-                <p className="text-sm sm:text-base md:text-[17px] text-neutral-600 font-medium leading-relaxed mt-2.5 sm:mt-3 max-w-xl">
-                  {ctaData.description ||
-                    "Let’s create inspiring spaces together. Get in touch with our team today."}
-                </p>
-
-                <div className="pt-5 sm:pt-6">
-                  <Link
-                    href={ctaData.button?.href || "/contact"}
-                    className="inline-flex items-center gap-2.5 bg-[#b88344] hover:bg-[#a17035] text-white px-8 sm:px-9 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold shadow-md shadow-[#b88344]/30 hover:scale-105 active:scale-95 transition-all"
-                  >
-                    {ctaData.button?.label || "Contact Us"}{" "}
-                    <ArrowRight size={18} className="stroke-[2.5]" />
-                  </Link>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* 9. Dynamic Footer */}
+      {/* 7. Dynamic Footer */}
       <Footer />
     </main>
   );

@@ -35,22 +35,17 @@ export default function Banner({
           <div className="flex items-center gap-2 sm:gap-2.5">
             <span className="w-6 sm:w-8 h-[2px] bg-[#b88344]" />
             <span className="text-[10px] sm:text-xs font-bold tracking-[0.22em] uppercase text-[#14171c]">
-              {data.badge || "MODERN SPACES FOR BETTER LIVING"}
+              {data.badge}
             </span>
           </div>
 
           <h1 className="text-[34px] xs:text-[38px] sm:text-5xl md:text-[68px] font-black text-[#14171c] leading-[1.12] sm:leading-[1.08] tracking-tight">
-            {data.titleLine1 || "Inspired"}{" "}
+            {data.titleLine1}{" "}
             <span className="text-[#b88344] block sm:inline">
-              {data.titleHighlight || "Spaces"}
+              {data.titleHighlight}
             </span>{" "}
-            <span className="block">{data.titleLine2 || "for Life"}</span>
+            <span className="block">{data.titleLine2}</span>
           </h1>
-
-          <p className="text-neutral-700 text-[13px] sm:text-[14px] leading-relaxed max-w-md font-normal pt-1">
-            {data.description ||
-              "Creative architecture, functional design and sustainable solutions for a better tomorrow."}
-          </p>
 
           <div className="pt-2 sm:pt-4">
             {data.buttons?.map((btn: any) => (

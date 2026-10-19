@@ -1,8 +1,6 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
@@ -48,7 +46,6 @@ export default function TeamPage() {
   const architecture = (siteData as any)?.categories?.Architecture?.sections;
   const pageBanner = architecture?.PageBanner?.variants?.ArchiPageBanner1;
   const teamSection = architecture?.Team?.variants?.ArchiTeam1;
-  const ctaData = architecture?.CTA?.variants?.ArchiCTA1;
 
   const members: any[] = teamSection?.members || [];
 
@@ -70,7 +67,7 @@ export default function TeamPage() {
       />
 
       {/* 3. Team Grid Section */}
-      <section className="pt-8 sm:pt-10 pb-12 sm:pb-16 px-4 sm:px-6 md:px-8 max-w-[1360px] mx-auto relative">
+      <section className="pt-8 sm:pt-10 pb-16 sm:pb-24 px-4 sm:px-6 md:px-8 max-w-[1360px] mx-auto relative">
         <div className="text-center max-w-xl mx-auto mb-7 sm:mb-9">
           <div className="flex items-center justify-center gap-2 mb-1.5">
             <span className="w-7 h-[1.5px] bg-[#b88344]"></span>
@@ -181,48 +178,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* 4. 100% Dynamic CTA Section */}
-      {ctaData && (
-        <section className="relative py-10 sm:py-14 px-4 sm:px-6 md:px-10 bg-[#faf8f5] overflow-hidden border-t border-neutral-200/60">
-          <div className="max-w-[1380px] mx-auto">
-            <div className="relative w-full rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-neutral-100 bg-[#fdfcf9] min-h-[260px] sm:min-h-[290px] flex items-center">
-              <img
-                src={ctaData.bgImage || "/hero.png"}
-                alt={ctaData.titleHighlight || "Architecture Vision"}
-                className="absolute inset-0 w-full h-full object-cover object-right md:object-[right_center]"
-              />
-
-              <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#fdfcf9] via-[#fdfcf9]/95 sm:via-[#fdfcf9]/90 md:via-[#fdfcf9]/80 to-transparent w-full md:w-[70%] pointer-events-none" />
-
-              <div className="relative z-10 px-6 sm:px-10 md:px-14 py-8 sm:py-10 max-w-xl md:max-w-2xl">
-                <h2 className="text-3xl sm:text-4xl md:text-[44px] font-black text-[#14171c] tracking-tight leading-[1.15]">
-                  {ctaData.titleLine1 || "Ready to Build"}{" "}
-                  <span className="text-[#b88344]">
-                    {ctaData.titleHighlight || "Your Vision?"}
-                  </span>
-                </h2>
-
-                <p className="text-xs sm:text-[13.5px] text-neutral-600 font-medium leading-relaxed mt-2.5 max-w-md">
-                  {ctaData.description ||
-                    "Let's create inspiring spaces together. Get in touch with our team today."}
-                </p>
-
-                <div className="pt-5 sm:pt-6">
-                  <Link
-                    href={ctaData.button?.href || "/contact"}
-                    className="inline-flex items-center gap-2.5 bg-[#b88344] hover:bg-[#a07136] text-white px-7 py-3 rounded-2xl text-xs sm:text-sm font-bold shadow-md shadow-[#b88344]/30 hover:scale-105 transition-all duration-200"
-                  >
-                    {ctaData.button?.label || "Contact Us"}{" "}
-                    <ArrowRight size={15} className="stroke-[2.5]" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* 5. Footer */}
+      {/* 4. Footer */}
       <Footer />
     </main>
   );

@@ -5,7 +5,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import siteData from "@/data/websiteData.json";
 
-// Inline Social SVGs
 function LinkedInIcon({ size = 13, className = "" }: { size?: number; className?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -77,83 +76,50 @@ export default function Team({
   return (
     <section
       id="team"
-      className="relative bg-[#faf8f4] pt-5 sm:pt-7 pb-8 sm:pb-10 px-4 sm:px-6 md:px-10 overflow-hidden selection:bg-[#b88344] selection:text-white"
+      className="relative bg-[#faf8f4] pt-8 sm:pt-10 pb-12 sm:pb-16 px-4 sm:px-6 md:px-8 overflow-hidden selection:bg-[#b88344] selection:text-white"
     >
-      {/* 1. Vertical Watermark Outline Text */}
-      <div
-        aria-hidden="true"
-        className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 pointer-events-none select-none z-0 hidden xl:block"
-      >
-        <span
-          className="text-[120px] font-black uppercase tracking-[0.2em] opacity-25 text-transparent"
-          style={{
-            writingMode: "vertical-rl",
-            transform: "rotate(180deg)",
-            WebkitTextStroke: "1.5px #d8c7ad",
-          }}
-        >
-          {data.badge?.replace(/—/g, "").trim() || "TEAM"}
-        </span>
-      </div>
-
-      <div className="relative z-10 max-w-[1360px] mx-auto">
-        {/* Top Header Block */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-2.5 mb-4 sm:mb-5 relative">
-          <div className="text-center md:text-left max-w-2xl">
-            <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
-              <span className="w-6 h-[1.5px] bg-[#b88344]" />
-              <span className="text-[10.5px] font-bold tracking-[0.22em] uppercase text-[#b88344]">
-                {data.badge?.replace(/—/g, "").trim() || "OUR TEAM"}
-              </span>
-              <span className="w-6 h-[1.5px] bg-[#b88344]" />
-            </div>
-
-            <h2 className="text-2xl sm:text-3xl md:text-[36px] font-black text-[#14171c] leading-tight tracking-[-0.03em]">
-              {data.titleLine1 || "Meet Our"}{" "}
-              <span className="text-[#b88344]">
-                {data.titleHighlight || "Creative Team"}
-              </span>
-            </h2>
-
-            <p className="text-neutral-500 font-medium text-xs sm:text-[12.5px] mt-1 max-w-xl leading-relaxed">
-              {data.description ||
-                "A passionate group of architects, designers and innovators dedicated to creating exceptional spaces."}
-            </p>
+      <div className="max-w-[1360px] mx-auto">
+        {/* Center-Aligned Header Block: Matching Our Services Section Pattern */}
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+          <div className="flex items-center justify-center gap-2 mb-1.5">
+            <span className="w-7 h-[1.5px] bg-[#b88344]" />
+            <span className="text-[11px] font-bold tracking-[0.24em] uppercase text-[#b88344]">
+              {data.badge?.replace(/—/g, "").trim()}
+            </span>
+            <span className="w-7 h-[1.5px] bg-[#b88344]" />
           </div>
 
-          <div className="hidden lg:flex items-center gap-3 border-l border-neutral-300 pl-4 py-1 text-right">
-            <div className="text-[10px] font-bold tracking-[0.25em] text-neutral-400 uppercase leading-snug">
-              PEOPLE <br />
-              IDEAS <br />
-              SPACES <br />
-              TOGETHER
-            </div>
-          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-[#14171c] tracking-tight leading-[1.15]">
+            {data.titleLine1}{" "}
+            <span className="text-[#b88344]">
+              {data.titleHighlight}
+            </span>
+          </h2>
+
+          <p className="text-xs sm:text-[14px] text-neutral-600 font-normal leading-relaxed mt-2">
+            {data.description || data.subtitle}
+          </p>
         </div>
 
-        {/* TEAM CARDS CONTAINER: Mobile par compact width & height, Desktop untouched */}
+        {/* TEAM CARDS CONTAINER: Responsive Snap Carousel on Mobile, Centered Grid on Desktop */}
         <div
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex md:grid md:grid-cols-4 gap-3.5 sm:gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-smooth no-scrollbar pb-1.5 -mx-4 px-4 sm:mx-0 sm:px-0"
+          className="flex md:grid md:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-smooth no-scrollbar pb-1.5 -mx-4 px-4 sm:mx-0 sm:px-0"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {displayedMembers.map((member: any, idx: number) => (
             <div
               key={member.name || idx}
-              className="w-[86vw] max-w-[300px] shrink-0 snap-center md:w-auto md:max-w-none bg-white rounded-2xl p-3 sm:p-3.5 border border-neutral-200/80 shadow-[0_3px_15px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-[#b88344]/40 transition-all duration-300 md:hover:-translate-y-1 flex flex-col justify-between group mx-auto md:mx-0"
+              className="w-full md:w-auto shrink-0 snap-center bg-white rounded-3xl p-4 sm:p-5 border border-neutral-100 shadow-[0_4px_22px_rgba(0,0,0,0.03)] hover:shadow-2xl hover:border-[#b88344]/30 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                {/* Member Picture: Mobile par compact h-[200px], Desktop par aspect-[4/5] */}
-                <div className="relative w-full h-[200px] sm:h-[220px] md:h-auto md:aspect-[4/5] rounded-xl overflow-hidden bg-neutral-100 mb-2.5 shadow-inner">
+                {/* Member Picture */}
+                <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-neutral-100 mb-3.5 shadow-inner">
                   <img
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src =
-                        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80";
-                    }}
                   />
                   <div
                     aria-hidden="true"
@@ -163,29 +129,28 @@ export default function Team({
 
                 {/* Name & Role */}
                 <div className="text-center space-y-0.5">
-                  <h3 className="text-[14.5px] sm:text-base font-bold text-[#14171c] tracking-tight group-hover:text-[#b88344] transition-colors leading-snug">
+                  <h3 className="text-[15.5px] sm:text-[16.5px] font-bold text-[#14171c] tracking-tight group-hover:text-[#b88344] transition-colors leading-snug">
                     {member.name}
                   </h3>
-                  <div className="text-[10px] sm:text-[11px] font-semibold text-[#b88344] uppercase tracking-wider">
+                  <div className="text-[10.5px] sm:text-[11.5px] font-semibold text-[#b88344] uppercase tracking-wider">
                     {member.role}
                   </div>
                 </div>
 
-                {/* Bio: Mobile par tight leading aur line clamp */}
-                <p className="text-[11px] text-neutral-500 font-normal text-center leading-relaxed mt-1.5 line-clamp-2 px-1">
-                  {member.bio ||
-                    "Dedicated professional bringing creative architectural concepts and functional design to life."}
+                {/* Bio */}
+                <p className="text-[11.5px] text-neutral-500 font-normal text-center leading-relaxed mt-2 line-clamp-2 px-1">
+                  {member.bio}
                 </p>
               </div>
 
               {/* Social Media Link Icons */}
-              <div className="flex items-center justify-center gap-1.5 pt-2.5 mt-2 border-t border-neutral-100">
+              <div className="flex items-center justify-center gap-2 pt-3 mt-3 border-t border-neutral-100">
                 <a
                   href={member.social?.linkedin || member.socials?.linkedin || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${member.name} LinkedIn`}
-                  className="w-6.5 h-6.5 rounded-full bg-[#f8f2e9] hover:bg-[#b88344] text-[#b88344] hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-sm"
+                  className="w-7 h-7 rounded-full bg-[#f8f2e9] hover:bg-[#b88344] text-[#b88344] hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-sm"
                 >
                   <LinkedInIcon size={12} />
                 </a>
@@ -195,7 +160,7 @@ export default function Team({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${member.name} Instagram`}
-                  className="w-6.5 h-6.5 rounded-full bg-[#f8f2e9] hover:bg-[#b88344] text-[#b88344] hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-sm"
+                  className="w-7 h-7 rounded-full bg-[#f8f2e9] hover:bg-[#b88344] text-[#b88344] hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-sm"
                 >
                   <InstagramIcon size={12} />
                 </a>
@@ -205,7 +170,7 @@ export default function Team({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${member.name} Facebook`}
-                  className="w-6.5 h-6.5 rounded-full bg-[#f8f2e9] hover:bg-[#b88344] text-[#b88344] hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-sm"
+                  className="w-7 h-7 rounded-full bg-[#f8f2e9] hover:bg-[#b88344] text-[#b88344] hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-sm"
                 >
                   <FacebookIcon size={12} />
                 </a>
@@ -215,29 +180,30 @@ export default function Team({
         </div>
 
         {/* Mobile Pagination Dots */}
-        <div className="flex md:hidden items-center justify-center gap-1.5 pt-3">
+        <div className="flex md:hidden items-center justify-center gap-2 pt-6">
           {displayedMembers.map((_: any, i: number) => (
             <button
               key={i}
               type="button"
               onClick={() => scrollToCard(i)}
               aria-label={`Go to team card ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
+              className={`h-2 rounded-full transition-all duration-300 ${
                 activeIdx === i
-                  ? "w-5 bg-[#b88344]"
-                  : "w-1.5 bg-neutral-300 hover:bg-[#b88344]/50"
+                  ? "w-7 bg-[#b88344]"
+                  : "w-2 bg-neutral-300 hover:bg-[#b88344]/50"
               }`}
             />
           ))}
         </div>
 
         {/* Bottom CTA Button */}
-        <div className="text-center mt-5 sm:mt-6">
+        <div className="flex justify-center mt-10 sm:mt-12">
           <Link
             href="/team"
-            className="inline-flex items-center gap-2 bg-[#b88344] hover:bg-[#9f6f35] text-white px-5 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-[13px] font-bold shadow-md shadow-[#b88344]/25 hover:scale-105 transition-all"
+            className="inline-flex items-center gap-2.5 bg-[#b88344] hover:bg-[#a07136] text-white px-7 sm:px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-lg shadow-[#b88344]/30 hover:scale-105 active:scale-95 transition-all duration-300"
           >
-            View All Team Members <ArrowRight size={13} />
+            <span>View All Team Members</span>
+            <ArrowRight size={16} className="stroke-[2.2]" />
           </Link>
         </div>
       </div>

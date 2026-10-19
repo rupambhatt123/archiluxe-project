@@ -43,8 +43,7 @@
                 { "key": "StatsCounter", "component": "ArchiStatsCounter1" },
                 { "key": "Timeline", "component": "ArchiTimeline1" },
                 { "key": "WhyChooseUs", "component": "ArchiWhyChooseUs1" },
-                { "key": "MissionVision", "component": "ArchiMissionVision1" },
-                { "key": "CTA", "component": "ArchiCTA1" }
+                { "key": "MissionVision", "component": "ArchiMissionVision1" }
               ]
             },
             "services": {
@@ -52,29 +51,25 @@
                 { "key": "PageBanner", "component": "ArchiPageBanner1" },
                 { "key": "Services", "component": "ArchiServices1" },
                 { "key": "FeaturedProject", "component": "ArchiFeaturedProject1" },
-                { "key": "Testimonials", "component": "ArchiTestimonials1" },
-                { "key": "CTA", "component": "ArchiCTA1" }
+                { "key": "Testimonials", "component": "ArchiTestimonials1" }
               ]
             },
             "projects": {
               "components": [
                 { "key": "PageBanner", "component": "ArchiPageBanner1" },
-                { "key": "Projects", "component": "ArchiProjects1" },
-                { "key": "CTA", "component": "ArchiCTA1" }
+                { "key": "Projects", "component": "ArchiProjects1" }
               ]
             },
             "team": {
               "components": [
                 { "key": "PageBanner", "component": "ArchiPageBanner1" },
-                { "key": "Team", "component": "ArchiTeam1" },
-                { "key": "CTA", "component": "ArchiCTA1" }
+                { "key": "Team", "component": "ArchiTeam1" }
               ]
             },
             "gallery": {
               "components": [
                 { "key": "PageBanner", "component": "ArchiPageBanner1" },
-                { "key": "Gallery", "component": "ArchiGallery1" },
-                { "key": "CTA", "component": "ArchiCTA1" }
+                { "key": "Gallery", "component": "ArchiGallery1" }
               ]
             },
             "contact": {
@@ -98,24 +93,13 @@
                 { "title": "About Us", "path": "/about" },
                 {
                   "title": "Services",
-                  "path": "/services",
-                  "children": [
-                    { "title": "All Services Overview", "path": "/services" },
-                    { "title": "Residential Architecture", "path": "/services/residential-architecture" },
-                    { "title": "Commercial Architecture", "path": "/services/commercial-architecture" },
-                    { "title": "Interior Designing", "path": "/services/interior-designing" },
-                    { "title": "Renovation & Remodeling", "path": "/services/renovation-remodeling" },
-                    { "title": "Landscape Design", "path": "/services/landscape-design" },
-                    { "title": "Planning & Consultation", "path": "/services/planning-consultation" },
-                    { "title": "Kitchen Remodeling", "path": "/services/kitchen-remodeling" },
-                    { "title": "Bathroom Renovation", "path": "/services/bathroom-renovation" }
-                  ]
+                  "path": "/services"
                 },
                 {
                   "title": "Projects",
                   "path": "/projects",
                   "children": [
-                    { "title": "All Projects Gallery", "path": "/projects" },
+                    { "title": "All Projects Overview", "path": "/projects" },
                     { "title": "Modern White Kitchen", "path": "/projects/modern-white-kitchen" },
                     { "title": "Contemporary Kitchen", "path": "/projects/contemporary-kitchen" },
                     { "title": "Classic Kitchen Remodel", "path": "/projects/classic-kitchen-remodel" },
@@ -312,7 +296,23 @@
                   "title": "Residential Architecture",
                   "desc": "Thoughtfully designed homes that blend comfort, style and functionality.",
                   "image": "/s1.jpg",
-                  "icon": "home"
+                  "icon": "home",
+                  "badge": "RESIDENTIAL ARCHITECTURE",
+                  "headline": "Design a Bespoke Home Crafted for Modern Elegance",
+                  "paragraph1": "A custom home is the ultimate sanctuary for your family, and visionary residential architecture can elevate your everyday living. Our residential design services merge seamless spatial flow, sustainable construction materials, and distinctive craftsmanship to produce homes that are both breathtaking and functional.",
+                  "paragraph2": "Whether you are designing a contemporary private villa from the ground up or re-imagining a suburban residence, we tailor every elevation, room layout, and natural lighting corridor to complement your lifestyle and property location.",
+                  "expYears": "15+",
+                  "expLabel": "Years Experience",
+                  "expHeading": "Transforming Visions into Timeless Homes",
+                  "expDesc": "With over 15 years of industry experience, we specialize in high-end residential architecture with energy-efficient envelopes, panoramic window layouts, bespoke façades, and intelligent floor plans that elevate your home's long-term worth.",
+                  "features": [
+                    { "title": "Custom Master Planning", "desc": "Tailor-made floor plans and elevation designs engineered around your family's routine and site topography.", "icon": "package" },
+                    { "title": "Premium Facade Materials", "desc": "Curated selection of natural stone, exposed concrete, warm wood slats, and high-performance architectural glass.", "icon": "layers" },
+                    { "title": "Passive Solar & Lighting", "desc": "Strategic architectural orientations, skylights, and courtyards that optimize daylight and cross-ventilation.", "icon": "lightbulb" },
+                    { "title": "Spatial Optimization", "desc": "Flowing open-plan layouts with intelligent zone segregation that maximize usable living space.", "icon": "maximize" },
+                    { "title": "Smart Home Integration", "desc": "Built-in provisions for automated climate control, motorized shading, security, and discreet infrastructure.", "icon": "plug" },
+                    { "title": "Structural Craftsmanship", "desc": "Rigorous on-site engineering oversight and compliant blueprints ensuring durable, generational construction.", "icon": "award" }
+                  ]
                 },
                 {
                   "id": 2,
@@ -320,7 +320,23 @@
                   "title": "Commercial Architecture",
                   "desc": "Innovative commercial spaces that enhance productivity and brand value.",
                   "image": "/s2.avif",
-                  "icon": "building2"
+                  "icon": "building2",
+                  "badge": "COMMERCIAL ARCHITECTURE",
+                  "headline": "Build Commercial Environments Designed for Growth and Impact",
+                  "paragraph1": "A well-conceived commercial building represents your company's identity and drives workplace efficiency. Our commercial architecture services unite progressive engineering, code compliance, and brand-first spatial planning to develop offices, retail centers, and hospitality spaces.",
+                  "paragraph2": "Whether you are building a boutique corporate headquarters or remodeling a multi-tenant commercial complex, we balance public presence with high acoustic standards, intuitive wayfinding, and resilient building infrastructure.",
+                  "expYears": "18+",
+                  "expLabel": "Years Experience",
+                  "expHeading": "Elevating Corporate Spaces and Business Value",
+                  "expDesc": "With over 18 years of commercial design leadership, we create high-performance office hubs, retail fronts, and corporate campuses that inspire talent, welcome clients, and maximize tenant occupancy.",
+                  "features": [
+                    { "title": "Zoning & Code Compliance", "desc": "Full handling of commercial zoning bylaws, municipal approvals, accessibility guidelines, and life-safety systems.", "icon": "package" },
+                    { "title": "High-Durability Surfaces", "desc": "Commercial-grade flooring, acoustic wall panels, and high-traffic cladding designed for longevity and easy upkeep.", "icon": "layers" },
+                    { "title": "Ergonomic & Task Lighting", "desc": "Commercial LED matrices, glare-controlled lighting plans, and energy-conserving daylight harvesting setups.", "icon": "lightbulb" },
+                    { "title": "Flexible Floorplates", "desc": "Adaptable structural spans and modular partitions that can evolve with team growth and shifting business needs.", "icon": "maximize" },
+                    { "title": "Advanced MEP Coordination", "desc": "Seamless routing of complex HVAC, server room power distribution, data cabling, and emergency backup systems.", "icon": "plug" },
+                    { "title": "Turnkey Project Delivery", "desc": "Detailed vendor management, bill of quantities (BOQ), and vigilant site supervision for on-schedule handover.", "icon": "award" }
+                  ]
                 },
                 {
                   "id": 3,
@@ -328,7 +344,23 @@
                   "title": "Interior Designing",
                   "desc": "Elegant interiors that reflect your personality and make every space extraordinary.",
                   "image": "/s3.avif",
-                  "icon": "sofa"
+                  "icon": "sofa",
+                  "badge": "INTERIOR DESIGNING",
+                  "headline": "Curate Inspiring Interior Spaces Tailored to Your Signature Style",
+                  "paragraph1": "Great interiors transform everyday rooms into immersive sensory experiences. Our interior design studio balances refined color harmony, custom millwork, curated materials, and layered illumination to craft interiors that reflect your aesthetic preferences.",
+                  "paragraph2": "From luxury penthouse suites and master bedroom retreats to open living areas and home offices, we oversee every detail from preliminary mood boards and fabric sampling to custom furniture installation.",
+                  "expYears": "14+",
+                  "expLabel": "Years Experience",
+                  "expHeading": "Designing Interior Masterpieces with Detail",
+                  "expDesc": "Backed by 14+ years of expertise in high-end interior architecture, we specialize in bespoke joinery, tailored soft furnishings, art curation, and balanced lighting schemes that enrich your lifestyle.",
+                  "features": [
+                    { "title": "Bespoke Millwork & Joinery", "desc": "Custom-crafted wardrobes, credenzas, media units, and wall paneling built to exact dimensional requirements.", "icon": "package" },
+                    { "title": "Luxurious Finishes & Stone", "desc": "Fine Italian marbles, textured wall plasters, brushed brass accents, and premium natural hardwood surfaces.", "icon": "layers" },
+                    { "title": "Layered Ambient Lighting", "desc": "Concealed cove lighting, statement chandeliers, recessed spotlights, and accent wall washers for mood creation.", "icon": "lightbulb" },
+                    { "title": "Furniture & Spatial Flow", "desc": "Balanced furniture placements, ergonomic proportions, and comfortable transit zones that make spaces feel open.", "icon": "maximize" },
+                    { "title": "Integrated AV & Automation", "desc": "Concealed audio systems, motorized drapery tracks, hidden wall sockets, and smart scene keypads.", "icon": "plug" },
+                    { "title": "White-Glove Styling", "desc": "Comprehensive art curation, rug selection, window treatments, and décor styling for a polished move-in experience.", "icon": "award" }
+                  ]
                 },
                 {
                   "id": 4,
@@ -336,7 +368,23 @@
                   "title": "Renovation & Remodeling",
                   "desc": "Transforming existing spaces into modern, functional and stylish environments.",
                   "image": "/s4.avif",
-                  "icon": "wrench"
+                  "icon": "wrench",
+                  "badge": "RENOVATION & REMODELING",
+                  "headline": "Revitalize Your Property with Structural Renovation and Modern Upgrades",
+                  "paragraph1": "Remodeling unlocks the hidden potential of older properties without losing their original character. Our renovation team resolves outdated layouts, removes non-load-bearing barriers, and updates aging electrical and plumbing networks.",
+                  "paragraph2": "Whether you are undertaking a historic brownstone restoration or a complete contemporary overhaul, we ensure that structural modifications remain secure, cleanly finished, and fully compliant with modern building standards.",
+                  "expYears": "16+",
+                  "expLabel": "Years Experience",
+                  "expHeading": "Breathe New Life into Outdated Spaces",
+                  "expDesc": "With over 16 years of hands-on remodeling experience, we specialize in structural wall removals, space reconfiguration, retrofitting modern amenities, and increasing property appraisal values.",
+                  "features": [
+                    { "title": "Structural Alterations", "desc": "Safe load-bearing wall removals, steel beam insertions, and open-plan conversions carried out under structural engineer oversight.", "icon": "package" },
+                    { "title": "Surface Refinishing", "desc": "Restoring vintage woodwork, repairing masonry, subfloor leveling, and replacing outdated finishes with modern alternatives.", "icon": "layers" },
+                    { "title": "Modernized Electrical", "desc": "Complete panel replacements, updated grounding, energy-efficient circuit layouts, and contemporary designer switches.", "icon": "lightbulb" },
+                    { "title": "Spatial Reconfiguration", "desc": "Realigning interior partitions to introduce dedicated pantries, walk-in closets, and spacious ensuite baths.", "icon": "maximize" },
+                    { "title": "Plumbing & HVAC Retrofits", "desc": "Modern PEX water supply lines, soundproofed drainage piping, and discreet ductless multi-split heating/cooling.", "icon": "plug" },
+                    { "title": "Quality Craftsmanship", "desc": "Dust mitigation practices, careful material staging, and precise execution that deliver durable, long-term results.", "icon": "award" }
+                  ]
                 },
                 {
                   "id": 5,
@@ -344,7 +392,23 @@
                   "title": "Landscape Design",
                   "desc": "Beautiful outdoor spaces that bring nature, balance and tranquility.",
                   "image": "/s5.webp",
-                  "icon": "leaf"
+                  "icon": "leaf",
+                  "badge": "LANDSCAPE DESIGN",
+                  "headline": "Create Harmonious Outdoor Spaces with Nature-Inspired Design",
+                  "paragraph1": "A thoughtfully planned outdoor environment extends your living area into the open air. Our landscape architecture team designs outdoor living rooms, stone patios, tranquil water installations, and sustainable plant selections that look stunning year-round.",
+                  "paragraph2": "Whether you own an expansive private estate, a suburban backyard, or an urban rooftop terrace, we blend hardscaping with softscaping to provide functional areas for dining, quiet relaxation, and family entertainment.",
+                  "expYears": "12+",
+                  "expLabel": "Years Experience",
+                  "expHeading": "Crafting Serene and Sustainable Landscapes",
+                  "expDesc": "With 12+ years of outdoor design mastery, we engineer custom swimming pools, fire pits, architectural pergolas, and native planting schemes that thrive in local soil and climate conditions.",
+                  "features": [
+                    { "title": "Hardscape Architecture", "desc": "Natural flagstone paths, retaining walls, cantilevered steps, and porcelain pool decking built to resist weather changes.", "icon": "package" },
+                    { "title": "Eco-Friendly Planting", "desc": "Curated selection of native plants, ornamental grasses, privacy hedges, and flowering perennials requiring minimal water.", "icon": "layers" },
+                    { "title": "Landscape Night Illumination", "desc": "Low-voltage pathway uplights, tree canopy spotlights, and underwater pool fixtures creating evening ambiance.", "icon": "lightbulb" },
+                    { "title": "Outdoor Living Zones", "desc": "Dedicated exterior dining terraces, sunken fire lounges, and covered outdoor kitchens that maximize outdoor living.", "icon": "maximize" },
+                    { "title": "Smart Irrigation & Drip", "desc": "Rain-sensing weather-linked drip irrigation systems that deliver precise hydration while conserving water.", "icon": "plug" },
+                    { "title": "Drainage & Soil Grading", "desc": "Comprehensive site grading, French drains, and retention systems ensuring clean runoff management and foundation safety.", "icon": "award" }
+                  ]
                 },
                 {
                   "id": 6,
@@ -352,7 +416,23 @@
                   "title": "Planning & Consultation",
                   "desc": "Expert guidance from concept to execution for successful and hassle-free projects.",
                   "image": "/s6.avif",
-                  "icon": "fileSpreadsheet"
+                  "icon": "fileSpreadsheet",
+                  "badge": "PLANNING & CONSULTATION",
+                  "headline": "Navigate Architectural Feasibility and Permits with Clarity",
+                  "paragraph1": "Sound planning is the foundation of every successful architectural investment. Our consulting team offers comprehensive feasibility assessments, site evaluations, municipal permit navigation, and budget estimations before construction begins.",
+                  "paragraph2": "Whether you are evaluating a land acquisition for development or preparing a major structural alteration, we eliminate guesswork by providing accurate drawings, zoning interpretations, and project phasing roadmaps.",
+                  "expYears": "20+",
+                  "expLabel": "Years Experience",
+                  "expHeading": "Strategic Guidance for Smooth Project Execution",
+                  "expDesc": "Backed by two decades of municipal and architectural consulting experience, we help owners and developers minimize project risks, prevent budget overruns, and secure required municipal permits on schedule.",
+                  "features": [
+                    { "title": "Zoning & Land Feasibility", "desc": "In-depth property surveys, setback calculations, Floor Area Ratio (FAR) checks, and developmental potential reports.", "icon": "package" },
+                    { "title": "Permit Document Packages", "desc": "Preparation and filing of code-compliant architectural drawing sets, structural stamps, and local council filings.", "icon": "layers" },
+                    { "title": "Sunlight & Shadow Analysis", "desc": "Solar envelope modeling and neighbor shadow impact studies to support planning permissions and sustainable siting.", "icon": "lightbulb" },
+                    { "title": "Site Layout Optimization", "desc": "Strategic vehicular access, driveway layouts, grading studies, and building footprint placements for the land.", "icon": "maximize" },
+                    { "title": "Utility & Grid Liaison", "desc": "Coordination with civic authorities for water, sewage, electrical grid tie-ins, and storm drainage infrastructure.", "icon": "plug" },
+                    { "title": "Cost & Phasing Strategy", "desc": "Accurate bill of materials, tender documentation, and milestone planning keeping your budget transparent.", "icon": "award" }
+                  ]
                 },
                 {
                   "id": 7,
@@ -360,15 +440,23 @@
                   "title": "Kitchen Remodeling",
                   "desc": "Create a beautiful kitchen designed for modern living with bespoke cabinetry, countertops, and space optimization.",
                   "image": "/s7.avif",
-                  "icon": "archive"
-                },
-                {
-                  "id": 8,
-                  "slug": "bathroom-renovation",
-                  "title": "Bathroom Renovation",
-                  "desc": "Spa-inspired bathroom sanctuaries featuring luxury sanitary fittings, heated surfaces, and elegant tile work.",
-                  "image": "/s8.avif",
-                  "icon": "wrench"
+                  "icon": "archive",
+                  "badge": "KITCHEN REMODELING",
+                  "headline": "Create a Beautiful Kitchen Designed for Modern Living",
+                  "paragraph1": "The kitchen is the heart of every home, and a well-designed kitchen can completely transform your daily routine. Our kitchen remodeling services combine thoughtful layouts, premium materials, and expert craftsmanship to create spaces that are both functional and visually stunning.",
+                  "paragraph2": "Whether you're planning a complete kitchen renovation or upgrading selected features, we design kitchens that improve comfort, efficiency, and long-term value while reflecting your personal style and lifestyle needs.",
+                  "expYears": "15+",
+                  "expLabel": "Years Experience",
+                  "expHeading": "Transform the Heart of Your Home",
+                  "expDesc": "With over 15 years of experience, we specialize in creating beautiful kitchens with custom cabinetry, premium countertops, modern lighting, and intelligent layouts that enhance everyday living while increasing your property's value.",
+                  "features": [
+                    { "title": "Custom Cabinetry", "desc": "Stylish and functional cabinets designed to maximize storage, match your style, and make your kitchen more organized.", "icon": "package" },
+                    { "title": "Premium Countertops", "desc": "Choose from quartz, granite, marble, or other high-quality surfaces that are durable, elegant, and easy to maintain.", "icon": "layers" },
+                    { "title": "Modern Lighting", "desc": "Enhance your kitchen with layered lighting, pendant fixtures, and under-cabinet illumination for a warm and inviting atmosphere.", "icon": "lightbulb" },
+                    { "title": "Space Optimization", "desc": "Smart layouts and efficient designs that make the most of every square foot, improving workflow and functionality.", "icon": "maximize" },
+                    { "title": "Appliance Integration", "desc": "Seamlessly integrate modern appliances for improved efficiency, energy savings, and a clean, contemporary look.", "icon": "plug" },
+                    { "title": "Quality Craftsmanship", "desc": "Every project is completed with exceptional attention to detail using premium materials and proven construction methods for long-lasting results.", "icon": "award" }
+                  ]
                 }
               ]
             }
@@ -383,7 +471,7 @@
                   "title": "Create a Beautiful Kitchen Designed for Modern Living",
                   "description1": "The kitchen is the heart of every home, and a well-designed kitchen can completely transform your daily routine. Our kitchen remodeling services combine thoughtful layouts, premium materials, and expert craftsmanship to create spaces that are both functional and visually stunning.",
                   "description2": "Whether you're planning a complete kitchen renovation or upgrading selected features, we design kitchens that improve comfort, efficiency, and long-term value while reflecting your personal style and lifestyle needs.",
-                  "heroImage": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80",
+                  "heroImage": "/s7.avif",
                   "expYears": "15+",
                   "expTitle": "Transform the Heart of Your Home",
                   "expDescription": "With over 15 years of experience, we specialize in creating beautiful kitchens with custom cabinetry, premium countertops, modern lighting, and intelligent layouts that enhance everyday living while increasing your property's value.",
@@ -441,49 +529,241 @@
                   "id": 1,
                   "category": "Modern Kitchen",
                   "title": "Modern White Kitchen",
-                  "description": "A clean and elegant design with premium finishes and smart storage solutions.",
-                  "image": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80",
-                  "slug": "modern-white-kitchen"
+                  "slug": "modern-white-kitchen",
+                  "image": "/s7.avif",
+                  "heroImage": "/s7.avif",
+                  "badge": "PROJECT DETAIL",
+                  "description": "This modern kitchen remodel combines clean lines, premium materials, and smart storage solutions to create a stylish and functional space. Designed to maximize space and natural light, this kitchen offers the perfect blend of beauty, convenience, and modern living.",
+                  "meta": {
+                    "type": "Kitchen Remodeling",
+                    "completionTime": "6 Weeks",
+                    "location": "New Delhi, India"
+                  },
+                  "overview": "Our team transformed this outdated kitchen into a modern, elegant, and highly functional space. We focused on open layouts, premium finishes, and smart storage to enhance both aesthetics and usability. The result is a bright, spacious kitchen that perfectly fits the homeowner's lifestyle.",
+                  "gallery": [
+                    "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80"
+                  ],
+                  "keyHighlights": [
+                    "Custom cabinetry with smart storage solutions",
+                    "Premium quartz countertops",
+                    "Modern pendant lighting and under-cabinet lights",
+                    "Modern appliances and seamless integration"
+                  ],
+                  "features": [
+                    { "title": "Custom Cabinetry", "desc": "Designed for maximum storage and a clean, modern look.", "icon": "archive" },
+                    { "title": "Space Optimization", "desc": "Smart layouts to make the most of every square foot.", "icon": "ruler" },
+                    { "title": "Premium Countertops", "desc": "High-quality quartz surfaces for durability and elegance.", "icon": "layers" },
+                    { "title": "Appliance Integration", "desc": "Seamless installation of modern appliances for a sleek finish.", "icon": "zap" },
+                    { "title": "Modern Lighting", "desc": "Pendant lights and under-cabinet lighting for a warm ambiance.", "icon": "lightbulb" },
+                    { "title": "Stylish Finishes", "desc": "Premium materials and textures for a contemporary look.", "icon": "sparkles" }
+                  ],
+                  "beforeAfter": {
+                    "before": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
+                    "after": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80"
+                  }
                 },
                 {
                   "id": 2,
                   "category": "Contemporary",
                   "title": "Contemporary Kitchen",
-                  "description": "A stylish kitchen with modern lighting and spacious layout for everyday living.",
-                  "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
-                  "slug": "contemporary-kitchen"
+                  "slug": "contemporary-kitchen",
+                  "image": "/k.jpg",
+                  "heroImage": "/k.jpg",
+                  "badge": "PROJECT DETAIL",
+                  "description": "A sophisticated contemporary kitchen featuring matte anthracite surfaces, deep marble accents, and an open layout that fosters everyday gathering.",
+                  "meta": {
+                    "type": "Contemporary Design",
+                    "completionTime": "8 Weeks",
+                    "location": "Mumbai, India"
+                  },
+                  "overview": "Designed for modern entertainers, this contemporary kitchen balances sleek minimalism with warm ambient textures. We integrated full-height storage pantry walls, an expansive waterfall preparation island, and concealed extraction systems.",
+                  "gallery": [
+                    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80"
+                  ],
+                  "keyHighlights": [
+                    "Nero Marquina waterfall center island",
+                    "Handleless push-to-open soft matte cabinets",
+                    "Architectural ceiling track spotlights",
+                    "Integrated induction cooktop with downdraft ventilation"
+                  ],
+                  "features": [
+                    { "title": "Waterfall Island", "desc": "Continuous stone veining flowing from countertop to the floor.", "icon": "layers" },
+                    { "title": "Concealed Storage", "desc": "Hidden breakfast station and integrated utility niches.", "icon": "archive" },
+                    { "title": "Architectural Lighting", "desc": "Warm recessed ceiling tracks paired with LED kickboard glow.", "icon": "lightbulb" },
+                    { "title": "Ergonomic Layout", "desc": "Fluid cooking triangle connecting sink, refrigeration, and range.", "icon": "ruler" },
+                    { "title": "Smart Downdraft Range", "desc": "Modern downdraft induction cooking unit that eliminates bulky hoods.", "icon": "zap" },
+                    { "title": "Matte Anti-Fingerprint Finish", "desc": "Thermal laminate surfaces that resist smudges and daily wear.", "icon": "sparkles" }
+                  ],
+                  "beforeAfter": {
+                    "before": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
+                    "after": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80"
+                  }
                 },
                 {
                   "id": 3,
                   "category": "Traditional",
                   "title": "Classic Kitchen Remodel",
-                  "description": "A timeless design that blends traditional charm with modern functionality.",
-                  "image": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80",
-                  "slug": "classic-kitchen-remodel"
+                  "slug": "classic-kitchen-remodel",
+                  "image": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1400&q=85",
+                  "heroImage": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1400&q=85",
+                  "badge": "PROJECT DETAIL",
+                  "description": "A timeless culinary retreat blending classic shaker cabinetry, brass hardware, and warm architectural wood tones with high-end appliances.",
+                  "meta": {
+                    "type": "Classic Remodeling",
+                    "completionTime": "7 Weeks",
+                    "location": "Bengaluru, India"
+                  },
+                  "overview": "This historic estate kitchen required a delicate balance between classic charm and high-performance functionality. We custom-built solid wood shaker cabinets, introduced a spacious fireclay farmhouse sink, and crafted antique brass lighting fixtures.",
+                  "gallery": [
+                    "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80"
+                  ],
+                  "keyHighlights": [
+                    "Bespoke solid wood shaker millwork",
+                    "Calacatta Gold honed marble countertops",
+                    "Double fireclay apron-front farmhouse sink",
+                    "Handcrafted brass cup pulls and fluted glass inserts"
+                  ],
+                  "features": [
+                    { "title": "Shaker Cabinetry", "desc": "Solid timber frames with inset beveled cabinet doors.", "icon": "archive" },
+                    { "title": "Honed Marble Surfaces", "desc": "Velvety smooth marble that adds timeless natural elegance.", "icon": "layers" },
+                    { "title": "Pendant Glass Chandelier", "desc": "Vintage-inspired ribbed glass fixtures casting warm glow.", "icon": "lightbulb" },
+                    { "title": "Pantry Organization", "desc": "Deep pull-out spice racks and hardwood utensil organizers.", "icon": "ruler" },
+                    { "title": "Integrated Dual Oven", "desc": "Built-in wall ovens flush-mounted within matching joinery.", "icon": "zap" },
+                    { "title": "Brass Artisan Accents", "desc": "Unlacquered brass fittings that age gracefully with time.", "icon": "sparkles" }
+                  ],
+                  "beforeAfter": {
+                    "before": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80",
+                    "after": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80"
+                  }
                 },
                 {
                   "id": 4,
                   "category": "Small Kitchen",
                   "title": "Small Kitchen Makeover",
-                  "description": "Smart design to maximize space and storage without compromising on style.",
-                  "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
-                  "slug": "small-kitchen-makeover"
+                  "slug": "small-kitchen-makeover",
+                  "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=85",
+                  "heroImage": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=85",
+                  "badge": "PROJECT DETAIL",
+                  "description": "An intelligent compact makeover optimizing every vertical inch with ceiling-height cabinetry, reflective surfaces, and hidden storage systems.",
+                  "meta": {
+                    "type": "Urban Space Makeover",
+                    "completionTime": "4 Weeks",
+                    "location": "Gurugram, India"
+                  },
+                  "overview": "Facing a narrow galley footprint, our objective was to eliminate clutter and introduce maximum natural light. By replacing dark upper cabinets with reflective cream millwork, floating shelves, and continuous quartz surfaces, we doubled the perceived size of the room.",
+                  "gallery": [
+                    "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80"
+                  ],
+                  "keyHighlights": [
+                    "Ceiling-height vertical storage maximization",
+                    "Under-cabinet daylight-balanced LED strips",
+                    "Pull-out prep cart and corner magic carousels",
+                    "Slimline 24-inch panel-ready appliances"
+                  ],
+                  "features": [
+                    { "title": "Vertical Optimization", "desc": "Floor-to-ceiling storage avoiding wasted dead space above.", "icon": "ruler" },
+                    { "title": "Magic Corner Hardware", "desc": "Smooth gliding blind-corner trays for effortless access.", "icon": "archive" },
+                    { "title": "Light-Reflective Finishes", "desc": "Gloss quartz and mirrored backsplashes reflecting daylight.", "icon": "layers" },
+                    { "title": "Recessed Channel Lights", "desc": "Linear LED channels providing shadow-free countertop lighting.", "icon": "lightbulb" },
+                    { "title": "Compact Appliances", "desc": "High-efficiency induction hobs and slim-fit dishwasher drawers.", "icon": "zap" },
+                    { "title": "Minimalist Hardware", "desc": "J-pull handles and integrated recessed profiles.", "icon": "sparkles" }
+                  ],
+                  "beforeAfter": {
+                    "before": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
+                    "after": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80"
+                  }
                 },
                 {
                   "id": 5,
                   "category": "Luxury Kitchen",
                   "title": "Luxury Kitchen Design",
-                  "description": "Premium materials and elegant finishes for a sophisticated look.",
-                  "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80",
-                  "slug": "luxury-kitchen-design"
+                  "slug": "luxury-kitchen-design",
+                  "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=85",
+                  "heroImage": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=85",
+                  "badge": "PROJECT DETAIL",
+                  "description": "An architectural showpiece tailored with bookmatched Italian porcelain, walnut veneers, and climate-controlled sommelier wine storage.",
+                  "meta": {
+                    "type": "Luxury Interior",
+                    "completionTime": "10 Weeks",
+                    "location": "Dubai, UAE"
+                  },
+                  "overview": "Created for a prestigious penthouse residence, this kitchen stands at the crossroads of gastronomy and fine art. We curated bookmatched marble slabs, motorized acoustic pocket doors that conceal the scullery, and a cantilevered bar.",
+                  "gallery": [
+                    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80"
+                  ],
+                  "keyHighlights": [
+                    "Custom American walnut vertical grain millwork",
+                    "Seamless bookmatched porcelain backdrop",
+                    "Dual-zone frameless glass wine preservation column",
+                    "Motorized pocket doors revealing a hidden prep kitchen"
+                  ],
+                  "features": [
+                    { "title": "Bespoke Walnut Joinery", "desc": "Hand-selected bookmatched veneers treated with matte oil.", "icon": "archive" },
+                    { "title": "Porcelain Countertop", "desc": "Heat, scratch, and stain-resistant porcelain surfaces.", "icon": "layers" },
+                    { "title": "Backlit Stone Splashback", "desc": "Translucent stone illuminated by warm dimmable LED sheets.", "icon": "lightbulb" },
+                    { "title": "Double Island Architecture", "desc": "Separate culinary work island and social dining bar.", "icon": "ruler" },
+                    { "title": "Chef-Grade Appliances", "desc": "Commercial-grade induction cooktops and steam combination ovens.", "icon": "zap" },
+                    { "title": "Precision Champagne Trims", "desc": "Custom brushed champagne gold kickplates and shadow reveals.", "icon": "sparkles" }
+                  ],
+                  "beforeAfter": {
+                    "before": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
+                    "after": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=600&q=80"
+                  }
                 },
                 {
                   "id": 6,
                   "category": "Modern Kitchen",
                   "title": "Open Concept Kitchen",
-                  "description": "A modern open kitchen design that seamlessly connects with the living space.",
-                  "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
-                  "slug": "open-concept-kitchen"
+                  "slug": "open-concept-kitchen",
+                  "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85",
+                  "heroImage": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85",
+                  "badge": "PROJECT DETAIL",
+                  "description": "A flowing open-concept culinary space connecting seamlessly with living and patio zones through generous natural lighting and cohesive textures.",
+                  "meta": {
+                    "type": "Open Concept Remodel",
+                    "completionTime": "6 Weeks",
+                    "location": "New York, USA"
+                  },
+                  "overview": "By removing a non-structural dividing wall, we transformed two cramped rooms into an airy, unified great room. A 12-foot central quartz island now anchors the residence, serving as food prep surface, buffet counter, and casual breakfast bar.",
+                  "gallery": [
+                    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80"
+                  ],
+                  "keyHighlights": [
+                    "Structural wall removal with hidden flush ceiling beam",
+                    "12-foot quartz entertaining and preparation island",
+                    "Matching natural white oak plank flooring throughout",
+                    "Concealed paneled refrigerator and pantry columns"
+                  ],
+                  "features": [
+                    { "title": "Central Entertaining Hub", "desc": "Expansive 12-foot island designed for casual dining and prep.", "icon": "ruler" },
+                    { "title": "Integrated Panel Storage", "desc": "Seamless appliance facades blending with surrounding joinery.", "icon": "archive" },
+                    { "title": "Pure White Quartz", "desc": "Non-porous durable quartz with antibacterial protection.", "icon": "layers" },
+                    { "title": "Pendant Trio Glow", "desc": "Handblown glass pendants creating focal warmth over the island.", "icon": "lightbulb" },
+                    { "title": "Quiet High-CFM Extractor", "desc": "Ultra-quiet ducted ventilation keeping open living spaces odor-free.", "icon": "zap" },
+                    { "title": "Harmonized Millwork", "desc": "Consistent white oak textures across kitchen and media cabinets.", "icon": "sparkles" }
+                  ],
+                  "beforeAfter": {
+                    "before": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80",
+                    "after": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80"
+                  }
                 }
               ]
             }
