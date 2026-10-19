@@ -105,8 +105,7 @@
                     { "title": "Classic Kitchen Remodel", "path": "/projects/classic-kitchen-remodel" },
                     { "title": "Small Kitchen Makeover", "path": "/projects/small-kitchen-makeover" },
                     { "title": "Luxury Kitchen Design", "path": "/projects/luxury-kitchen-design" },
-                    { "title": "Open Concept Kitchen", "path": "/projects/open-concept-kitchen" },
-                    { "title": "Serene Heights Luxury Villa", "path": "/projects/serene-heights" }
+                    { "title": "Open Concept Kitchen", "path": "/projects/open-concept-kitchen" }
                   ]
                 },
                 { "title": "Our Team", "path": "/team" },
@@ -877,6 +876,7 @@
               "titleLine1": "What People Say About",
               "titleHighlight": "Our Design Studio",
               "description": "Read genuine reviews and experiences from our valued homeowners and commercial clients.",
+              "subtitle": "Read genuine reviews and experiences from our valued homeowners and commercial clients.",
               "items": [
                 {
                   "id": 1,
