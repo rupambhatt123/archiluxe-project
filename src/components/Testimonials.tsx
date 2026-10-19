@@ -113,7 +113,7 @@ export default function Testimonials({
           </h2>
 
           <p className="text-neutral-600 font-medium text-xs sm:text-[14px] mt-2 max-w-xl mx-auto leading-relaxed">
-            {data.description || data.subtitle}
+            {data.description || (data as any).subtitle}
           </p>
         </div>
 
