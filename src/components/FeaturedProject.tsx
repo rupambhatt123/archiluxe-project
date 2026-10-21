@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import siteData from "@/data/websiteData.json";
 
 interface FeaturedProjectsProps {
@@ -24,7 +23,7 @@ export default function FeaturedProjects({
   return (
     <section
       id="projects"
-      className="relative bg-[#faf7f0] pt-6 pb-10 sm:pt-8 sm:pb-12 px-4 sm:px-8 md:px-12 overflow-hidden selection:bg-[#b88344] selection:text-white"
+      className="relative bg-[#faf7f0] pt-6 pb-12 sm:pt-8 sm:pb-16 px-4 sm:px-8 md:px-12 overflow-hidden selection:bg-[#b88344] selection:text-white"
     >
       {/* 1. Background Golden Aura Glows */}
       <div
@@ -63,7 +62,7 @@ export default function FeaturedProjects({
       </div>
 
       <div className="relative z-10 max-w-[1340px] mx-auto">
-        {/* Section Header - Reduced Bottom Margin */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
           <div className="flex items-center justify-center gap-3 mb-1.5">
             <span className="w-9 h-[1.5px] bg-[#b88344]" />
@@ -90,7 +89,6 @@ export default function FeaturedProjects({
         <div className="relative">
           {/* Main Hero Image Frame */}
           <div className="relative w-full h-[460px] sm:h-[500px] md:h-[540px] rounded-3xl overflow-hidden shadow-2xl bg-neutral-200 border border-[#b88344]/20 group">
-            {/* Background Image Set directly to /10oct.png */}
             <img
               src="/10oct.png"
               alt={data.projectName || "Project Showcase"}
@@ -167,24 +165,6 @@ export default function FeaturedProjects({
               </Link>
             </p>
           </div>
-        </div>
-
-        {/* Big Bottom Action Buttons */}
-        <div className="flex items-center gap-4 justify-end mt-8 md:mt-8 pr-2">
-          <button
-            type="button"
-            className="w-14 h-14 rounded-2xl bg-[#eee7d8] hover:bg-[#e4dcce] text-[#14171c] flex items-center justify-center shadow-md transition-all duration-200 hover:scale-110 active:scale-95 border border-[#b88344]/20"
-            aria-label="Previous Project"
-          >
-            <ArrowLeft size={22} className="stroke-[2.2]" />
-          </button>
-
-          <Link
-            href={data.newProjectsLink || "/projects"}
-            className="inline-flex items-center gap-3 bg-[#b88344] hover:bg-[#a07136] text-white px-9 py-4 rounded-2xl text-sm sm:text-base font-bold shadow-xl shadow-[#b88344]/30 hover:scale-105 active:scale-95 transition-all"
-          >
-            New Projects <ArrowRight size={19} className="stroke-[2.2]" />
-          </Link>
         </div>
       </div>
     </section>

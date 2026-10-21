@@ -429,7 +429,7 @@
                     { "title": "Permit Document Packages", "desc": "Preparation and filing of code-compliant architectural drawing sets, structural stamps, and local council filings.", "icon": "layers" },
                     { "title": "Sunlight & Shadow Analysis", "desc": "Solar envelope modeling and neighbor shadow impact studies to support planning permissions and sustainable siting.", "icon": "lightbulb" },
                     { "title": "Site Layout Optimization", "desc": "Strategic vehicular access, driveway layouts, grading studies, and building footprint placements for the land.", "icon": "maximize" },
-                    { "title": "Utility & Grid Liaison", "desc": "Coordination with civic authorities for water, sewage, electrical grid tie-ins, and storm drainage infrastructure.", "icon": "plug" },
+                    { "title": "Utility & Grid Liaison", "desc": "Coordination with civic authorities for water, sewage, electrical grid tieins, and storm drainage infrastructure.", "icon": "plug" },
                     { "title": "Cost & Phasing Strategy", "desc": "Accurate bill of materials, tender documentation, and milestone planning keeping your budget transparent.", "icon": "award" }
                   ]
                 },
@@ -455,6 +455,54 @@
                     { "title": "Space Optimization", "desc": "Smart layouts and efficient designs that make the most of every square foot, improving workflow and functionality.", "icon": "maximize" },
                     { "title": "Appliance Integration", "desc": "Seamlessly integrate modern appliances for improved efficiency, energy savings, and a clean, contemporary look.", "icon": "plug" },
                     { "title": "Quality Craftsmanship", "desc": "Every project is completed with exceptional attention to detail using premium materials and proven construction methods for long-lasting results.", "icon": "award" }
+                  ]
+                },
+                {
+                  "id": 8,
+                  "slug": "architectural-3d-visualization",
+                  "title": "Architectural 3D Visualization",
+                  "desc": "Photo-realistic 3D rendering, walkthrough animations, and virtual reality previews of your projects.",
+                  "image": "/8s.avif",
+                  "icon": "eye",
+                  "badge": "3D VISUALIZATION",
+                  "headline": "Experience Your Architecture in Photorealistic Detail Before Construction",
+                  "paragraph1": "Immersive visualization bridges the gap between architectural blueprints and client imagination. We translate floor plans into hyper-realistic CGI renderings, sun simulation studies, and animated VR walkthroughs.",
+                  "paragraph2": "Whether pitching to investors or finalizing residential finishing materials, our detailed renders ensure full clarity on spatial scale, textures, and lighting atmosphere before breaking ground.",
+                  "expYears": "10+",
+                  "expLabel": "Years Experience",
+                  "expHeading": "Bringing Vision to Life with Visual Technology",
+                  "expDesc": "With over 10 years of architectural CGI experience, we craft cinematic renderings, day-to-night lighting passes, and interactive digital twins that assist approvals and design refinement.",
+                  "features": [
+                    { "title": "Photorealistic CGI Renderings", "desc": "High-resolution exterior and interior stills highlighting accurate material reflections and lighting.", "icon": "layers" },
+                    { "title": "Sun & Shadow Studies", "desc": "Accurate solar path simulations visualizing natural daylight penetration across every season.", "icon": "lightbulb" },
+                    { "title": "Cinematic Walkthroughs", "desc": "Smooth 4K camera fly-through animations capturing architectural flow and spatial proportions.", "icon": "package" },
+                    { "title": "Virtual Reality Tours", "desc": "Interactive 360-degree virtual reality walkthroughs allowing real-time spatial navigation.", "icon": "maximize" },
+                    { "title": "Material & Texture Previews", "desc": "Side-by-side digital comparisons of stones, woods, fabrics, and metallic finishes.", "icon": "plug" },
+                    { "title": "Marketing Ready Visuals", "desc": "Polished graphics and presentations crafted for municipal filings and real estate brochures.", "icon": "award" }
+                  ]
+                },
+                {
+                  "id": 9,
+                  "slug": "sustainable-eco-design",
+                  "title": "Sustainable & Eco Design",
+                  "desc": "Energy-efficient architecture, passive solar design, and environmentally conscious construction.",
+                  "image": "/93.avif",
+                  "icon": "leaf",
+                  "badge": "SUSTAINABLE DESIGN",
+                  "headline": "Build for the Future with Low-Carbon and Energy-Efficient Architecture",
+                  "paragraph1": "Sustainable design is the cornerstone of responsible modern construction. We integrate climate-responsive orientations, high-performance thermal insulation, and renewable energy systems to reduce your building's carbon footprint.",
+                  "paragraph2": "From net-zero residential prototypes to LEED-certified commercial developments, our holistic approach reduces lifelong utility expenses while providing clean, healthy indoor air quality.",
+                  "expYears": "12+",
+                  "expLabel": "Years Experience",
+                  "expHeading": "Designing Eco-Friendly Spaces for Generational Value",
+                  "expDesc": "With 12+ years of green building leadership, we specialize in passive cooling strategies, rainwater harvesting integration, solar microgrids, and locally sourced non-toxic building materials.",
+                  "features": [
+                    { "title": "Passive Solar Orientation", "desc": "Smart massing and window placements capturing natural winter warmth while blocking harsh summer heat.", "icon": "lightbulb" },
+                    { "title": "Thermal Envelope Optimization", "desc": "Airtight construction details and double/triple glazed low-E glass minimizing heating and cooling loads.", "icon": "layers" },
+                    { "title": "Renewable Energy Systems", "desc": "Seamless architectural integration of rooftop solar arrays, battery storage, and heat pump infrastructure.", "icon": "plug" },
+                    { "title": "Rainwater & Greywater Recovery", "desc": "Underground retention cisterns and filtration loops providing sustainable water for landscape and toilets.", "icon": "maximize" },
+                    { "title": "Eco-Friendly Materials", "desc": "Sourcing certified timber, recycled concrete, non-VOC paints, and carbon-negative masonry options.", "icon": "package" },
+                    { "title": "Green Building Certifications", "desc": "Guidance and design compliance for LEED, BREEAM, and national green building certification standards.", "icon": "award" }
                   ]
                 }
               ]
@@ -609,8 +657,8 @@
                   "category": "Traditional",
                   "title": "Classic Kitchen Remodel",
                   "slug": "classic-kitchen-remodel",
-                  "image": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1400&q=85",
-                  "heroImage": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1400&q=85",
+                  "image": "/p1.avif",
+                  "heroImage": "/p1.avif",
                   "badge": "PROJECT DETAIL",
                   "description": "A timeless culinary retreat blending classic shaker cabinetry, brass hardware, and warm architectural wood tones with high-end appliances.",
                   "meta": {
@@ -649,8 +697,8 @@
                   "category": "Small Kitchen",
                   "title": "Small Kitchen Makeover",
                   "slug": "small-kitchen-makeover",
-                  "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=85",
-                  "heroImage": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=85",
+                  "image": "/p2.avif",
+                  "heroImage": "/p2.avif",
                   "badge": "PROJECT DETAIL",
                   "description": "An intelligent compact makeover optimizing every vertical inch with ceiling-height cabinetry, reflective surfaces, and hidden storage systems.",
                   "meta": {
@@ -689,8 +737,8 @@
                   "category": "Luxury Kitchen",
                   "title": "Luxury Kitchen Design",
                   "slug": "luxury-kitchen-design",
-                  "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=85",
-                  "heroImage": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=85",
+                  "image": "/ps.avif",
+                  "heroImage": "/ps.avif",
                   "badge": "PROJECT DETAIL",
                   "description": "An architectural showpiece tailored with bookmatched Italian porcelain, walnut veneers, and climate-controlled sommelier wine storage.",
                   "meta": {
@@ -729,8 +777,8 @@
                   "category": "Modern Kitchen",
                   "title": "Open Concept Kitchen",
                   "slug": "open-concept-kitchen",
-                  "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85",
-                  "heroImage": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85",
+                  "image": "/ps.avif",
+                  "heroImage": "/ps.avif",
                   "badge": "PROJECT DETAIL",
                   "description": "A flowing open-concept culinary space connecting seamlessly with living and patio zones through generous natural lighting and cohesive textures.",
                   "meta": {
@@ -883,21 +931,45 @@
                   "quote": "Working with this design studio was a fantastic experience. They understood our vision perfectly and transformed our space into a beautiful, functional and modern home. Highly professional and creative team!",
                   "author": "Rohan Mehta",
                   "role": "Homeowner",
-                  "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80"
+                  "avatar": "/test.avif"
                 },
                 {
                   "id": 2,
                   "quote": "Exceptional creativity and attention to detail! The team delivered a space that is both stylish and practical. From concept to completion, the entire process was smooth and stress-free. Truly recommend them!",
                   "author": "Priya Sharma",
                   "role": "Interior Designer",
-                  "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80"
+                  "avatar": "/test2.avif"
                 },
                 {
                   "id": 3,
                   "quote": "The design studio exceeded our expectations with their innovative ideas and elegant designs. They created an office space that reflects our brand and culture perfectly. Great team, great results!",
                   "author": "Amit Verma",
                   "role": "Business Owner",
-                  "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80"
+                  "avatar": "/test3.avif"
+                },
+                {
+                  "id": 4,
+                  "name": "Sneha Kapoor",
+                  "author": "Sneha Kapoor",
+                  "role": "Villa Owner",
+                  "quote": "The architectural layout and lighting design exceeded all our expectations. Our luxury kitchen and living spaces feel twice as large and incredibly welcoming. Truly world-class craftsmanship!",
+                  "avatar": "/test4.avif"
+                },
+                {
+                  "id": 5,
+                  "name": "Vikram Singhania",
+                  "author": "Vikram Singhania",
+                  "role": "Commercial Client",
+                  "quote": "Superb project management and zero delays in execution. Their 3D visualization matched the real built office 100%. One of the most reliable and transparent design firms we have worked with.",
+                  "avatar": "/test5.avif"
+                },
+                {
+                  "id": 6,
+                  "name": "Ananya Joshi",
+                  "author": "Ananya Joshi",
+                  "role": "Homeowner",
+                  "quote": "Our kitchen and home renovation was effortless from day one. Every corner, custom cabinet, and stone finish was curated with perfection. We constantly receive compliments from guests!",
+                  "avatar": "/test6.avif"
                 }
               ]
             }

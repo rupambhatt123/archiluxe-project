@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
@@ -16,7 +16,6 @@ export default function ProjectsPage() {
   const projectsData = architecture?.Projects?.variants?.ArchiProjects1;
 
   const [activeCategory, setActiveCategory] = useState("All Projects");
-  const [currentPage, setCurrentPage] = useState(1);
 
   const filteredProjects =
     activeCategory === "All Projects"
@@ -70,7 +69,6 @@ export default function ProjectsPage() {
                 type="button"
                 onClick={() => {
                   setActiveCategory(cat);
-                  setCurrentPage(1);
                 }}
                 className={`px-4 sm:px-5 py-2 rounded-xl text-xs font-bold transition-all duration-200 border cursor-pointer ${
                   isActive
@@ -134,40 +132,6 @@ export default function ProjectsPage() {
             ))}
           </AnimatePresence>
         </motion.div>
-
-        {/* Pagination Bar */}
-        <div className="flex items-center justify-center gap-2 mt-10 sm:mt-12">
-          <button
-            type="button"
-            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-            className="w-9 h-9 rounded-xl bg-white hover:bg-[#faf7f2] text-[#14171c] border border-neutral-200/80 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer"
-          >
-            <ChevronLeft size={15} />
-          </button>
-
-          {[1, 2, 3].map((page) => (
-            <button
-              key={page}
-              type="button"
-              onClick={() => setCurrentPage(page)}
-              className={`w-9 h-9 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                currentPage === page
-                  ? "bg-[#b88344] text-white shadow-md shadow-[#b88344]/30"
-                  : "bg-white hover:bg-[#faf7f2] text-[#14171c] border border-neutral-200/80"
-              }`}
-            >
-              {page}
-            </button>
-          ))}
-
-          <button
-            type="button"
-            onClick={() => setCurrentPage((p) => Math.min(3, p + 1))}
-            className="w-9 h-9 rounded-xl bg-white hover:bg-[#faf7f2] text-[#14171c] border border-neutral-200/80 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer"
-          >
-            <ChevronRight size={15} />
-          </button>
-        </div>
       </section>
 
       <Footer />

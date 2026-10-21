@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import {
@@ -112,21 +111,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       />
 
       {/* 3. Main Content Container */}
-      <section className="pt-6 sm:pt-8 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-10 max-w-[1360px] mx-auto">
-        {/* Breadcrumb Trail Strip */}
-        <div className="flex items-center gap-2 text-xs sm:text-[13px] text-neutral-500 font-medium mb-6">
-          <Home size={14} className="text-neutral-600" />
-          <Link href="/" className="hover:text-[#b88344] transition-colors">
-            Home
-          </Link>
-          <span>&gt;</span>
-          <Link href="/projects" className="hover:text-[#b88344] transition-colors">
-            Our Projects
-          </Link>
-          <span>&gt;</span>
-          <span className="text-neutral-600 truncate">{projectTitle}</span>
-        </div>
-
+      <section className="pt-8 sm:pt-10 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-10 max-w-[1360px] mx-auto">
         {/* Top Hero Section: Left Text + Meta Card | Right Main Image */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-8 sm:mb-10">
           {/* Left Details */}
