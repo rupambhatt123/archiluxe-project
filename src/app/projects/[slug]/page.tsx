@@ -80,7 +80,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
   if (!project) return null;
 
-  const projectTitle = project.title || defaultProjectConfig?.titleLine1;
+  const projectTitle = project.title || defaultProjectConfig?.titleLine1 || "Project Details";
   const badgeTitle = project.badge || defaultProjectConfig?.badge;
   const spacedBadge = badgeTitle
     ? badgeTitle.toUpperCase().replace(/—/g, "").trim().split("").join(" ")
@@ -97,11 +97,12 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   return (
     <main className="min-h-screen bg-white text-[#14171c] font-sans selection:bg-[#b88344] selection:text-white">
       <PageBanner
-        title={pageBanner?.title}
+        title={projectTitle}
         bgImage={project.heroImage || project.image || pageBanner?.bgOverlayImage}
         breadcrumbs={[
-          { label: common?.homeLabel, href: "/" },
-          { label: pageBanner?.title },
+          { label: "Home", href: "/" },
+          { label: "Projects", href: "/projects" },
+          { label: projectTitle },
         ]}
       />
 
@@ -141,7 +142,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   </div>
                   <div className="min-w-0">
                     <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-wider">
-                      {projectMeta.typeLabel}
+                      {projectMeta.typeLabel || "Type"}
                     </p>
                     <p className="text-xs sm:text-[13.5px] font-bold text-[#14171c] truncate">
                       {projectMeta.type || project.category}
@@ -155,7 +156,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   </div>
                   <div className="min-w-0">
                     <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-wider">
-                      {projectMeta.completionTimeLabel}
+                      {projectMeta.completionTimeLabel || "Duration"}
                     </p>
                     <p className="text-xs sm:text-[13.5px] font-bold text-[#14171c] truncate">
                       {projectMeta.completionTime}
@@ -169,7 +170,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   </div>
                   <div className="min-w-0">
                     <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-wider">
-                      {projectMeta.locationLabel}
+                      {projectMeta.locationLabel || "Location"}
                     </p>
                     <p className="text-xs sm:text-[13.5px] font-bold text-[#14171c] truncate">
                       {projectMeta.location}
@@ -205,7 +206,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               >
                 <Image
                   src={imgUrl}
-                  alt={projectTitle}
+                  alt={`${projectTitle} Gallery ${idx + 1}`}
                   fill
                   unoptimized
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -220,7 +221,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             {overviewText && (
               <div className="lg:col-span-7 space-y-3">
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#14171c] tracking-tight">
-                  {project.overviewTitle || defaultProjectConfig?.overviewTitle}
+                  {project.overviewTitle || defaultProjectConfig?.overviewTitle || "Project Overview"}
                 </h2>
                 <p className="text-[13.5px] sm:text-[14px] text-neutral-600 leading-relaxed font-normal">
                   {overviewText}
@@ -231,7 +232,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             {keyHighlights && keyHighlights.length > 0 && (
               <div className="lg:col-span-5 bg-[#f4efe6] rounded-[24px] p-6 sm:p-7 border border-[#ebe3d5]">
                 <h3 className="text-base sm:text-lg font-bold text-[#14171c] mb-4 tracking-tight">
-                  {project.highlightsTitle || defaultProjectConfig?.highlightsTitle}
+                  {project.highlightsTitle || defaultProjectConfig?.highlightsTitle || "Key Highlights"}
                 </h3>
                 <div className="space-y-3">
                   {keyHighlights.map((highlight: string, idx: number) => (
@@ -253,7 +254,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             {features && features.length > 0 && (
               <div className="lg:col-span-7 space-y-5">
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#14171c] tracking-tight">
-                  {project.featuresTitle || defaultProjectConfig?.featuresTitle}
+                  {project.featuresTitle || defaultProjectConfig?.featuresTitle || "Features & Work Included"}
                 </h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 pt-1">
@@ -283,32 +284,32 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             {beforeAfter && beforeAfter.before && beforeAfter.after && (
               <div className="lg:col-span-5 bg-[#f4efe6] rounded-[24px] p-6 sm:p-7 border border-[#ebe3d5]">
                 <h3 className="text-base sm:text-lg font-bold text-[#14171c] mb-4 tracking-tight">
-                  {project.beforeAfterTitle || defaultProjectConfig?.beforeAfterTitle}
+                  {project.beforeAfterTitle || defaultProjectConfig?.beforeAfterTitle || "Before & After"}
                 </h3>
                 <div className="grid grid-cols-2 gap-3.5">
                   <div className="relative h-44 sm:h-52 rounded-2xl overflow-hidden bg-neutral-200 shadow-sm group">
                     <Image
                       src={beforeAfter.before}
-                      alt={beforeAfter.beforeLabel}
+                      alt={beforeAfter.beforeLabel || `${projectTitle} Before Remodel`}
                       fill
                       unoptimized
                       className="object-cover"
                     />
                     <span className="absolute bottom-2.5 left-2.5 bg-[#14171c]/85 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1 rounded-lg">
-                      {beforeAfter.beforeLabel}
+                      {beforeAfter.beforeLabel || "Before"}
                     </span>
                   </div>
 
                   <div className="relative h-44 sm:h-52 rounded-2xl overflow-hidden bg-neutral-200 shadow-sm group">
                     <Image
                       src={beforeAfter.after}
-                      alt={beforeAfter.afterLabel}
+                      alt={beforeAfter.afterLabel || `${projectTitle} After Remodel`}
                       fill
                       unoptimized
                       className="object-cover"
                     />
                     <span className="absolute bottom-2.5 left-2.5 bg-[#b88344] text-white text-[11px] font-bold px-3 py-1 rounded-lg shadow-sm">
-                      {beforeAfter.afterLabel}
+                      {beforeAfter.afterLabel || "After"}
                     </span>
                   </div>
                 </div>

@@ -126,8 +126,8 @@
               "titleLine1": "Inspired",
               "titleHighlight": "Spaces",
               "titleLine2": "for Life",
-              "description": "Creative architecture, functional design and sustainable solutions for a better tomorrow.",
-              "backgroundImage": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85",
+              "description": "Creative architecture, functional design and sustainable solutions fottps://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&r a better tomorrow.",
+              "backgroundImage": "/hero.png",
               "buttons": [
                 { "label": "Explore Our Projects", "href": "/projects" }
               ],
@@ -142,7 +142,7 @@
         "PageBanner": {
           "variants": {
             "ArchiPageBanner1": {
-              "bgOverlayImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80"
+              "bgOverlayImage": "/8s.avif"
             }
           }
         },
@@ -229,7 +229,7 @@
               "titleLine1": "Why Choose",
               "titleHighlight": "Archiluxe",
               "description": "We combine creativity, functionality and expertise to deliver architectural and interior spaces that exceed expectations.",
-              "centerImage": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+              "centerImage": "/w1.png",
               "button": {
                 "label": "Learn More",
                 "href": "/services"
@@ -544,7 +544,7 @@
               "description": "Explore our latest architectural and interior design projects that reflect creativity, functionality and modern living.",
               "projectName": "Serene Heights",
               "projectDesc": "A modern living space designed with elegant interiors, open layouts and natural light, creating a perfect blend of comfort and functionality.",
-              "bgImage": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85",
+              "bgImage": "/10oct.png",
               "meta": {
                 "clients": "Skyline Builders",
                 "area": "5,200 m²",
@@ -588,10 +588,10 @@
                   },
                   "overview": "Our team transformed this outdated kitchen into a modern, elegant, and highly functional space. We focused on open layouts, premium finishes, and smart storage to enhance both aesthetics and usability. The result is a bright, spacious kitchen that perfectly fits the homeowner's lifestyle.",
                   "gallery": [
-                    "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80"
+                    "/s8.avif",
+                    "/j2.avif",
+                    "/j3.jpg",
+                    "/k.jpg"
                   ],
                   "keyHighlights": [
                     "Custom cabinetry with smart storage solutions",
@@ -608,8 +608,8 @@
                     { "title": "Stylish Finishes", "desc": "Premium materials and textures for a contemporary look.", "icon": "sparkles" }
                   ],
                   "beforeAfter": {
-                    "before": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
-                    "after": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80"
+                    "before": "/p1.avif",
+                    "after": "/s7.avif"
                   }
                 },
                 {
@@ -628,10 +628,10 @@
                   },
                   "overview": "Designed for modern entertainers, this contemporary kitchen balances sleek minimalism with warm ambient textures. We integrated full-height storage pantry walls, an expansive waterfall preparation island, and concealed extraction systems.",
                   "gallery": [
-                    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80"
+                    "/s8.avif",
+                    "/j2.avif",
+                    "/j3.jpg",
+                    "/k.jpg"
                   ],
                   "keyHighlights": [
                     "Nero Marquina waterfall center island",
@@ -648,8 +648,8 @@
                     { "title": "Matte Anti-Fingerprint Finish", "desc": "Thermal laminate surfaces that resist smudges and daily wear.", "icon": "sparkles" }
                   ],
                   "beforeAfter": {
-                    "before": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
-                    "after": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80"
+                    "before": "/p1.avif",
+                    "after": "/s7.avif"
                   }
                 },
                 {
@@ -668,10 +668,10 @@
                   },
                   "overview": "This historic estate kitchen required a delicate balance between classic charm and high-performance functionality. We custom-built solid wood shaker cabinets, introduced a spacious fireclay farmhouse sink, and crafted antique brass lighting fixtures.",
                   "gallery": [
-                    "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80"
+                     "/s8.avif",
+                    "/j2.avif",
+                    "/j3.jpg",
+                    "/k.jpg"
                   ],
                   "keyHighlights": [
                     "Bespoke solid wood shaker millwork",
@@ -688,8 +688,8 @@
                     { "title": "Brass Artisan Accents", "desc": "Unlacquered brass fittings that age gracefully with time.", "icon": "sparkles" }
                   ],
                   "beforeAfter": {
-                    "before": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80",
-                    "after": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80"
+                    "before": "/p1.avif",
+                    "after": "/s7.avif"
                   }
                 },
                 {
@@ -708,10 +708,10 @@
                   },
                   "overview": "Facing a narrow galley footprint, our objective was to eliminate clutter and introduce maximum natural light. By replacing dark upper cabinets with reflective cream millwork, floating shelves, and continuous quartz surfaces, we doubled the perceived size of the room.",
                   "gallery": [
-                    "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80"
+                    "/s8.avif",
+                    "/j2.avif",
+                    "/j3.jpg",
+                    "/k.jpg"
                   ],
                   "keyHighlights": [
                     "Ceiling-height vertical storage maximization",
@@ -728,8 +728,8 @@
                     { "title": "Minimalist Hardware", "desc": "J-pull handles and integrated recessed profiles.", "icon": "sparkles" }
                   ],
                   "beforeAfter": {
-                    "before": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
-                    "after": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80"
+                    "before": "/j3.jpg",
+                    "after": "/k.jpg"
                   }
                 },
                 {
@@ -748,10 +748,10 @@
                   },
                   "overview": "Created for a prestigious penthouse residence, this kitchen stands at the crossroads of gastronomy and fine art. We curated bookmatched marble slabs, motorized acoustic pocket doors that conceal the scullery, and a cantilevered bar.",
                   "gallery": [
-                    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80"
+                   "/s8.avif",
+                    "/j2.avif",
+                    "/j3.jpg",
+                    "/k.jpg"
                   ],
                   "keyHighlights": [
                     "Custom American walnut vertical grain millwork",
@@ -768,8 +768,8 @@
                     { "title": "Precision Champagne Trims", "desc": "Custom brushed champagne gold kickplates and shadow reveals.", "icon": "sparkles" }
                   ],
                   "beforeAfter": {
-                    "before": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
-                    "after": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=600&q=80"
+                    "before": "/j3.jpg",
+                    "after": "/k.jpg"
                   }
                 },
                 {
