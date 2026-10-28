@@ -12,13 +12,10 @@ import {
   Eye,
   LucideIcon,
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
 import PageBanner from "@/components/PageBanner";
 import About from "@/components/About";
-import Footer from "@/components/Footer";
 import siteData from "@/data/websiteData.json";
 
-// Icon mapping for Why Choose Us features
 const iconMap: Record<string, LucideIcon> = {
   Users,
   Lightbulb,
@@ -31,7 +28,6 @@ const iconMap: Record<string, LucideIcon> = {
 export default function AboutPage() {
   const architecture = (siteData as any)?.categories?.Architecture?.sections;
 
-  // 100% Dynamic Section Extracts from JSON
   const pageBanner = architecture?.PageBanner?.variants?.ArchiPageBanner1;
   const timelineData = architecture?.Timeline?.variants?.ArchiTimeline1;
   const whyChooseUsData = architecture?.WhyChooseUs?.variants?.ArchiWhyChooseUs1;
@@ -40,7 +36,6 @@ export default function AboutPage() {
   const timelineItems: any[] = timelineData?.items || [];
   const whyFeaturesList: any[] = whyChooseUsData?.features || whyChooseUsData?.items || [];
 
-  // Robust Card Extraction: works with items, cards, or individual mission/vision keys
   const missionVisionCards: any[] =
     missionVisionData?.items ||
     missionVisionData?.cards ||
@@ -67,20 +62,14 @@ export default function AboutPage() {
 
   return (
     <main className="min-h-screen bg-[#faf8f5] text-[#14171c] font-sans selection:bg-[#b88344] selection:text-white">
-      {/* 1. Floating Header Navigation */}
-      <Navbar activePage="About Us" />
-
-      {/* 2. Dynamic Universal PageBanner */}
       <PageBanner
         title={pageBanner?.title || "About Us"}
         breadcrumbs={[{ label: pageBanner?.title || "About Us" }]}
         bgImage={pageBanner?.bgOverlayImage}
       />
 
-      {/* 3. Dynamic About Section */}
       <About />
 
-      {/* 4. 100% Dynamic Timeline / Journey Section */}
       {timelineData && (
         <section className="relative py-12 sm:py-16 md:py-20 bg-[#faf8f5] px-4 sm:px-6 md:px-12 overflow-hidden border-t border-neutral-200/60">
           <div
@@ -162,12 +151,10 @@ export default function AboutPage() {
         </section>
       )}
 
-      {/* 5. 100% Dynamic Why Choose Us Section */}
       {whyChooseUsData && (
         <section className="relative bg-[#fcfbf9] py-14 sm:py-18 px-4 sm:px-6 lg:px-10 overflow-hidden border-t border-neutral-200/60">
           <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
-            {/* Left Column: Heading & Content (Button Removed) */}
             <div className="lg:col-span-3 space-y-4 pr-0 lg:pr-2">
               <div className="flex items-center gap-2.5">
                 <span className="w-8 h-[2px] bg-[#b88344]" />
@@ -189,7 +176,6 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Center Column: Dynamic Highlight Image */}
             <div className="lg:col-span-4 relative flex justify-center py-2">
               <div className="relative w-full max-w-[390px] h-[450px] sm:h-[470px]">
                 <div className="absolute -top-3.5 -right-3.5 w-32 h-32 bg-[#b88344] rounded-2xl pointer-events-none z-0 shadow-sm" />
@@ -204,7 +190,6 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Right Column: Dynamic Features Grid */}
             <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3.5 sm:gap-4">
               {whyFeaturesList.map((item: any, idx: number) => {
                 const IconComponent =
@@ -242,7 +227,6 @@ export default function AboutPage() {
         </section>
       )}
 
-      {/* 6. 100% Dynamic Mission & Vision Section */}
       {missionVisionData && (
         <section className="relative overflow-hidden selection:bg-[#b88344] selection:text-white bg-[#faf8f5] border-t border-neutral-200/60">
           <div
@@ -295,7 +279,6 @@ export default function AboutPage() {
                       className="bg-white rounded-3xl p-5 sm:p-6 shadow-[0_4px_25px_rgba(0,0,0,0.04)] border border-neutral-100 flex flex-col justify-between"
                     >
                       <div>
-                        {/* Relative Wrapper without overflow-hidden so the icon badge is never cut */}
                         <div className="relative mb-7">
                           <div className="h-[200px] sm:h-[220px] rounded-2xl overflow-hidden bg-neutral-200">
                             <img
@@ -310,7 +293,6 @@ export default function AboutPage() {
                             />
                           </div>
 
-                          {/* Floating Circular Icon Badge */}
                           <div className="absolute -bottom-4 left-4 w-12 h-12 rounded-full bg-gradient-to-br from-[#c89858] to-[#9e6f33] text-white flex items-center justify-center shadow-lg shadow-[#b88344]/40 border-2 border-white z-20">
                             <CardIcon size={20} className="stroke-[2.2]" />
                           </div>
@@ -334,9 +316,6 @@ export default function AboutPage() {
           </div>
         </section>
       )}
-
-      {/* 7. Dynamic Footer */}
-      <Footer />
     </main>
   );
 }

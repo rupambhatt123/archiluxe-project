@@ -8,8 +8,6 @@ import {
   X,
   Maximize2,
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
 import siteData from "@/data/websiteData.json";
 
@@ -20,7 +18,6 @@ export default function GalleryPage() {
 
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
   const [mobileIndex, setMobileIndex] = useState(0);
 
   const filteredItems =
@@ -32,7 +29,6 @@ export default function GalleryPage() {
 
   useEffect(() => {
     setMobileIndex(0);
-    setCurrentPage(1);
   }, [activeCategory]);
 
   useEffect(() => {
@@ -58,31 +54,26 @@ export default function GalleryPage() {
 
   return (
     <main className="min-h-screen bg-[#faf8f5] text-[#14171c] font-sans selection:bg-[#b88344] selection:text-white">
-      {/* 1. Header Navigation */}
-      <Navbar activePage="Gallery" />
-
-      {/* 2. Universal Dynamic Page Banner */}
       <PageBanner
-        title={galleryData?.badge?.replace(/—/g, "").trim() || "Gallery"}
-        breadcrumbs={[{ label: "Gallery" }]}
+        title={galleryData?.badge?.replace(/—/g, "").trim()}
+        breadcrumbs={[{ label: galleryData?.badge?.replace(/—/g, "").trim() }]}
         bgImage={pageBanner?.bgOverlayImage}
       />
 
-      {/* 3. Gallery Grid Section */}
       <section className="pt-8 sm:pt-10 pb-16 sm:pb-24 px-4 sm:px-6 md:px-8 max-w-[1360px] mx-auto">
         <div className="text-center max-w-xl mx-auto mb-6 sm:mb-8">
           <div className="flex items-center justify-center gap-2 mb-1.5">
             <span className="w-7 h-[1.5px] bg-[#b88344]"></span>
             <span className="text-[11px] font-bold tracking-[0.24em] uppercase text-[#b88344]">
-              {galleryData?.badge?.replace(/—/g, "").trim() || "OUR GALLERY"}
+              {galleryData?.badge?.replace(/—/g, "").trim()}
             </span>
             <span className="w-7 h-[1.5px] bg-[#b88344]"></span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-[40px] font-black text-[#14171c] tracking-tight leading-[1.12]">
-            {galleryData?.titleLine1 || "Explore Our"}{" "}
+            {galleryData?.titleLine1}{" "}
             <span className="text-[#b88344]">
-              {galleryData?.titleHighlight || "Kitchen Gallery"}
+              {galleryData?.titleHighlight}
             </span>
           </h2>
 
@@ -91,7 +82,6 @@ export default function GalleryPage() {
           </p>
         </div>
 
-        {/* Category Filter Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-7 sm:mb-9">
           {galleryData?.categories?.map((cat: string) => {
             const isActive = activeCategory === cat;
@@ -112,7 +102,6 @@ export default function GalleryPage() {
           })}
         </div>
 
-        {/* Mobile View Slider */}
         <div className="block sm:hidden">
           {filteredItems.length > 0 && (
             <div className="relative">
@@ -157,7 +146,6 @@ export default function GalleryPage() {
           )}
         </div>
 
-        {/* Desktop / Tablet Grid */}
         <motion.div
           layout
           className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-4"
@@ -195,43 +183,8 @@ export default function GalleryPage() {
             ))}
           </AnimatePresence>
         </motion.div>
-
-        {/* Pagination */}
-        <div className="hidden sm:flex items-center justify-center gap-2 mt-8 sm:mt-10">
-          <button
-            type="button"
-            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-            className="w-9 h-9 rounded-xl bg-white hover:bg-[#faf7f2] text-[#14171c] border border-neutral-200/80 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer"
-          >
-            <ChevronLeft size={15} />
-          </button>
-
-          {[1, 2, 3, 4].map((page) => (
-            <button
-              key={page}
-              type="button"
-              onClick={() => setCurrentPage(page)}
-              className={`w-9 h-9 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                currentPage === page
-                  ? "bg-[#b88344] text-white shadow-md shadow-[#b88344]/30"
-                  : "bg-white hover:bg-[#faf7f2] text-[#14171c] border border-neutral-200/80"
-              }`}
-            >
-              {page}
-            </button>
-          ))}
-
-          <button
-            type="button"
-            onClick={() => setCurrentPage((p) => Math.min(4, p + 1))}
-            className="w-9 h-9 rounded-xl bg-white hover:bg-[#faf7f2] text-[#14171c] border border-neutral-200/80 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer"
-          >
-            <ChevronRight size={15} />
-          </button>
-        </div>
       </section>
 
-      {/* Lightbox Modal */}
       <AnimatePresence>
         {selectedImageIndex !== null && filteredItems[selectedImageIndex] && (
           <motion.div
@@ -303,9 +256,6 @@ export default function GalleryPage() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* 4. Footer */}
-      <Footer />
     </main>
   );
 }

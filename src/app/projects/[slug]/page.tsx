@@ -13,18 +13,16 @@ import {
   Sparkles,
   LucideIcon,
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
 import rawSiteData from "@/data/websiteData.json";
 
 const siteData = rawSiteData as any;
-const common = siteData.common || {};
-const siteName = common.siteName;
+const common = siteData.common;
+const siteName = common?.siteName;
 
 const architecture = siteData.categories?.Architecture?.sections;
 const pageBanner = architecture?.PageBanner?.variants?.ArchiPageBanner1;
-const projectsList: any[] = architecture?.Projects?.variants?.ArchiProjects1?.items || [];
+const projectsList: any[] = architecture?.Projects?.variants?.ArchiProjects1?.items;
 const defaultProjectConfig = architecture?.ProjectDetails?.variants?.ArchiProjectDetails1;
 
 const iconMap: Record<string, LucideIcon> = {
@@ -41,7 +39,7 @@ function normalizeSlug(str: string = "") {
 }
 
 function findProjectBySlug(targetSlug: string) {
-  if (!targetSlug) return null;
+  if (!targetSlug || !projectsList) return null;
   const cleanTarget = normalizeSlug(targetSlug);
 
   return (
@@ -54,6 +52,7 @@ function findProjectBySlug(targetSlug: string) {
 }
 
 export async function generateStaticParams() {
+  if (!projectsList) return [];
   return projectsList.map((p: any) => ({
     slug: p.slug || normalizeSlug(p.title),
   }));
@@ -68,7 +67,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const matchedProject = findProjectBySlug(slug) || defaultProjectConfig;
 
   return {
-    title: `${matchedProject?.title || "Project Details"} | ${siteName}`,
+    title: `${matchedProject?.title} | ${siteName}`,
     description: matchedProject?.description || matchedProject?.overview,
   };
 }
@@ -97,24 +96,17 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen bg-white text-[#14171c] font-sans selection:bg-[#b88344] selection:text-white">
-      {/* 1. Header Navigation */}
-      <Navbar activePage="Projects" />
-
-      {/* 2. Page Banner */}
       <PageBanner
-        title={pageBanner?.title || "Project Details"}
+        title={pageBanner?.title}
         bgImage={project.heroImage || project.image || pageBanner?.bgOverlayImage}
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Project Details" },
+          { label: common?.homeLabel, href: "/" },
+          { label: pageBanner?.title },
         ]}
       />
 
-      {/* 3. Main Content Container */}
       <section className="pt-8 sm:pt-10 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-10 max-w-[1360px] mx-auto">
-        {/* Top Hero Section: Left Text + Meta Card | Right Main Image */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-8 sm:mb-10">
-          {/* Left Details */}
           <div className="lg:col-span-6 space-y-4">
             {spacedBadge && (
               <span className="text-[11px] font-bold tracking-[0.26em] text-[#b88344] block">
@@ -141,7 +133,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               </p>
             )}
 
-            {/* 3-Column Pill Meta Box */}
             {projectMeta && (
               <div className="bg-[#f4efe6] rounded-2xl p-4 sm:p-5 grid grid-cols-3 gap-3 border border-[#ebe3d5] mt-6">
                 <div className="flex items-center gap-3">
@@ -150,7 +141,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   </div>
                   <div className="min-w-0">
                     <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-wider">
-                      Project Type
+                      {projectMeta.typeLabel}
                     </p>
                     <p className="text-xs sm:text-[13.5px] font-bold text-[#14171c] truncate">
                       {projectMeta.type || project.category}
@@ -164,7 +155,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   </div>
                   <div className="min-w-0">
                     <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-wider">
-                      Completion Time
+                      {projectMeta.completionTimeLabel}
                     </p>
                     <p className="text-xs sm:text-[13.5px] font-bold text-[#14171c] truncate">
                       {projectMeta.completionTime}
@@ -178,7 +169,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   </div>
                   <div className="min-w-0">
                     <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-wider">
-                      Location
+                      {projectMeta.locationLabel}
                     </p>
                     <p className="text-xs sm:text-[13.5px] font-bold text-[#14171c] truncate">
                       {projectMeta.location}
@@ -189,7 +180,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             )}
           </div>
 
-          {/* Right Main Showcase Image */}
           {(project.heroImage || project.image) && (
             <div className="lg:col-span-6">
               <div className="relative w-full h-[320px] sm:h-[380px] md:h-[420px] rounded-[28px] overflow-hidden shadow-sm bg-neutral-100">
@@ -206,7 +196,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           )}
         </div>
 
-        {/* 4-Image Horizontal Grid */}
         {projectGallery && projectGallery.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 sm:gap-4 mb-10 sm:mb-12">
             {projectGallery.slice(0, 4).map((imgUrl: string, idx: number) => (
@@ -216,7 +205,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               >
                 <Image
                   src={imgUrl}
-                  alt={`Gallery Image ${idx + 1}`}
+                  alt={projectTitle}
                   fill
                   unoptimized
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -226,14 +215,12 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
         )}
 
-        {/* Mid Row: Project Overview (Left) & Key Highlights (Right) */}
         {(overviewText || (keyHighlights && keyHighlights.length > 0)) && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-10 sm:mb-12">
-            {/* Project Overview */}
             {overviewText && (
               <div className="lg:col-span-7 space-y-3">
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#14171c] tracking-tight">
-                  Project Overview
+                  {project.overviewTitle || defaultProjectConfig?.overviewTitle}
                 </h2>
                 <p className="text-[13.5px] sm:text-[14px] text-neutral-600 leading-relaxed font-normal">
                   {overviewText}
@@ -241,11 +228,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               </div>
             )}
 
-            {/* Key Highlights Card */}
             {keyHighlights && keyHighlights.length > 0 && (
               <div className="lg:col-span-5 bg-[#f4efe6] rounded-[24px] p-6 sm:p-7 border border-[#ebe3d5]">
                 <h3 className="text-base sm:text-lg font-bold text-[#14171c] mb-4 tracking-tight">
-                  Key Highlights
+                  {project.highlightsTitle || defaultProjectConfig?.highlightsTitle}
                 </h3>
                 <div className="space-y-3">
                   {keyHighlights.map((highlight: string, idx: number) => (
@@ -262,14 +248,12 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
         )}
 
-        {/* Bottom Row: Features & Work Included (Left) & Before & After (Right) */}
         {((features && features.length > 0) || beforeAfter) && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            {/* Left: Features & Work Included 2-Col Grid */}
             {features && features.length > 0 && (
               <div className="lg:col-span-7 space-y-5">
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#14171c] tracking-tight">
-                  Features &amp; Work Included
+                  {project.featuresTitle || defaultProjectConfig?.featuresTitle}
                 </h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 pt-1">
@@ -296,36 +280,35 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               </div>
             )}
 
-            {/* Right: Before & After Card */}
             {beforeAfter && beforeAfter.before && beforeAfter.after && (
               <div className="lg:col-span-5 bg-[#f4efe6] rounded-[24px] p-6 sm:p-7 border border-[#ebe3d5]">
                 <h3 className="text-base sm:text-lg font-bold text-[#14171c] mb-4 tracking-tight">
-                  Before &amp; After
+                  {project.beforeAfterTitle || defaultProjectConfig?.beforeAfterTitle}
                 </h3>
                 <div className="grid grid-cols-2 gap-3.5">
                   <div className="relative h-44 sm:h-52 rounded-2xl overflow-hidden bg-neutral-200 shadow-sm group">
                     <Image
                       src={beforeAfter.before}
-                      alt="Before Remodel"
+                      alt={beforeAfter.beforeLabel}
                       fill
                       unoptimized
                       className="object-cover"
                     />
                     <span className="absolute bottom-2.5 left-2.5 bg-[#14171c]/85 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1 rounded-lg">
-                      Before
+                      {beforeAfter.beforeLabel}
                     </span>
                   </div>
 
                   <div className="relative h-44 sm:h-52 rounded-2xl overflow-hidden bg-neutral-200 shadow-sm group">
                     <Image
                       src={beforeAfter.after}
-                      alt="After Remodel"
+                      alt={beforeAfter.afterLabel}
                       fill
                       unoptimized
                       className="object-cover"
                     />
                     <span className="absolute bottom-2.5 left-2.5 bg-[#b88344] text-white text-[11px] font-bold px-3 py-1 rounded-lg shadow-sm">
-                      After
+                      {beforeAfter.afterLabel}
                     </span>
                   </div>
                 </div>
@@ -334,9 +317,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
         )}
       </section>
-
-      {/* 4. Footer */}
-      <Footer />
     </main>
   );
 }

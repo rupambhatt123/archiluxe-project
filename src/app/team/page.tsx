@@ -1,8 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
 import siteData from "@/data/websiteData.json";
 
@@ -43,77 +41,68 @@ function TwitterIcon({ className }: { className?: string }) {
 }
 
 export default function TeamPage() {
+  const common = (siteData as any)?.common;
   const architecture = (siteData as any)?.categories?.Architecture?.sections;
   const pageBanner = architecture?.PageBanner?.variants?.ArchiPageBanner1;
   const teamSection = architecture?.Team?.variants?.ArchiTeam1;
 
-  const members: any[] = teamSection?.members || [];
-
-  const bannerTitle =
-    teamSection?.badge?.replace(/—/g, "").trim() ||
-    pageBanner?.title ||
-    "Our Team";
+  const members: any[] = teamSection?.members;
+  const bannerTitle = teamSection?.badge?.replace(/—/g, "").trim() || pageBanner?.title;
 
   return (
     <main className="min-h-screen bg-[#faf8f5] text-[#14171c] font-sans selection:bg-[#b88344] selection:text-white">
-      {/* 1. Header Navigation */}
-      <Navbar activePage="Our Team" />
-
-      {/* 2. 100% Dynamic PageBanner */}
       <PageBanner
         title={bannerTitle}
         breadcrumbs={[{ label: bannerTitle }]}
         bgImage={pageBanner?.bgOverlayImage}
       />
 
-      {/* 3. Team Grid Section */}
       <section className="pt-8 sm:pt-10 pb-16 sm:pb-24 px-4 sm:px-6 md:px-8 max-w-[1360px] mx-auto relative">
         <div className="text-center max-w-xl mx-auto mb-7 sm:mb-9">
           <div className="flex items-center justify-center gap-2 mb-1.5">
             <span className="w-7 h-[1.5px] bg-[#b88344]"></span>
             <span className="text-[11px] font-bold tracking-[0.24em] uppercase text-[#b88344]">
-              {teamSection?.badge?.replace(/—/g, "").trim() || "OUR TEAM"}
+              {teamSection?.badge?.replace(/—/g, "").trim()}
             </span>
             <span className="w-7 h-[1.5px] bg-[#b88344]"></span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-[40px] font-black text-[#14171c] tracking-tight leading-[1.12]">
-            {teamSection?.titleLine1 || "Meet Our"}{" "}
+            {teamSection?.titleLine1}{" "}
             <span className="text-[#b88344]">
-              {teamSection?.titleHighlight || "Creative Team"}
+              {teamSection?.titleHighlight}
             </span>
           </h2>
 
           <p className="text-xs sm:text-[13px] text-neutral-600 font-normal leading-relaxed mt-2">
-            {teamSection?.description ||
-              "A dedicated team of designers, planners and project experts working together to create beautiful and functional spaces for your home."}
+            {teamSection?.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-          {members.map((member: any, idx: number) => {
+          {members?.map((member: any, idx: number) => {
             const socials = [
               {
                 icon: LinkedinIcon,
                 label: "LinkedIn",
-                url: member.socials?.linkedin || "https://linkedin.com",
+                url: member.socials?.linkedin || common?.socialLinks?.linkedin,
               },
               {
                 icon: InstagramIcon,
                 label: "Instagram",
-                url: member.socials?.instagram || "https://instagram.com",
+                url: member.socials?.instagram || common?.socialLinks?.instagram,
               },
               {
                 icon: FacebookIcon,
                 label: "Facebook",
-                url: member.socials?.facebook || "https://facebook.com",
+                url: member.socials?.facebook || common?.socialLinks?.facebook,
               },
               {
                 icon: TwitterIcon,
                 label: "Twitter",
-                url: member.socials?.twitter || "https://twitter.com",
+                url: member.socials?.twitter || common?.socialLinks?.twitter,
               },
-            ];
+            ].filter((s) => Boolean(s.url));
 
             return (
               <motion.div
@@ -154,32 +143,31 @@ export default function TeamPage() {
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-center gap-2 pt-3 pb-0.5">
-                    {socials.map((item) => {
-                      const IconComponent = item.icon;
-                      return (
-                        <a
-                          key={item.label}
-                          href={item.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${member.name} ${item.label}`}
-                          className="w-7 h-7 rounded-full bg-[#fbf5eb] text-[#b88344] hover:bg-[#b88344] hover:text-white flex items-center justify-center transition-colors cursor-pointer"
-                        >
-                          <IconComponent className="w-3.5 h-3.5" />
-                        </a>
-                      );
-                    })}
-                  </div>
+                  {socials.length > 0 && (
+                    <div className="flex items-center justify-center gap-2 pt-3 pb-0.5">
+                      {socials.map((item) => {
+                        const IconComponent = item.icon;
+                        return (
+                          <a
+                            key={item.label}
+                            href={item.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${member.name} ${item.label}`}
+                            className="w-7 h-7 rounded-full bg-[#fbf5eb] text-[#b88344] hover:bg-[#b88344] hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+                          >
+                            <IconComponent className="w-3.5 h-3.5" />
+                          </a>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
               </motion.div>
             );
           })}
         </div>
       </section>
-
-      {/* 4. Footer */}
-      <Footer />
     </main>
   );
 }

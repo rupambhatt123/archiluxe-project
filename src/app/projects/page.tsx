@@ -4,8 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
 import siteData from "@/data/websiteData.json";
 
@@ -26,31 +24,26 @@ export default function ProjectsPage() {
 
   return (
     <main className="min-h-screen bg-[#faf8f5] text-[#14171c] font-sans selection:bg-[#b88344] selection:text-white">
-      {/* 1. Header Navigation */}
-      <Navbar activePage="Projects" />
-
-      {/* 2. Standardized High-Impact PageBanner */}
       <PageBanner
-        title={projectsData?.badge?.replace(/—/g, "").trim() || "Our Projects"}
-        breadcrumbs={[{ label: "Projects" }]}
+        title={projectsData?.badge?.replace(/—/g, "").trim()}
+        breadcrumbs={[{ label: projectsData?.badge?.replace(/—/g, "").trim() }]}
         bgImage={pageBanner?.bgOverlayImage}
       />
 
-      {/* 3. PROJECTS SHOWCASE & FILTER PILLS */}
       <section className="pt-8 sm:pt-10 pb-16 sm:pb-24 px-4 sm:px-6 md:px-8 max-w-[1360px] mx-auto">
         <div className="text-center max-w-xl mx-auto mb-7 sm:mb-9">
           <div className="flex items-center justify-center gap-2 mb-1.5">
             <span className="w-7 h-[1.5px] bg-[#b88344]"></span>
             <span className="text-[11px] font-bold tracking-[0.24em] uppercase text-[#b88344]">
-              {projectsData?.badge?.replace(/—/g, "").trim() || "OUR PROJECTS"}
+              {projectsData?.badge?.replace(/—/g, "").trim()}
             </span>
             <span className="w-7 h-[1.5px] bg-[#b88344]"></span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-[40px] font-black text-[#14171c] tracking-tight leading-[1.12]">
-            {projectsData?.titleLine1 || "Crafting"}{" "}
+            {projectsData?.titleLine1}{" "}
             <span className="text-[#b88344]">
-              {projectsData?.titleHighlight || "Architectural Visions"}
+              {projectsData?.titleHighlight}
             </span>
           </h2>
 
@@ -59,7 +52,6 @@ export default function ProjectsPage() {
           </p>
         </div>
 
-        {/* Filter Pills */}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-8 sm:mb-10">
           {projectsData?.categories?.map((cat: string) => {
             const isActive = activeCategory === cat;
@@ -82,7 +74,6 @@ export default function ProjectsPage() {
           })}
         </div>
 
-        {/* Responsive Grid */}
         <motion.div
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
@@ -133,8 +124,6 @@ export default function ProjectsPage() {
           </AnimatePresence>
         </motion.div>
       </section>
-
-      <Footer />
     </main>
   );
 }

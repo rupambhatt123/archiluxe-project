@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import PageBanner from "@/components/PageBanner";
 import rawSiteData from "@/data/websiteData.json";
 import {
@@ -17,12 +15,12 @@ import {
 } from "lucide-react";
 
 const siteData = rawSiteData as any;
-const common = siteData.common || {};
-const siteName = common.siteName;
+const common = siteData.common;
+const siteName = common?.siteName;
 
 const architecture = siteData.categories?.Architecture?.sections;
 const servicesSection = architecture?.Services?.variants?.ArchiServices1;
-const servicesList: any[] = servicesSection?.items || servicesSection?.services || [];
+const servicesList: any[] = servicesSection?.items || servicesSection?.services;
 const pageBanner = architecture?.PageBanner?.variants?.ArchiPageBanner1;
 
 const iconMap: Record<string, LucideIcon> = {
@@ -39,7 +37,7 @@ function normalizeSlug(str: string = "") {
 }
 
 function findServiceBySlug(targetSlug: string) {
-  if (!targetSlug) return null;
+  if (!targetSlug || !servicesList) return null;
   const cleanTarget = normalizeSlug(targetSlug);
 
   return (
@@ -52,6 +50,7 @@ function findServiceBySlug(targetSlug: string) {
 }
 
 export async function generateStaticParams() {
+  if (!servicesList) return [];
   return servicesList.map((srv: any) => ({
     slug: srv.slug || normalizeSlug(srv.title),
   }));
@@ -89,30 +88,23 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const expHeading = currentService.expHeading;
   const expDesc = currentService.expDesc;
 
-  const features: any[] = currentService.features || [];
+  const features: any[] = currentService.features;
 
   return (
     <main className="min-h-screen bg-[#faf8f5] text-[#14171c] selection:bg-[#b88344] selection:text-white">
-      {/* 1. Navbar */}
-      <Navbar activePage="Services" />
-
-      {/* 2. Page Banner */}
       <PageBanner
-        title={pageBanner?.title || "Service Details"}
+        title={pageBanner?.title}
         bgImage={pageBanner?.bgOverlayImage || currentService.image}
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Service Details" },
+          { label: common?.homeLabel, href: "/" },
+          { label: pageBanner?.title },
         ]}
       />
 
-      {/* 3. Main Body Container */}
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          
-          {/* ================= LEFT SIDEBAR ================= */}
           <aside className="lg:col-span-3 space-y-2.5 lg:sticky lg:top-28 pt-1">
-            {servicesList.map((item: any, idx: number) => {
+            {servicesList?.map((item: any, idx: number) => {
               const itemSlug = item.slug || normalizeSlug(item.title);
               const isActive = normalizeSlug(itemSlug) === normalizeSlug(slug);
 
@@ -135,13 +127,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             })}
           </aside>
 
-          {/* ================= RIGHT MAIN CONTENT ================= */}
           <div className="lg:col-span-9 space-y-8 sm:space-y-10 pt-1">
-            
-            {/* Top Row: Left Content + Right Image */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
-              
-              {/* Left Column: Badge, Title & Paragraphs */}
               <div className="md:col-span-7 space-y-3.5">
                 {badgeTitle && (
                   <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-[#b88344] block">
@@ -166,7 +153,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 )}
               </div>
 
-              {/* Right Column: Dynamic Image */}
               {currentService.image && (
                 <div className="md:col-span-5">
                   <div className="relative w-full h-[280px] sm:h-[320px] md:h-[350px] rounded-3xl overflow-hidden shadow-sm bg-neutral-200 border border-neutral-100">
@@ -181,10 +167,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   </div>
                 </div>
               )}
-
             </div>
 
-            {/* Middle Row: Experience Highlight Card (Sirf tab render hoga jab JSON me exp details hon) */}
             {(expYears || expHeading) && (
               <div className="bg-[#f4f2ec] rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
                 {expYears && (
@@ -215,8 +199,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </div>
             )}
 
-            {/* Bottom Row: Features Grid (Sirf JSON items render honge) */}
-            {features.length > 0 && (
+            {features && features.length > 0 && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-7 pt-2">
                 {features.map((feat: any, idx: number) => {
                   const IconComponent = iconMap[feat.icon] || Package;
@@ -240,14 +223,9 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 })}
               </div>
             )}
-
           </div>
-
         </div>
       </div>
-
-      {/* 4. Footer */}
-      <Footer />
     </main>
   );
 }
