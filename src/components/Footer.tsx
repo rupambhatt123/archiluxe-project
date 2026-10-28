@@ -140,11 +140,11 @@ export default function Footer({
           <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="inline-block">
               <img
-                src="/l2.png"
-                alt="Archiluxe Architecture Firm"
-                className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain mix-blend-screen"
+                src={footerData?.logoImage || "/l2.webp"}
+                alt={siteData.common?.siteName || "Archiluxe Architecture Firm"}
+                className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = "/l1.png";
+                  (e.target as HTMLImageElement).src = "/l1.webp";
                 }}
               />
             </Link>

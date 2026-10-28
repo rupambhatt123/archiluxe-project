@@ -23,7 +23,7 @@ export default function Banner({
   return (
     <section className="relative w-full min-h-[100dvh] md:min-h-[640px] md:h-[90vh] md:max-h-[820px] overflow-hidden bg-[#0d0f12] text-[#14171c] selection:bg-[#b88344] selection:text-white flex flex-col justify-between">
       <img
-        src="/hero.png"
+        src="/hero.webp"
         alt={data.titleHighlight || "Modern Architecture"}
         className="absolute inset-0 w-full h-full object-cover object-center"
       />

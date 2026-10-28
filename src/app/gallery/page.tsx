@@ -55,8 +55,8 @@ export default function GalleryPage() {
   return (
     <main className="min-h-screen bg-[#faf8f5] text-[#14171c] font-sans selection:bg-[#b88344] selection:text-white">
       <PageBanner
-        title={galleryData?.badge?.replace(/—/g, "").trim()}
-        breadcrumbs={[{ label: galleryData?.badge?.replace(/—/g, "").trim() }]}
+        title="Gallery"
+        breadcrumbs={[{ label: "Gallery" }]}
         bgImage={pageBanner?.bgOverlayImage}
       />
 

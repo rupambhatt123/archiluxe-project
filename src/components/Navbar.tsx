@@ -9,7 +9,9 @@ import rawSiteData from "@/data/websiteData.json";
 const siteData = rawSiteData as any;
 const common = siteData.common;
 const architecture = siteData.categories?.Architecture?.sections;
-const navData = architecture?.Navbar?.variants?.ArchiNavbar1;
+const navData =
+  architecture?.Header?.variants?.ArchiHeader1 ||
+  architecture?.Navbar?.variants?.ArchiNavbar1;
 const projectsList: any[] = architecture?.Projects?.variants?.ArchiProjects1?.items || [];
 
 function normalizeSlug(str: string = "") {
@@ -19,6 +21,16 @@ function normalizeSlug(str: string = "") {
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const ctaText =
+    typeof navData?.ctaButton === "object"
+      ? navData?.ctaButton?.text
+      : navData?.ctaButton || "Contact Us";
+
+  const ctaPath =
+    typeof navData?.ctaButton === "object"
+      ? navData?.ctaButton?.path
+      : "/contact";
 
   const projectDropdownItems = [
     { label: "All Projects", href: "/projects" },
@@ -125,14 +137,14 @@ export default function Navbar() {
 
         <div className="hidden lg:flex items-center">
           <Link
-            href="/contact"
+            href={ctaPath}
             className={`px-5 py-2.5 rounded-full text-xs sm:text-[13px] font-bold transition-all duration-200 flex items-center gap-1.5 shadow-sm ${
-              pathname.startsWith("/contact")
+              pathname.startsWith(ctaPath)
                 ? "bg-[#9e6f33] text-white"
                 : "bg-[#b88344] hover:bg-[#a07136] text-white hover:scale-[1.02]"
             }`}
           >
-            <span>{navData?.ctaButton || "Contact Us"}</span>
+            <span>{ctaText}</span>
             <ArrowRight size={14} />
           </Link>
         </div>
@@ -203,11 +215,11 @@ export default function Navbar() {
 
           <div className="pt-2 border-t border-neutral-100">
             <Link
-              href="/contact"
+              href={ctaPath}
               onClick={() => setMobileMenuOpen(false)}
               className="w-full bg-[#b88344] text-white px-4 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5"
             >
-              <span>{navData?.ctaButton || "Contact Us"}</span>
+              <span>{ctaText}</span>
               <ArrowRight size={14} />
             </Link>
           </div>

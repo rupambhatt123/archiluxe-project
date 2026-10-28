@@ -85,6 +85,7 @@
         "Header": {
           "variants": {
             "ArchiHeader1": {
+              "logoImage": "/l1.webp",
               "logoText": "Archi",
               "logoHighlight": "luxe",
               "tagline": "ARCHITECTURE FIRM",
@@ -126,8 +127,8 @@
               "titleLine1": "Inspired",
               "titleHighlight": "Spaces",
               "titleLine2": "for Life",
-              "description": "Creative architecture, functional design and sustainable solutions fottps://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&r a better tomorrow.",
-              "backgroundImage": "/hero.png",
+              "description": "Creative architecture, functional design and sustainable solutions for a better tomorrow.",
+              "backgroundImage": "/hero.webp",
               "buttons": [
                 { "label": "Explore Our Projects", "href": "/projects" }
               ],
@@ -142,7 +143,7 @@
         "PageBanner": {
           "variants": {
             "ArchiPageBanner1": {
-              "bgOverlayImage": "/8s.avif"
+              "bgOverlayImage": "/8s.webp"
             }
           }
         },
@@ -153,7 +154,7 @@
               "titleLine1": "Foundations of",
               "titleHighlight": "ArchiLuxe",
               "subtitle": "Crafting Architectural Designs and Masterpieces Interior Wonders",
-              "mainImage": "bb.webp",
+              "mainImage": "/bb.webp",
               "points": [
                 {
                   "id": "01",
@@ -199,7 +200,7 @@
                   "title": "Founding Year",
                   "subtitle": "Inception:",
                   "description": "Florz was founded by a team of flooring enthusiasts with a vision to redefine flooring solutions for homeowners and businesses alike. Their goal was to combine quality materials with exceptional service.",
-                  "image": "/j1.avif",
+                  "image": "/j1.webp",
                   "imageOnLeft": true
                 },
                 {
@@ -207,7 +208,7 @@
                   "title": "Initial Launch",
                   "subtitle": "Business Setup:",
                   "description": "Florz established its headquarters in New York, partnering with top manufacturers to offer a diverse range of flooring products, including hardwood, laminate, vinyl, and tile.",
-                  "image": "/j2.avif",
+                  "image": "/j2.webp",
                   "imageOnLeft": false
                 },
                 {
@@ -215,7 +216,7 @@
                   "title": "Growth and Community Recognition",
                   "subtitle": "Market Expansion:",
                   "description": "As demand grew, Florz expanded its product offerings to include eco-friendly flooring options, catering to environmentally conscious consumers.",
-                  "image": "/aa.jpg",
+                  "image": "/aa.webp",
                   "imageOnLeft": true
                 }
               ]
@@ -229,7 +230,7 @@
               "titleLine1": "Why Choose",
               "titleHighlight": "Archiluxe",
               "description": "We combine creativity, functionality and expertise to deliver architectural and interior spaces that exceed expectations.",
-              "centerImage": "/w1.png",
+              "centerImage": "/w1.webp",
               "button": {
                 "label": "Learn More",
                 "href": "/services"
@@ -256,26 +257,26 @@
                 {
                   "title": "Our Mission",
                   "description": "To create innovative, functional and sustainable architectural and interior spaces that enhance lives and bring our clients' vision to reality through thoughtful design and expert execution.",
-                  "image": "/m1.avif",
+                  "image": "/m1.webp",
                   "icon": "target"
                 },
                 {
                   "title": "Our Vision",
                   "description": "To be a leading architecture and design firm recognized for creating inspiring spaces, setting new benchmarks in design excellence and contributing to a more sustainable and beautiful built environment.",
-                  "image": "/m2.jpg",
+                  "image": "/m2.webp",
                   "icon": "eye"
                 }
               ],
               "mission": {
                 "title": "Our Mission",
                 "description": "To create innovative, functional and sustainable architectural and interior spaces that enhance lives and bring our clients' vision to reality through thoughtful design and expert execution.",
-                "image": "/m1.avif",
+                "image": "/m1.webp",
                 "icon": "target"
               },
               "vision": {
                 "title": "Our Vision",
                 "description": "To be a leading architecture and design firm recognized for creating inspiring spaces, setting new benchmarks in design excellence and contributing to a more sustainable and beautiful built environment.",
-                "image": "/m2.avif",
+                "image": "/m2.webp",
                 "icon": "eye"
               }
             }
@@ -294,7 +295,7 @@
                   "slug": "residential-architecture",
                   "title": "Residential Architecture",
                   "desc": "Thoughtfully designed homes that blend comfort, style and functionality.",
-                  "image": "/s1.jpg",
+                  "image": "/s1.webp",
                   "icon": "home",
                   "badge": "RESIDENTIAL ARCHITECTURE",
                   "headline": "Design a Bespoke Home Crafted for Modern Elegance",
@@ -318,7 +319,7 @@
                   "slug": "commercial-architecture",
                   "title": "Commercial Architecture",
                   "desc": "Innovative commercial spaces that enhance productivity and brand value.",
-                  "image": "/s2.avif",
+                  "image": "/s2.webp",
                   "icon": "building2",
                   "badge": "COMMERCIAL ARCHITECTURE",
                   "headline": "Build Commercial Environments Designed for Growth and Impact",
@@ -342,7 +343,7 @@
                   "slug": "interior-designing",
                   "title": "Interior Designing",
                   "desc": "Elegant interiors that reflect your personality and make every space extraordinary.",
-                  "image": "/s3.avif",
+                  "image": "/s3.webp",
                   "icon": "sofa",
                   "badge": "INTERIOR DESIGNING",
                   "headline": "Curate Inspiring Interior Spaces Tailored to Your Signature Style",
@@ -366,7 +367,7 @@
                   "slug": "renovation-remodeling",
                   "title": "Renovation & Remodeling",
                   "desc": "Transforming existing spaces into modern, functional and stylish environments.",
-                  "image": "/s4.avif",
+                  "image": "/s4..webp",
                   "icon": "wrench",
                   "badge": "RENOVATION & REMODELING",
                   "headline": "Revitalize Your Property with Structural Renovation and Modern Upgrades",
@@ -414,7 +415,7 @@
                   "slug": "planning-consultation",
                   "title": "Planning & Consultation",
                   "desc": "Expert guidance from concept to execution for successful and hassle-free projects.",
-                  "image": "/s6.avif",
+                  "image": "/s6.webp",
                   "icon": "fileSpreadsheet",
                   "badge": "PLANNING & CONSULTATION",
                   "headline": "Navigate Architectural Feasibility and Permits with Clarity",
@@ -438,7 +439,7 @@
                   "slug": "kitchen-remodeling",
                   "title": "Kitchen Remodeling",
                   "desc": "Create a beautiful kitchen designed for modern living with bespoke cabinetry, countertops, and space optimization.",
-                  "image": "/s7.avif",
+                  "image": "/s7.webp",
                   "icon": "archive",
                   "badge": "KITCHEN REMODELING",
                   "headline": "Create a Beautiful Kitchen Designed for Modern Living",
@@ -462,7 +463,7 @@
                   "slug": "architectural-3d-visualization",
                   "title": "Architectural 3D Visualization",
                   "desc": "Photo-realistic 3D rendering, walkthrough animations, and virtual reality previews of your projects.",
-                  "image": "/8s.avif",
+                  "image": "/8s.webp",
                   "icon": "eye",
                   "badge": "3D VISUALIZATION",
                   "headline": "Experience Your Architecture in Photorealistic Detail Before Construction",
@@ -486,7 +487,7 @@
                   "slug": "sustainable-eco-design",
                   "title": "Sustainable & Eco Design",
                   "desc": "Energy-efficient architecture, passive solar design, and environmentally conscious construction.",
-                  "image": "/93.avif",
+                  "image": "/9s.webp",
                   "icon": "leaf",
                   "badge": "SUSTAINABLE DESIGN",
                   "headline": "Build for the Future with Low-Carbon and Energy-Efficient Architecture",
@@ -518,7 +519,7 @@
                   "title": "Create a Beautiful Kitchen Designed for Modern Living",
                   "description1": "The kitchen is the heart of every home, and a well-designed kitchen can completely transform your daily routine. Our kitchen remodeling services combine thoughtful layouts, premium materials, and expert craftsmanship to create spaces that are both functional and visually stunning.",
                   "description2": "Whether you're planning a complete kitchen renovation or upgrading selected features, we design kitchens that improve comfort, efficiency, and long-term value while reflecting your personal style and lifestyle needs.",
-                  "heroImage": "/s7.avif",
+                  "heroImage": "/s7.webp",
                   "expYears": "15+",
                   "expTitle": "Transform the Heart of Your Home",
                   "expDescription": "With over 15 years of experience, we specialize in creating beautiful kitchens with custom cabinetry, premium countertops, modern lighting, and intelligent layouts that enhance everyday living while increasing your property's value.",
@@ -577,8 +578,8 @@
                   "category": "Modern Kitchen",
                   "title": "Modern White Kitchen",
                   "slug": "modern-white-kitchen",
-                  "image": "/s7.avif",
-                  "heroImage": "/s7.avif",
+                  "image": "/s7.webp",
+                  "heroImage": "/s7.webp",
                   "badge": "PROJECT DETAIL",
                   "description": "This modern kitchen remodel combines clean lines, premium materials, and smart storage solutions to create a stylish and functional space. Designed to maximize space and natural light, this kitchen offers the perfect blend of beauty, convenience, and modern living.",
                   "meta": {
@@ -588,10 +589,10 @@
                   },
                   "overview": "Our team transformed this outdated kitchen into a modern, elegant, and highly functional space. We focused on open layouts, premium finishes, and smart storage to enhance both aesthetics and usability. The result is a bright, spacious kitchen that perfectly fits the homeowner's lifestyle.",
                   "gallery": [
-                    "/s8.avif",
-                    "/j2.avif",
-                    "/j3.jpg",
-                    "/k.jpg"
+                    "/s8.webp",
+                    "/j2.webp",
+                    "/j3.webp",
+                    "/k.webp"
                   ],
                   "keyHighlights": [
                     "Custom cabinetry with smart storage solutions",
@@ -608,8 +609,8 @@
                     { "title": "Stylish Finishes", "desc": "Premium materials and textures for a contemporary look.", "icon": "sparkles" }
                   ],
                   "beforeAfter": {
-                    "before": "/p1.avif",
-                    "after": "/s7.avif"
+                    "before": "/p1.webp",
+                    "after": "/s7.webp"
                   }
                 },
                 {
@@ -617,8 +618,8 @@
                   "category": "Contemporary",
                   "title": "Contemporary Kitchen",
                   "slug": "contemporary-kitchen",
-                  "image": "/k.jpg",
-                  "heroImage": "/k.jpg",
+                  "image": "/k.webp",
+                  "heroImage": "/k.webp",
                   "badge": "PROJECT DETAIL",
                   "description": "A sophisticated contemporary kitchen featuring matte anthracite surfaces, deep marble accents, and an open layout that fosters everyday gathering.",
                   "meta": {
@@ -628,10 +629,10 @@
                   },
                   "overview": "Designed for modern entertainers, this contemporary kitchen balances sleek minimalism with warm ambient textures. We integrated full-height storage pantry walls, an expansive waterfall preparation island, and concealed extraction systems.",
                   "gallery": [
-                    "/s8.avif",
-                    "/j2.avif",
-                    "/j3.jpg",
-                    "/k.jpg"
+                    "/s8.webp",
+                    "/j2.webp",
+                    "/j3.webp",
+                    "/k.webp"
                   ],
                   "keyHighlights": [
                     "Nero Marquina waterfall center island",
@@ -648,8 +649,8 @@
                     { "title": "Matte Anti-Fingerprint Finish", "desc": "Thermal laminate surfaces that resist smudges and daily wear.", "icon": "sparkles" }
                   ],
                   "beforeAfter": {
-                    "before": "/p1.avif",
-                    "after": "/s7.avif"
+                    "before": "/p1.webp",
+                    "after": "/s7.webp"
                   }
                 },
                 {
@@ -657,8 +658,8 @@
                   "category": "Traditional",
                   "title": "Classic Kitchen Remodel",
                   "slug": "classic-kitchen-remodel",
-                  "image": "/p1.avif",
-                  "heroImage": "/p1.avif",
+                  "image": "/p1.webp",
+                  "heroImage": "/p1.webp",
                   "badge": "PROJECT DETAIL",
                   "description": "A timeless culinary retreat blending classic shaker cabinetry, brass hardware, and warm architectural wood tones with high-end appliances.",
                   "meta": {
@@ -668,10 +669,10 @@
                   },
                   "overview": "This historic estate kitchen required a delicate balance between classic charm and high-performance functionality. We custom-built solid wood shaker cabinets, introduced a spacious fireclay farmhouse sink, and crafted antique brass lighting fixtures.",
                   "gallery": [
-                     "/s8.avif",
-                    "/j2.avif",
-                    "/j3.jpg",
-                    "/k.jpg"
+                    "/s8.webp",
+                    "/j2.webp",
+                    "/j3.webp",
+                    "/k.webp"
                   ],
                   "keyHighlights": [
                     "Bespoke solid wood shaker millwork",
@@ -688,8 +689,8 @@
                     { "title": "Brass Artisan Accents", "desc": "Unlacquered brass fittings that age gracefully with time.", "icon": "sparkles" }
                   ],
                   "beforeAfter": {
-                    "before": "/p1.avif",
-                    "after": "/s7.avif"
+                    "before": "/p1.webp",
+                    "after": "/s7.webp"
                   }
                 },
                 {
@@ -697,8 +698,8 @@
                   "category": "Small Kitchen",
                   "title": "Small Kitchen Makeover",
                   "slug": "small-kitchen-makeover",
-                  "image": "/p2.avif",
-                  "heroImage": "/p2.avif",
+                  "image": "/p2.webp",
+                  "heroImage": "/p2.webp",
                   "badge": "PROJECT DETAIL",
                   "description": "An intelligent compact makeover optimizing every vertical inch with ceiling-height cabinetry, reflective surfaces, and hidden storage systems.",
                   "meta": {
@@ -708,10 +709,10 @@
                   },
                   "overview": "Facing a narrow galley footprint, our objective was to eliminate clutter and introduce maximum natural light. By replacing dark upper cabinets with reflective cream millwork, floating shelves, and continuous quartz surfaces, we doubled the perceived size of the room.",
                   "gallery": [
-                    "/s8.avif",
-                    "/j2.avif",
-                    "/j3.jpg",
-                    "/k.jpg"
+                    "/s8.webp",
+                    "/j2.webp",
+                    "/j3.webp",
+                    "/k.webp"
                   ],
                   "keyHighlights": [
                     "Ceiling-height vertical storage maximization",
@@ -728,8 +729,8 @@
                     { "title": "Minimalist Hardware", "desc": "J-pull handles and integrated recessed profiles.", "icon": "sparkles" }
                   ],
                   "beforeAfter": {
-                    "before": "/j3.jpg",
-                    "after": "/k.jpg"
+                    "before": "/p1.webp",
+                    "after": "/s7.webp"
                   }
                 },
                 {
@@ -737,8 +738,8 @@
                   "category": "Luxury Kitchen",
                   "title": "Luxury Kitchen Design",
                   "slug": "luxury-kitchen-design",
-                  "image": "/ps.avif",
-                  "heroImage": "/ps.avif",
+                  "image": "/ps.webp",
+                  "heroImage": "/ps.webp",
                   "badge": "PROJECT DETAIL",
                   "description": "An architectural showpiece tailored with bookmatched Italian porcelain, walnut veneers, and climate-controlled sommelier wine storage.",
                   "meta": {
@@ -748,10 +749,10 @@
                   },
                   "overview": "Created for a prestigious penthouse residence, this kitchen stands at the crossroads of gastronomy and fine art. We curated bookmatched marble slabs, motorized acoustic pocket doors that conceal the scullery, and a cantilevered bar.",
                   "gallery": [
-                   "/s8.avif",
-                    "/j2.avif",
-                    "/j3.jpg",
-                    "/k.jpg"
+                    "/s8.webp",
+                    "/j2.webp",
+                    "/j3.webp",
+                    "/k.webp"
                   ],
                   "keyHighlights": [
                     "Custom American walnut vertical grain millwork",
@@ -768,8 +769,8 @@
                     { "title": "Precision Champagne Trims", "desc": "Custom brushed champagne gold kickplates and shadow reveals.", "icon": "sparkles" }
                   ],
                   "beforeAfter": {
-                    "before": "/j3.jpg",
-                    "after": "/k.jpg"
+                    "before": "/p1.webp",
+                    "after": "/s7.webp"
                   }
                 },
                 {
@@ -777,8 +778,8 @@
                   "category": "Modern Kitchen",
                   "title": "Open Concept Kitchen",
                   "slug": "open-concept-kitchen",
-                  "image": "/ps.avif",
-                  "heroImage": "/ps.avif",
+                  "image": "/ps.webp",
+                  "heroImage": "/ps.webp",
                   "badge": "PROJECT DETAIL",
                   "description": "A flowing open-concept culinary space connecting seamlessly with living and patio zones through generous natural lighting and cohesive textures.",
                   "meta": {
@@ -788,10 +789,10 @@
                   },
                   "overview": "By removing a non-structural dividing wall, we transformed two cramped rooms into an airy, unified great room. A 12-foot central quartz island now anchors the residence, serving as food prep surface, buffet counter, and casual breakfast bar.",
                   "gallery": [
-                    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80",
-                    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80"
+                    "/s8.webp",
+                    "/j2.webp",
+                    "/j3.webp",
+                    "/k.webp"
                   ],
                   "keyHighlights": [
                     "Structural wall removal with hidden flush ceiling beam",
@@ -808,8 +809,8 @@
                     { "title": "Harmonized Millwork", "desc": "Consistent white oak textures across kitchen and media cabinets.", "icon": "sparkles" }
                   ],
                   "beforeAfter": {
-                    "before": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80",
-                    "after": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80"
+                    "before": "/p1.webp",
+                    "after": "/s7.webp"
                   }
                 }
               ]
@@ -828,12 +829,12 @@
                 "completionTime": "6 Weeks",
                 "location": "New Delhi, India"
               },
-              "heroImage": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1400&q=85",
+              "heroImage": "/s7.webp",
               "gallery": [
-                "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
-                "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
-                "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80",
-                "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80"
+                "/s8.webp",
+                "/j1.webp",
+                "/l1.webp",
+                "/k.webp"
               ],
               "overview": "Our team transformed this outdated kitchen into a modern, elegant, and highly functional space. We focused on open layouts, premium finishes, and smart storage to enhance both aesthetics and usability. The result is a bright, spacious kitchen that perfectly fits the homeowner's lifestyle.",
               "keyHighlights": [
@@ -851,8 +852,8 @@
                 { "title": "Stylish Finishes", "desc": "Premium materials and textures for a contemporary look.", "icon": "sparkles" }
               ],
               "beforeAfter": {
-                "before": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80",
-                "after": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80"
+                "before": "/p1.webp",
+                "after": "/s7.webp"
               }
             }
           }
@@ -869,49 +870,49 @@
                   "name": "Vikram Singh",
                   "role": "Founder & CEO",
                   "bio": "With 20+ years of experience, Vikram leads our vision to create modern and functional kitchens for every home.",
-                  "image": "/t1.avif"
+                  "image": "/test6.webp"
                 },
                 {
                   "name": "Priya Malhotra",
                   "role": "Lead Interior Designer",
                   "bio": "Priya specializes in creating stylish and practical kitchen designs that match your lifestyle and aesthetic preferences.",
-                  "image": "/t2.avif"
+                  "image": "/test2.webp"
                 },
                 {
                   "name": "Amit Sharma",
                   "role": "Project Manager",
                   "bio": "Amit ensures smooth execution of every project, from planning to installation, with attention to detail and quality.",
-                  "image": "/ts.avif"
+                  "image": "/ts (1).webp"
                 },
                 {
                   "name": "Sneha Gupta",
                   "role": "Kitchen Design Consultant",
                   "bio": "Sneha works closely with clients to understand their needs and create personalized kitchen solutions.",
-                  "image": "/t4.avif"
+                  "image": "/test4.webp"
                 },
                 {
                   "name": "Rahul Mehta",
                   "role": "3D Visualization Expert",
                   "bio": "Rahul creates detailed 3D designs to help you visualize your dream kitchen before the project begins.",
-                  "image": "/ts.avif"
+                  "image": "/ts (1).webp"
                 },
                 {
                   "name": "Anjali Verma",
                   "role": "Material & Product Specialist",
                   "bio": "Anjali helps you choose the best materials, finishes, and appliances to create a kitchen that is durable and elegant.",
-                  "image": "/t1.avif"
+                  "image": "/test3.webp"
                 },
                 {
                   "name": "Karan Yadav",
                   "role": "Installation Supervisor",
                   "bio": "Karan oversees the installation process and ensures every detail is completed with precision and perfection.",
-                  "image": "/t7.avif"
+                  "image": "/test6.webp"
                 },
                 {
                   "name": "Nikita Rao",
                   "role": "Client Relationship Manager",
                   "bio": "Nikita ensures a seamless experience by providing complete support and guidance throughout your kitchen remodeling journey.",
-                  "image": "/t8.avif"
+                  "image": "/test2.webp"
                 }
               ]
             }
@@ -931,21 +932,21 @@
                   "quote": "Working with this design studio was a fantastic experience. They understood our vision perfectly and transformed our space into a beautiful, functional and modern home. Highly professional and creative team!",
                   "author": "Rohan Mehta",
                   "role": "Homeowner",
-                  "avatar": "/test.avif"
+                  "avatar": "/test6.webp"
                 },
                 {
                   "id": 2,
                   "quote": "Exceptional creativity and attention to detail! The team delivered a space that is both stylish and practical. From concept to completion, the entire process was smooth and stress-free. Truly recommend them!",
                   "author": "Priya Sharma",
                   "role": "Interior Designer",
-                  "avatar": "/test2.avif"
+                  "avatar": "/test2.webp"
                 },
                 {
                   "id": 3,
                   "quote": "The design studio exceeded our expectations with their innovative ideas and elegant designs. They created an office space that reflects our brand and culture perfectly. Great team, great results!",
                   "author": "Amit Verma",
                   "role": "Business Owner",
-                  "avatar": "/test3.avif"
+                  "avatar": "/test3.webp"
                 },
                 {
                   "id": 4,
@@ -953,7 +954,7 @@
                   "author": "Sneha Kapoor",
                   "role": "Villa Owner",
                   "quote": "The architectural layout and lighting design exceeded all our expectations. Our luxury kitchen and living spaces feel twice as large and incredibly welcoming. Truly world-class craftsmanship!",
-                  "avatar": "/test4.avif"
+                  "avatar": "/test4.webp"
                 },
                 {
                   "id": 5,
@@ -961,7 +962,7 @@
                   "author": "Vikram Singhania",
                   "role": "Commercial Client",
                   "quote": "Superb project management and zero delays in execution. Their 3D visualization matched the real built office 100%. One of the most reliable and transparent design firms we have worked with.",
-                  "avatar": "/test5.avif"
+                  "avatar": "/test.webp"
                 },
                 {
                   "id": 6,
@@ -969,7 +970,7 @@
                   "author": "Ananya Joshi",
                   "role": "Homeowner",
                   "quote": "Our kitchen and home renovation was effortless from day one. Every corner, custom cabinet, and stone finish was curated with perfection. We constantly receive compliments from guests!",
-                  "avatar": "/test6.avif"
+                  "avatar": "/test6.webp"
                 }
               ]
             }
@@ -995,73 +996,73 @@
                   "id": 1,
                   "category": "Modern Kitchen",
                   "title": "Calacatta Gold Island with Pendant Glow",
-                  "image": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85"
+                  "image": "/s7.webp"
                 },
                 {
                   "id": 2,
                   "category": "Contemporary",
                   "title": "Matte Anthracite & Nero Marquina Island",
-                  "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+                  "image": "/8s.webp"
                 },
                 {
                   "id": 3,
                   "category": "Modern Kitchen",
                   "title": "Scandinavian White Oak & Marble Counter",
-                  "image": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=85"
+                  "image": "/p1.webp"
                 },
                 {
                   "id": 4,
                   "category": "Traditional",
                   "title": "Sage Green Country Estate Millwork",
-                  "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85"
+                  "image": "/p4.webp"
                 },
                 {
                   "id": 5,
                   "category": "Traditional",
                   "title": "L-Shaped Olive Green Cabinetry & Open Shelving",
-                  "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=85"
+                  "image": "/k.webp"
                 },
                 {
                   "id": 6,
                   "category": "Contemporary",
                   "title": "Minimalist Warm Oak Island & Stainless Range",
-                  "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
+                  "image": "/ps.webp"
                 },
                 {
                   "id": 7,
                   "category": "Luxury Kitchen",
                   "title": "Walnut Vertical Grain Veneer with Marble Bar",
-                  "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"
+                  "image": "/s3.webp"
                 },
                 {
                   "id": 8,
                   "category": "Small Kitchen",
                   "title": "Sunlit Coastal White Kitchen with Black Range",
-                  "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85"
+                  "image": "/8s.webp"
                 },
                 {
                   "id": 9,
                   "category": "Luxury Kitchen",
                   "title": "Open Garden Courtyard Transition Kitchen",
-                  "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85"
+                  "image": "/9s.webp"
                 },
                 {
                   "id": 10,
                   "category": "Modern Kitchen",
                   "title": "Warm Backlit Veneer & Waterfall Island",
-                  "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85"
+                  "image": "/s1.webp"
                 },
                 {
                   "id": 11,
                   "category": "Small Kitchen",
                   "title": "Bespoke Corner Pantry & Fluted Glass Millwork",
-                  "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=85"
+                  "image": "/p1.webp"
                 },
                 {
                   "id": 12,
                   "category": "Contemporary",
                   "title": "Charcoal Bar Stools & Panoramic Garden Sliders",
-                  "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
+                  "image": "/10oct.webp"
                 }
               ]
             }
@@ -1166,14 +1167,15 @@
                 "label": "Contact Us",
                 "href": "/contact"
               },
-              "image": "/hero.png",
-              "bgImage": "/hero.png"
+              "image": "/hero.webp",
+              "bgImage": "/hero.webp"
             }
           }
         },
         "Footer": {
           "variants": {
             "ArchiFooter1": {
+              "logoImage": "/L.png",
               "about": "We create innovative architecture and interior spaces that blend aesthetics, functionality, and sustainability. From residential to commercial projects, we bring your vision to life with thoughtful design and expert execution.",
               "location": "100 S Main Street, New York, NY 10001",
               "phone": "+1 000 000 000",
