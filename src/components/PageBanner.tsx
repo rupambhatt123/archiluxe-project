@@ -23,7 +23,7 @@ export default function PageBanner({
   );
 
   const trail: BreadcrumbItem[] = [
-    { label: "Home", href: "/" },
+    { label: "HOME", href: "/" },
     ...filteredCrumbs,
   ];
 
@@ -45,13 +45,13 @@ export default function PageBanner({
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto space-y-3">
         {title && (
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight uppercase">
             {title}
           </h1>
         )}
 
         {trail.length > 1 && (
-          <nav className="flex items-center justify-center gap-2 text-xs sm:text-[13px] text-neutral-300 font-medium">
+          <nav className="flex items-center justify-center gap-2 text-xs sm:text-[13px] text-neutral-300 font-medium uppercase">
             {trail.map((crumb, idx) => {
               const isLast = idx === trail.length - 1;
               return (
@@ -59,12 +59,12 @@ export default function PageBanner({
                   {crumb.href && !isLast ? (
                     <Link
                       href={crumb.href}
-                      className="hover:text-[#b88344] transition-colors"
+                      className="hover:text-[#b88344] transition-colors uppercase"
                     >
                       {crumb.label}
                     </Link>
                   ) : (
-                    <span className="text-[#b88344] truncate max-w-[200px] sm:max-w-none">
+                    <span className="text-[#b88344] truncate max-w-[200px] sm:max-w-none uppercase">
                       {crumb.label}
                     </span>
                   )}
