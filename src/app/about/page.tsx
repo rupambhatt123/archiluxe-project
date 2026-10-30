@@ -8,25 +8,29 @@ import {
   Gem,
   Leaf,
   Headphones,
-  Rocket,
+  Target,
   Eye,
   LucideIcon,
 } from "lucide-react";
 import PageBanner from "@/components/PageBanner";
 import About from "@/components/About";
-import siteData from "@/data/websiteData.json";
+import rawSiteData from "@/data/websiteData.json";
+
+const siteData = rawSiteData as any;
 
 const iconMap: Record<string, LucideIcon> = {
-  Users,
-  Lightbulb,
-  Cog,
-  Gem,
-  Leaf,
-  Headphones,
+  users: Users,
+  lightbulb: Lightbulb,
+  cog: Cog,
+  gem: Gem,
+  leaf: Leaf,
+  headphones: Headphones,
+  target: Target,
+  eye: Eye,
 };
 
 export default function AboutPage() {
-  const architecture = (siteData as any)?.categories?.Architecture?.sections;
+  const architecture = siteData?.categories?.Architecture?.sections;
 
   const pageBanner = architecture?.PageBanner?.variants?.ArchiPageBanner1;
   const timelineData = architecture?.Timeline?.variants?.ArchiTimeline1;
@@ -34,37 +38,14 @@ export default function AboutPage() {
   const missionVisionData = architecture?.MissionVision?.variants?.ArchiMissionVision1;
 
   const timelineItems: any[] = timelineData?.items || [];
-  const whyFeaturesList: any[] = whyChooseUsData?.features || whyChooseUsData?.items || [];
-
-  const missionVisionCards: any[] =
-    missionVisionData?.items ||
-    missionVisionData?.cards ||
-    [
-      missionVisionData?.mission
-        ? {
-            title: missionVisionData.mission.title || "Our Mission",
-            description: missionVisionData.mission.description,
-            image:
-              missionVisionData.mission.image ||
-              "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
-          }
-        : null,
-      missionVisionData?.vision
-        ? {
-            title: missionVisionData.vision.title || "Our Vision",
-            description: missionVisionData.vision.description,
-            image:
-              missionVisionData.vision.image ||
-              "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-          }
-        : null,
-    ].filter(Boolean);
+  const whyFeaturesList: any[] = whyChooseUsData?.features || [];
+  const missionVisionCards: any[] = missionVisionData?.items || [];
 
   return (
     <main className="min-h-screen bg-[#faf8f5] text-[#14171c] font-sans selection:bg-[#b88344] selection:text-white">
       <PageBanner
-        title={pageBanner?.title || "About Us"}
-        breadcrumbs={[{ label: pageBanner?.title || "About Us" }]}
+        title="ABOUT US"
+        breadcrumbs={[{ label: "ABOUT US" }]}
         bgImage={pageBanner?.bgOverlayImage}
       />
 
@@ -78,21 +59,25 @@ export default function AboutPage() {
           />
 
           <div className="relative z-10 max-w-6xl mx-auto">
-            <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-              <div className="flex items-center justify-center gap-2.5 mb-2">
-                <span className="w-8 h-[1.5px] bg-[#b88344]" />
-                <span className="text-xs font-black tracking-[0.24em] uppercase text-[#b88344]">
-                  {timelineData.badge?.replace(/—/g, "").trim() || "OUR JOURNEY"}
-                </span>
-                <span className="w-8 h-[1.5px] bg-[#b88344]" />
+            {(timelineData.badge || timelineData.titleLine1) && (
+              <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+                {timelineData.badge && (
+                  <div className="flex items-center justify-center gap-2.5 mb-2">
+                    <span className="w-8 h-[1.5px] bg-[#b88344]" />
+                    <span className="text-xs font-black tracking-[0.24em] uppercase text-[#b88344]">
+                      {timelineData.badge.replace(/—/g, "").trim()}
+                    </span>
+                    <span className="w-8 h-[1.5px] bg-[#b88344]" />
+                  </div>
+                )}
+                <h2 className="text-3xl sm:text-5xl font-black text-[#14171c] tracking-tight">
+                  {timelineData.titleLine1}{" "}
+                  <span className="text-[#b88344]">
+                    {timelineData.titleHighlight}
+                  </span>
+                </h2>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-black text-[#14171c] tracking-tight">
-                {timelineData.titleLine1 || "Milestones"} &{" "}
-                <span className="text-[#b88344]">
-                  {timelineData.titleHighlight || "Evolution"}
-                </span>
-              </h2>
-            </div>
+            )}
 
             <div className="relative">
               <div className="hidden md:block absolute left-1/2 top-4 bottom-4 -translate-x-1/2 w-[2px] bg-gradient-to-b from-transparent via-[#b88344] to-transparent shadow-[0_0_8px_rgba(184,131,68,0.5)]" />
@@ -110,14 +95,13 @@ export default function AboutPage() {
                     >
                       <div className="w-full md:w-1/2 group">
                         <div className="h-64 sm:h-72 md:h-80 w-full rounded-3xl overflow-hidden shadow-xl border border-[#b88344]/30 relative bg-neutral-200">
-                          <img
-                            src={
-                              item.image ||
-                              "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80"
-                            }
-                            alt={item.title}
-                            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                          />
+                          {item.image && (
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                            />
+                          )}
                           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
                         </div>
                       </div>
@@ -136,7 +120,7 @@ export default function AboutPage() {
                         <p className="text-xs sm:text-[14px] text-neutral-600 leading-relaxed font-normal pt-1">
                           {item.subtitle && (
                             <strong className="text-[#14171c] font-bold">
-                              {item.subtitle}:{" "}
+                              {item.subtitle}{" "}
                             </strong>
                           )}
                           {item.description}
@@ -156,23 +140,24 @@ export default function AboutPage() {
           <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             <div className="lg:col-span-3 space-y-4 pr-0 lg:pr-2">
-              <div className="flex items-center gap-2.5">
-                <span className="w-8 h-[2px] bg-[#b88344]" />
-                <span className="text-[12px] font-bold tracking-[0.2em] uppercase text-[#14171c]">
-                  {whyChooseUsData.badge?.replace(/—/g, "").trim() || "WHY CHOOSE US"}
-                </span>
-              </div>
+              {whyChooseUsData.badge && (
+                <div className="flex items-center gap-2.5">
+                  <span className="w-8 h-[2px] bg-[#b88344]" />
+                  <span className="text-[12px] font-bold tracking-[0.2em] uppercase text-[#14171c]">
+                    {whyChooseUsData.badge.replace(/—/g, "").trim()}
+                  </span>
+                </div>
+              )}
 
               <h2 className="text-4xl sm:text-5xl font-black text-[#14171c] leading-[1.08] tracking-tight">
-                {whyChooseUsData.titleLine1 || "Why Choose"} <br />
+                {whyChooseUsData.titleLine1} <br />
                 <span className="text-[#b88344]">
-                  {whyChooseUsData.titleHighlight || "Archiluxe"}
+                  {whyChooseUsData.titleHighlight}
                 </span>
               </h2>
 
               <p className="text-[13px] sm:text-[14px] text-neutral-600 leading-relaxed font-normal pt-1">
-                {whyChooseUsData.description ||
-                  "We combine creativity, functionality and expertise to deliver architectural and interior spaces that exceed expectations."}
+                {whyChooseUsData.description}
               </p>
             </div>
 
@@ -181,20 +166,21 @@ export default function AboutPage() {
                 <div className="absolute -top-3.5 -right-3.5 w-32 h-32 bg-[#b88344] rounded-2xl pointer-events-none z-0 shadow-sm" />
 
                 <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl relative z-10 bg-neutral-200 border border-white">
-                  <img
-                    src={whyChooseUsData.mainImage || "/w1.png"}
-                    alt="Why Choose Archiluxe"
-                    className="w-full h-full object-cover"
-                  />
+                  {whyChooseUsData.centerImage && (
+                    <img
+                      src={whyChooseUsData.centerImage}
+                      alt={whyChooseUsData.titleLine1}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3.5 sm:gap-4">
               {whyFeaturesList.map((item: any, idx: number) => {
-                const IconComponent =
-                  iconMap[item.icon] || (idx % 3 === 0 ? Users : Lightbulb);
-                const isSolidGold = item.isSolidGold ?? (idx === 0 || idx === 3);
+                const IconComponent = iconMap[item.icon] || Users;
+                const isSolidGold = idx === 0 || idx === 3;
 
                 return (
                   <div
@@ -216,7 +202,7 @@ export default function AboutPage() {
                     </h3>
 
                     <p className="text-[11px] sm:text-[12px] text-neutral-500 font-normal leading-relaxed">
-                      {item.desc || item.description}
+                      {item.desc}
                     </p>
                   </div>
                 );
@@ -236,12 +222,6 @@ export default function AboutPage() {
               clipPath: "polygon(0 0, 100% 0, 88% 100%, 0% 100%)",
             }}
           >
-            <div
-              className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-luminosity"
-              style={{
-                backgroundImage: `url('${missionVisionData.bgImage || "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"}')`,
-              }}
-            />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-[#111519]/80 to-transparent" />
           </div>
 
@@ -249,29 +229,30 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
               
               <div className="lg:col-span-4 text-white space-y-3 pr-0 lg:pr-6">
-                <div className="flex items-center gap-2.5">
-                  <span className="w-8 h-[2px] bg-[#b88344]" />
-                  <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-neutral-300">
-                    {missionVisionData.badge?.replace(/—/g, "").trim() || "MISSION & VISION"}
-                  </span>
-                </div>
+                {missionVisionData.badge && (
+                  <div className="flex items-center gap-2.5">
+                    <span className="w-8 h-[2px] bg-[#b88344]" />
+                    <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-neutral-300">
+                      {missionVisionData.badge.replace(/—/g, "").trim()}
+                    </span>
+                  </div>
+                )}
 
                 <h2 className="text-3xl sm:text-5xl font-black text-white leading-[1.08] tracking-tight">
-                  {missionVisionData.titleLine1 || "Our Mission"} <br />
+                  {missionVisionData.titleLine1} <br />
                   <span className="text-[#b88344]">
-                    {missionVisionData.titleHighlight || "& Vision"}
+                    {missionVisionData.titleHighlight}
                   </span>
                 </h2>
 
                 <p className="text-xs sm:text-[13px] text-neutral-400 font-normal leading-relaxed max-w-sm pt-1">
-                  {missionVisionData.description ||
-                    "Guided by a clear purpose and a bold vision, we design spaces that inspire, enrich lives, and create a sustainable tomorrow."}
+                  {missionVisionData.description}
                 </p>
               </div>
 
               <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 {missionVisionCards.map((card: any, idx: number) => {
-                  const CardIcon = idx === 0 ? Rocket : Eye;
+                  const CardIcon = iconMap[card.icon] || (idx === 0 ? Target : Eye);
 
                   return (
                     <div
@@ -281,16 +262,13 @@ export default function AboutPage() {
                       <div>
                         <div className="relative mb-7">
                           <div className="h-[200px] sm:h-[220px] rounded-2xl overflow-hidden bg-neutral-200">
-                            <img
-                              src={
-                                card.image ||
-                                (idx === 0
-                                  ? "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
-                                  : "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80")
-                              }
-                              alt={card.title}
-                              className="w-full h-full object-cover"
-                            />
+                            {card.image && (
+                              <img
+                                src={card.image}
+                                alt={card.title}
+                                className="w-full h-full object-cover"
+                              />
+                            )}
                           </div>
 
                           <div className="absolute -bottom-4 left-4 w-12 h-12 rounded-full bg-gradient-to-br from-[#c89858] to-[#9e6f33] text-white flex items-center justify-center shadow-lg shadow-[#b88344]/40 border-2 border-white z-20">
@@ -304,7 +282,7 @@ export default function AboutPage() {
                         <div className="w-11 h-[2px] bg-[#b88344] mb-3" />
 
                         <p className="text-[12px] sm:text-[13px] text-neutral-600 leading-relaxed font-normal">
-                          {card.desc || card.description}
+                          {card.description}
                         </p>
                       </div>
                     </div>

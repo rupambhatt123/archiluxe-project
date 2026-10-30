@@ -30,7 +30,7 @@ export default function ContactPage() {
     name: "",
     email: "",
     phone: "",
-    projectType: servicesList?.[0]?.title,
+    projectType: servicesList?.[0]?.title || "Residential Architecture",
     subject: "",
     message: "",
   });
@@ -53,64 +53,65 @@ export default function ContactPage() {
       name: "",
       email: "",
       phone: "",
-      projectType: servicesList?.[0]?.title,
+      projectType: servicesList?.[0]?.title || "Residential Architecture",
       subject: "",
       message: "",
     });
     setIsSubmitted(false);
   };
 
-  const officeTitle = contactData?.office?.title;
-  const officeAddress = contactData?.office?.address || common?.address;
-  const emailTitle = contactData?.email?.title;
-  const emailAddress = contactData?.email?.email || common?.email;
-  const callTitle = contactData?.call?.title;
-  const callPhone = contactData?.call?.phone || common?.phone;
+  const officeTitle = contactData?.office?.title || "Office Location";
+  const officeAddress = contactData?.office?.address || common?.address || "100 S Main Street, New York, NY 10001";
+  const emailTitle = contactData?.email?.title || "Email Us";
+  const emailAddress = contactData?.email?.email || common?.email || "info@xyz.com";
+  const callTitle = contactData?.call?.title || "Call Us";
+  const callPhone = contactData?.call?.phone || common?.phone || "+1 000 000 000";
 
   return (
     <main className="min-h-screen bg-[#faf8f5] text-[#14171c] font-sans selection:bg-[#b88344] selection:text-white">
       <PageBanner
-        title={contactData?.badge?.replace(/—/g, "").trim()}
-        breadcrumbs={[{ label: contactData?.badge?.replace(/—/g, "").trim() }]}
+        title="Contact Us"
+        breadcrumbs={[{ label: "Contact Us" }]}
         bgImage={pageBanner?.bgOverlayImage}
       />
 
       <section className="pt-10 sm:pt-14 pb-12 sm:pb-16 px-4 sm:px-6 md:px-8 max-w-[1360px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+          
+          {/* Left Column: Contact Information */}
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <div className="flex items-center gap-2 mb-1.5">
+              <div className="flex items-center gap-2 mb-2">
                 <span className="w-7 h-[1.5px] bg-[#b88344]"></span>
                 <span className="text-[11px] font-bold tracking-[0.24em] uppercase text-[#b88344]">
-                  {contactData?.badge?.replace(/—/g, "").trim()}
+                  {contactData?.badge?.replace(/—/g, "").trim() || "CONTACT US"}
                 </span>
                 <span className="w-7 h-[1.5px] bg-[#b88344]"></span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl md:text-[42px] font-black text-[#14171c] leading-[1.14] tracking-tight">
-                {contactData?.titleLine1}{" "}
+                {contactData?.titleLine1 || "Let's Discuss Your"}{" "}
                 <span className="text-[#b88344]">
-                  {contactData?.titleHighlight}
+                  {contactData?.titleHighlight || "Kitchen Project"}
                 </span>
               </h2>
 
               <p className="text-xs sm:text-[13.5px] text-neutral-600 font-normal leading-relaxed mt-2.5">
-                {contactData?.description}
+                {contactData?.description ||
+                  "Have a question, need expert advice, or ready to start your kitchen remodeling project? Our team is here to help you create a beautiful, functional, and modern kitchen for your home."}
               </p>
             </div>
 
             <div className="space-y-3.5 pt-1">
               {officeAddress && (
-                <div className="bg-white rounded-2xl p-4 sm:p-4.5 border border-neutral-100 shadow-[0_3px_15px_rgba(0,0,0,0.02)] flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-[#fbf5eb] text-[#b88344] flex items-center justify-center shrink-0">
-                    <MapPin size={18} />
+                <div className="bg-white rounded-2xl p-4 sm:p-5 border border-neutral-100 shadow-[0_3px_15px_rgba(0,0,0,0.02)] flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-[#b88344] text-white flex items-center justify-center shrink-0 shadow-sm shadow-[#b88344]/20">
+                    <MapPin size={22} />
                   </div>
                   <div>
-                    {officeTitle && (
-                      <h4 className="text-xs sm:text-[13px] font-bold text-[#14171c]">
-                        {officeTitle}
-                      </h4>
-                    )}
+                    <h4 className="text-[13px] sm:text-[14px] font-bold text-[#14171c]">
+                      {officeTitle}
+                    </h4>
                     <p className="text-[11.5px] sm:text-xs text-neutral-500 mt-0.5 leading-relaxed">
                       {officeAddress}
                     </p>
@@ -119,16 +120,14 @@ export default function ContactPage() {
               )}
 
               {emailAddress && (
-                <div className="bg-white rounded-2xl p-4 sm:p-4.5 border border-neutral-100 shadow-[0_3px_15px_rgba(0,0,0,0.02)] flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-[#fbf5eb] text-[#b88344] flex items-center justify-center shrink-0">
-                    <Mail size={18} />
+                <div className="bg-white rounded-2xl p-4 sm:p-5 border border-neutral-100 shadow-[0_3px_15px_rgba(0,0,0,0.02)] flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-[#b88344] text-white flex items-center justify-center shrink-0 shadow-sm shadow-[#b88344]/20">
+                    <Mail size={22} />
                   </div>
                   <div>
-                    {emailTitle && (
-                      <h4 className="text-xs sm:text-[13px] font-bold text-[#14171c]">
-                        {emailTitle}
-                      </h4>
-                    )}
+                    <h4 className="text-[13px] sm:text-[14px] font-bold text-[#14171c]">
+                      {emailTitle}
+                    </h4>
                     <a
                       href={`mailto:${emailAddress}`}
                       className="text-[11.5px] sm:text-xs text-neutral-500 hover:text-[#b88344] mt-0.5 block truncate transition-colors"
@@ -140,16 +139,14 @@ export default function ContactPage() {
               )}
 
               {callPhone && (
-                <div className="bg-white rounded-2xl p-4 sm:p-4.5 border border-neutral-100 shadow-[0_3px_15px_rgba(0,0,0,0.02)] flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-[#fbf5eb] text-[#b88344] flex items-center justify-center shrink-0">
-                    <Phone size={18} />
+                <div className="bg-white rounded-2xl p-4 sm:p-5 border border-neutral-100 shadow-[0_3px_15px_rgba(0,0,0,0.02)] flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-[#b88344] text-white flex items-center justify-center shrink-0 shadow-sm shadow-[#b88344]/20">
+                    <Phone size={22} />
                   </div>
                   <div>
-                    {callTitle && (
-                      <h4 className="text-xs sm:text-[13px] font-bold text-[#14171c]">
-                        {callTitle}
-                      </h4>
-                    )}
+                    <h4 className="text-[13px] sm:text-[14px] font-bold text-[#14171c]">
+                      {callTitle}
+                    </h4>
                     <a
                       href={`tel:${callPhone.replace(/[^0-9+]/g, "")}`}
                       className="text-[11.5px] sm:text-xs text-neutral-500 hover:text-[#b88344] mt-0.5 block transition-colors"
@@ -162,69 +159,71 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 md:p-9 border border-neutral-100 shadow-[0_4px_25px_rgba(0,0,0,0.03)] w-full">
+          {/* Right Column: Contact Form */}
+          <div className="lg:col-span-7 bg-[#faf8f5]/60 rounded-3xl p-6 sm:p-8 md:p-9 border border-neutral-200/60 shadow-[0_4px_25px_rgba(0,0,0,0.02)] w-full">
             {!isSubmitted ? (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <h3 className="text-2xl sm:text-[26px] font-extrabold text-[#14171c] tracking-tight">
-                    {contactData?.form?.title}
+                    {contactData?.form?.title || "Send Us a Message"}
                   </h3>
                   <p className="text-xs sm:text-[13px] text-neutral-500 mt-1">
-                    {contactData?.form?.description}
+                    {contactData?.form?.description ||
+                      "Fill out the form below and our team will get back to you shortly to discuss your requirements."}
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-neutral-400">
+                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[#b88344]">
                       <User size={16} />
                     </div>
                     <input
                       type="text"
                       required
-                      placeholder={contactData?.form?.namePlaceholder}
+                      placeholder={contactData?.form?.namePlaceholder || "Your Name *"}
                       value={formData.name}
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="w-full pl-11 pr-4 py-3 sm:py-3.5 bg-[#faf8f5] border border-neutral-200/80 rounded-2xl text-xs sm:text-[13px] text-neutral-800 placeholder:text-neutral-400 focus:outline-none focus:border-[#b88344] focus:bg-white transition-all"
+                      className="w-full pl-11 pr-4 py-3 sm:py-3.5 bg-white border border-neutral-200/80 rounded-2xl text-xs sm:text-[13px] text-neutral-800 placeholder:text-neutral-500 focus:outline-none focus:border-[#b88344] transition-all"
                     />
                   </div>
 
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-neutral-400">
+                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[#b88344]">
                       <Mail size={16} />
                     </div>
                     <input
                       type="email"
                       required
-                      placeholder={contactData?.form?.emailPlaceholder}
+                      placeholder={contactData?.form?.emailPlaceholder || "Your Email *"}
                       value={formData.email}
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
-                      className="w-full pl-11 pr-4 py-3 sm:py-3.5 bg-[#faf8f5] border border-neutral-200/80 rounded-2xl text-xs sm:text-[13px] text-neutral-800 placeholder:text-neutral-400 focus:outline-none focus:border-[#b88344] focus:bg-white transition-all"
+                      className="w-full pl-11 pr-4 py-3 sm:py-3.5 bg-white border border-neutral-200/80 rounded-2xl text-xs sm:text-[13px] text-neutral-800 placeholder:text-neutral-500 focus:outline-none focus:border-[#b88344] transition-all"
                     />
                   </div>
 
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-neutral-400">
+                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[#b88344]">
                       <Phone size={16} />
                     </div>
                     <input
                       type="tel"
                       required
-                      placeholder={contactData?.form?.phonePlaceholder}
+                      placeholder={contactData?.form?.phonePlaceholder || "Phone Number *"}
                       value={formData.phone}
                       onChange={(e) =>
                         setFormData({ ...formData, phone: e.target.value })
                       }
-                      className="w-full pl-11 pr-4 py-3 sm:py-3.5 bg-[#faf8f5] border border-neutral-200/80 rounded-2xl text-xs sm:text-[13px] text-neutral-800 placeholder:text-neutral-400 focus:outline-none focus:border-[#b88344] focus:bg-white transition-all"
+                      className="w-full pl-11 pr-4 py-3 sm:py-3.5 bg-white border border-neutral-200/80 rounded-2xl text-xs sm:text-[13px] text-neutral-800 placeholder:text-neutral-500 focus:outline-none focus:border-[#b88344] transition-all"
                     />
                   </div>
 
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-neutral-400">
+                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[#b88344]">
                       <Layers size={16} />
                     </div>
                     <select
@@ -232,13 +231,22 @@ export default function ContactPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, projectType: e.target.value })
                       }
-                      className="w-full pl-11 pr-10 py-3 sm:py-3.5 bg-[#faf8f5] border border-neutral-200/80 rounded-2xl text-xs sm:text-[13px] text-neutral-800 appearance-none focus:outline-none focus:border-[#b88344] focus:bg-white transition-all cursor-pointer"
+                      className="w-full pl-11 pr-10 py-3 sm:py-3.5 bg-white border border-neutral-200/80 rounded-2xl text-xs sm:text-[13px] text-neutral-800 appearance-none focus:outline-none focus:border-[#b88344] transition-all cursor-pointer"
                     >
-                      {servicesList?.map((srv: any) => (
-                        <option key={srv.slug || srv.title} value={srv.title}>
-                          {srv.title}
-                        </option>
-                      ))}
+                      {servicesList && servicesList.length > 0 ? (
+                        servicesList.map((srv: any) => (
+                          <option key={srv.slug || srv.title} value={srv.title}>
+                            {srv.title}
+                          </option>
+                        ))
+                      ) : (
+                        <>
+                          <option value="Residential Architecture">Residential Architecture</option>
+                          <option value="Commercial Architecture">Commercial Architecture</option>
+                          <option value="Interior Designing">Interior Designing</option>
+                          <option value="Renovation & Remodeling">Renovation & Remodeling</option>
+                        </>
+                      )}
                     </select>
                     <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-neutral-400">
                       <ChevronDown size={15} />
@@ -247,34 +255,34 @@ export default function ContactPage() {
                 </div>
 
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-neutral-400">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[#b88344]">
                     <FileText size={16} />
                   </div>
                   <input
                     type="text"
                     required
-                    placeholder={contactData?.form?.subjectPlaceholder}
+                    placeholder={contactData?.form?.subjectPlaceholder || "Subject *"}
                     value={formData.subject}
                     onChange={(e) =>
                       setFormData({ ...formData, subject: e.target.value })
                     }
-                    className="w-full pl-11 pr-4 py-3 sm:py-3.5 bg-[#faf8f5] border border-neutral-200/80 rounded-2xl text-xs sm:text-[13px] text-neutral-800 placeholder:text-neutral-400 focus:outline-none focus:border-[#b88344] focus:bg-white transition-all"
+                    className="w-full pl-11 pr-4 py-3 sm:py-3.5 bg-white border border-neutral-200/80 rounded-2xl text-xs sm:text-[13px] text-neutral-800 placeholder:text-neutral-500 focus:outline-none focus:border-[#b88344] transition-all"
                   />
                 </div>
 
                 <div className="relative">
-                  <div className="absolute top-3.5 left-0 pl-4 pointer-events-none text-neutral-400">
+                  <div className="absolute top-3.5 left-0 pl-4 pointer-events-none text-[#b88344]">
                     <MessageSquare size={16} />
                   </div>
                   <textarea
                     rows={4}
                     required
-                    placeholder={contactData?.form?.messagePlaceholder}
+                    placeholder={contactData?.form?.messagePlaceholder || "Your Message *"}
                     value={formData.message}
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
                     }
-                    className="w-full pl-11 pr-4 py-3.5 bg-[#faf8f5] border border-neutral-200/80 rounded-2xl text-xs sm:text-[13px] text-neutral-800 placeholder:text-neutral-400 focus:outline-none focus:border-[#b88344] focus:bg-white transition-all resize-none"
+                    className="w-full pl-11 pr-4 py-3.5 bg-white border border-neutral-200/80 rounded-2xl text-xs sm:text-[13px] text-neutral-800 placeholder:text-neutral-500 focus:outline-none focus:border-[#b88344] transition-all resize-none"
                   ></textarea>
                 </div>
 
@@ -284,8 +292,8 @@ export default function ContactPage() {
                   className="w-full bg-[#b88344] hover:bg-[#a07136] text-white py-3.5 rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-[#b88344]/30 hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer disabled:opacity-75"
                 >
                   {isSubmitting
-                    ? contactData?.form?.submittingLabel
-                    : contactData?.form?.submitButton}{" "}
+                    ? "Submitting..."
+                    : contactData?.form?.submitButton || "Send Message"}{" "}
                   <ArrowRight size={15} />
                 </button>
               </form>
@@ -302,15 +310,13 @@ export default function ContactPage() {
 
                 <div className="space-y-2 max-w-md">
                   <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-[#b88344]">
-                    {contactData?.success?.badge}
+                    Message Sent
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-black text-[#14171c] tracking-tight">
-                    {contactData?.success?.heading}, {formData.name}!
+                    Thank You, {formData.name}!
                   </h3>
                   <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
-                    {contactData?.success?.description
-                      ?.replace("{{email}}", formData.email)
-                      ?.replace("{{projectType}}", formData.projectType)}
+                    We have received your message and will get back to you shortly at {formData.email}.
                   </p>
                 </div>
 
@@ -320,15 +326,13 @@ export default function ContactPage() {
                     onClick={handleReset}
                     className="inline-flex items-center gap-2 bg-[#faf8f5] hover:bg-[#f1ede6] text-[#14171c] border border-neutral-200/80 px-5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer"
                   >
-                    <RotateCcw size={14} />{" "}
-                    {contactData?.success?.resetButton}
+                    <RotateCcw size={14} /> Send Another Message
                   </button>
                   <Link
                     href="/"
                     className="inline-flex items-center gap-2 bg-[#b88344] hover:bg-[#a07136] text-white px-5 py-2.5 rounded-xl text-xs font-bold shadow-md shadow-[#b88344]/25 transition-all"
                   >
-                    {contactData?.success?.homeButton}{" "}
-                    <ArrowRight size={14} />
+                    Back to Home <ArrowRight size={14} />
                   </Link>
                 </div>
               </motion.div>
@@ -337,6 +341,7 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Map Section */}
       {contactData?.mapLocation?.embedUrl && (
         <section className="px-4 sm:px-6 md:px-8 pb-12 sm:pb-16 max-w-[1360px] mx-auto">
           <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-neutral-100 h-[280px] sm:h-[360px]">
@@ -349,16 +354,16 @@ export default function ContactPage() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="filter saturate-75 w-full h-full"
-              title={contactData.mapLocation.label}
+              title={contactData.mapLocation.label || "Our Location"}
             />
 
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none flex flex-col items-center max-w-[90%]">
               <div className="bg-white/95 backdrop-blur-md px-4 sm:px-5 py-2 rounded-xl shadow-xl border border-neutral-100 text-center mb-2">
                 <h5 className="font-extrabold text-xs text-[#14171c]">
-                  {contactData.mapLocation.label}
+                  {contactData.mapLocation.label || "Our Location"}
                 </h5>
                 <p className="text-[10px] sm:text-[11px] text-neutral-500 mt-0.5 truncate max-w-[240px] sm:max-w-none">
-                  {contactData.mapLocation.address}
+                  {contactData.mapLocation.address || officeAddress}
                 </p>
               </div>
               <div className="w-8 h-8 rounded-full bg-[#b88344] text-white flex items-center justify-center shadow-xl ring-4 ring-white animate-bounce">

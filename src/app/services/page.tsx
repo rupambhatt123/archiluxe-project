@@ -6,7 +6,9 @@ import {
   Sofa,
   Wrench,
   Leaf,
-  FileText,
+  FileSpreadsheet,
+  Archive,
+  Eye,
   ArrowRight,
   LucideIcon,
 } from "lucide-react";
@@ -17,16 +19,18 @@ const siteData = rawSiteData as any;
 const common = siteData.common;
 const architecture = siteData.categories?.Architecture?.sections;
 const servicesSection = architecture?.Services?.variants?.ArchiServices1;
-const servicesList: any[] = servicesSection?.services || servicesSection?.items;
+const servicesList: any[] = servicesSection?.items || servicesSection?.services;
 const pageBanner = architecture?.PageBanner?.variants?.ArchiPageBanner1;
 
 const iconMap: Record<string, LucideIcon> = {
   home: Home,
-  building: Building2,
+  building2: Building2,
   sofa: Sofa,
   wrench: Wrench,
   leaf: Leaf,
-  fileText: FileText,
+  fileSpreadsheet: FileSpreadsheet,
+  archive: Archive,
+  eye: Eye,
 };
 
 export const metadata: Metadata = {
@@ -36,7 +40,6 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   const badgeTitle = servicesSection?.badge?.replace(/—/g, "").trim();
-  const globalBtnText = servicesSection?.buttonText || servicesSection?.button?.label;
 
   return (
     <main className="min-h-screen bg-[#faf8f5] text-[#14171c] font-sans selection:bg-[#b88344] selection:text-white">
@@ -44,7 +47,7 @@ export default function ServicesPage() {
         title={badgeTitle}
         bgImage={pageBanner?.bgOverlayImage}
         breadcrumbs={[
-          { label: common?.homeLabel, href: "/" },
+          { label: "Home", href: "/" },
           { label: badgeTitle },
         ]}
       />
@@ -67,7 +70,7 @@ export default function ServicesPage() {
           </h2>
 
           <p className="text-xs sm:text-[14px] text-neutral-600 mt-2 font-normal leading-relaxed">
-            {servicesSection?.description || servicesSection?.subtitle}
+            {servicesSection?.description}
           </p>
         </div>
 
@@ -75,20 +78,12 @@ export default function ServicesPage() {
           {servicesList?.map((item: any, idx: number) => {
             const Icon = iconMap[item.icon] || Home;
 
-            const rawSlug =
-              item.slug ||
-              item.title
-                ?.toLowerCase()
-                .replace(/[^a-z0-9]+/g, "-")
-                .replace(/(^-|-$)/g, "");
-
-            const cardLink = item.href || item.link || (rawSlug ? `/services/${rawSlug}` : "/services");
-            const cardBtnLabel = item.buttonText || item.cta || globalBtnText;
-            const descriptionText = item.desc || item.description;
+            const cardLink = `/services/${item.slug}`;
+            const descriptionText = item.desc;
 
             return (
               <div
-                key={item.id || item.slug || item.title || idx}
+                key={item.id || item.slug || idx}
                 className="group bg-white rounded-3xl p-5 sm:p-5.5 border border-neutral-100 shadow-[0_4px_22px_rgba(0,0,0,0.04)] hover:shadow-2xl hover:border-[#b88344]/30 hover:-translate-y-1 transition-all duration-300 flex items-stretch gap-4 sm:gap-5 min-h-[215px] sm:min-h-[225px]"
               >
                 <div className="w-[52%] flex flex-col justify-between py-1">
@@ -111,7 +106,7 @@ export default function ServicesPage() {
                       href={cardLink}
                       className="inline-flex items-center gap-1.5 text-[12.5px] font-bold text-[#b88344] hover:text-[#9e6f33] transition-colors group/link"
                     >
-                      <span>{cardBtnLabel}</span>
+                      <span>Read More</span>
                       <ArrowRight
                         size={13}
                         className="stroke-[2.3] transition-transform duration-300 group-hover/link:translate-x-1"
